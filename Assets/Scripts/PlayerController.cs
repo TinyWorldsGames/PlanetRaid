@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
 
     public float turnSpeed = 10f;
 
+    public Quaternion characterSpineRotation;
+
+
 
     private void Awake()
     {
@@ -37,8 +40,17 @@ public class PlayerController : MonoBehaviour
         Vector3 lookDirection = mousePos - transform.position;
         lookDirection.y = 0;
         Quaternion newRotation = Quaternion.LookRotation(lookDirection);
-        transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, turnSpeed * Time.deltaTime);
+        characterSpineRotation = newRotation;
+        // transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, turnSpeed * Time.deltaTime);
 
+        if (Mathf.Abs(newRotation.eulerAngles.y - transform.rotation.eulerAngles.y) >= 45)
+        {
+
+            transform.rotation = newRotation;
+        }
+
+       
 
     }
+
 }
