@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: f5f66fe8449dbb74d95d1fb52e1f9ec8
+guid: 276b40e6f469e504ea075aa38f9d37fd
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 2012204719954072570
-    second: metarig|metarig|mixamo.com|Layer0
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 2
