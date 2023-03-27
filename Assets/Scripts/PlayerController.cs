@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
 
     private Rigidbody rb;
-    private Animator anim;
 
     public Camera cam;
 
