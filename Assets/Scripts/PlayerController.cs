@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         characterSpineRotation = newRotation;
         // transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, turnSpeed * Time.deltaTime);
 
-        if (Mathf.Abs(newRotation.eulerAngles.y - transform.rotation.eulerAngles.y) >= 45)
+        if (Mathf.Abs(newRotation.eulerAngles.y - transform.rotation.eulerAngles.y) >= 90)
         {
 
             transform.rotation = newRotation;
