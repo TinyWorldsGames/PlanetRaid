@@ -15,8 +15,8 @@ public class GridXZ<TGridObject> {
     private int height;
     private float cellSize;
     private Vector3 originPosition;
-    private TGridObject[,] gridArray;
-
+    public TGridObject[,] gridArray;
+    public TextMesh[,] debugTextArray;
     public GridXZ(int width, int height, float cellSize, Vector3 originPosition, Func<GridXZ<TGridObject>, int, int, TGridObject> createGridObject) {
         this.width = width;
         this.height = height;
@@ -33,7 +33,7 @@ public class GridXZ<TGridObject> {
 
         bool showDebug = true;
         if (showDebug) {
-            TextMesh[,] debugTextArray = new TextMesh[width, height];
+             debugTextArray = new TextMesh[width, height];
 
             for (int x = 0; x < gridArray.GetLength(0); x++) {
                 for (int z = 0; z < gridArray.GetLength(1); z++) {
@@ -41,9 +41,13 @@ public class GridXZ<TGridObject> {
                     debugTextArray[x, z].transform.parent = GridBuildingSystem3D.Instance.transform;
                     Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x, z + 1), Color.white, 100f);
                     Debug.DrawLine(GetWorldPosition(x, z), GetWorldPosition(x + 1, z), Color.white, 100f);
-                    
+
+                   
+
+
                 }
             }
+           
             Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
             Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
 
@@ -77,6 +81,7 @@ public class GridXZ<TGridObject> {
     public void SetGridObject(int x, int z, TGridObject value) {
         if (x >= 0 && z >= 0 && x < width && z < height) {
             gridArray[x, z] = value;
+            
             TriggerGridObjectChanged(x, z);
         }
     }

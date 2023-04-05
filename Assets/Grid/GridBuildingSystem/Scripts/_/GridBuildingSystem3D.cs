@@ -9,14 +9,23 @@ public class GridBuildingSystem3D : MonoBehaviour {
     public static GridBuildingSystem3D Instance { get; private set; }
 
     public event EventHandler OnSelectedChanged;
-    public event EventHandler OnObjectPlaced;
+    // public event EventHandler OnObjectPlaced;
+    public delegate void GridSelectedDelagate(PlacedObjectTypeSO objectTypeSO);
+    public delegate void ObjectPlacedDelegate(GridObject objectTypeSO);
+    public GridSelectedDelagate OnGridSelected;
+    public ObjectPlacedDelegate OnObjectPlaced;
 
 
-    private GridXZ<GridObject> grid;
+
+    public GridXZ<GridObject> grid;
     [SerializeField] private List<PlacedObjectTypeSO> placedObjectTypeSOList = null;
     [SerializeField]
     private PlacedObjectTypeSO placedObjectTypeSO;
     private PlacedObjectTypeSO.Dir dir;
+    private GridObject startNode, endNode;
+    [SerializeField]
+    Pathfinding pathfinding;
+    
 
     private void Awake() {
         Instance = this;
@@ -29,46 +38,48 @@ public class GridBuildingSystem3D : MonoBehaviour {
         placedObjectTypeSO = null;// placedObjectTypeSOList[0];
     }
 
-    public class GridObject {
+    private void OnEnable()
+    {
+        OnObjectPlaced += CreateNewBuilding;
+    }
 
-        private GridXZ<GridObject> grid;
-        private int x;
-        private int y;
-        public PlacedObject_Done placedObject;
+    private void Start()
+    {
+        startNode = grid.gridArray[2, 2];
+        endNode = grid.gridArray[3, 4];
+        // pathFinding.CalculateThePath(startNode, endNode);
+        
 
-        public GridObject(GridXZ<GridObject> grid, int x, int y) {
-            this.grid = grid;
-            this.x = x;
-            this.y = y;
-            placedObject = null;
-        }
 
-        public override string ToString() {
-            return x + ", " + y + "\n" + placedObject;
-        }
+    }
 
-        public void SetPlacedObject(PlacedObject_Done placedObject) {
-            this.placedObject = placedObject;
-            grid.TriggerGridObjectChanged(x, y);
-        }
+    public void CreateNewBuilding(GridObject gridObjects)
+    {
 
-        public void ClearPlacedObject() {
-            placedObject = null;
-            grid.TriggerGridObjectChanged(x, y);
-        }
+        Debug.Log("Calisti");
 
-        public PlacedObject_Done GetPlacedObject() {
-            return placedObject;
-        }
+        Vector2Int placedObjectOrigin = new Vector2Int(gridObjects.x, gridObjects.y);
+        placedObjectOrigin = grid.ValidateGridPosition(placedObjectOrigin);
+        Vector2Int rotationOffset = placedObjectTypeSO.GetRotationOffset(dir);
+        Vector3 placedObjectWorldPosition = grid.GetWorldPosition(placedObjectOrigin.x, placedObjectOrigin.y) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
+        PlacedObject_Done placedObject = PlacedObject_Done.Create(placedObjectWorldPosition, placedObjectOrigin, dir, placedObjectTypeSO);
+        List<Vector2Int> gridPositionList = placedObjectTypeSO.GetGridPositionList(placedObjectOrigin, dir);
 
-        public bool CanBuild() {
-            return placedObject == null;
+
+        foreach (Vector2Int gridPosition in gridPositionList)
+        {
+            grid.GetGridObject(gridPosition.x, gridPosition.y).SetPlacedObject(placedObject);
         }
 
     }
 
-    private void Update() {
-        if (Input.GetMouseButtonDown(0) && placedObjectTypeSO != null) {
+
+
+    private void Update() 
+    {
+        if (Input.GetMouseButtonDown(0) && placedObjectTypeSO != null) 
+        {
+            
             Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
             grid.GetXZ(mousePosition, out int x, out int z);
 
@@ -78,6 +89,7 @@ public class GridBuildingSystem3D : MonoBehaviour {
             // Test Can Build
             List<Vector2Int> gridPositionList = placedObjectTypeSO.GetGridPositionList(placedObjectOrigin, dir);
             bool canBuild = true;
+            
             foreach (Vector2Int gridPosition in gridPositionList) {
                 if (!grid.GetGridObject(gridPosition.x, gridPosition.y).CanBuild()) {
                     canBuild = false;
@@ -85,20 +97,18 @@ public class GridBuildingSystem3D : MonoBehaviour {
                 }
             }
 
-            if (canBuild) {
-                Vector2Int rotationOffset = placedObjectTypeSO.GetRotationOffset(dir);
-                Vector3 placedObjectWorldPosition = grid.GetWorldPosition(placedObjectOrigin.x, placedObjectOrigin.y) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
+            if (canBuild) 
+            {
+               
 
-                PlacedObject_Done placedObject = PlacedObject_Done.Create(placedObjectWorldPosition, placedObjectOrigin, dir, placedObjectTypeSO);
-
-                foreach (Vector2Int gridPosition in gridPositionList) {
-                    grid.GetGridObject(gridPosition.x, gridPosition.y).SetPlacedObject(placedObject);
-                }
-
-                OnObjectPlaced?.Invoke(this, EventArgs.Empty);
+              
+                OnGridSelected?.Invoke(placedObjectTypeSO);
 
                 //DeselectObjectType();
-            } else {
+            } 
+
+            else 
+            {
                 // Cannot build here
                 Utils.CreateWorldTextPopup("Cannot Build Here!", mousePosition);
             }
@@ -118,23 +128,57 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha0)) { DeselectObjectType(); }
 
+        if (Input.GetKeyDown(KeyCode.Alpha7)) 
+        {
+            Debug.Log(grid.gridArray[3, 2].CanBuild());
 
-        if (Input.GetMouseButtonDown(1)) {
-            Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
-            if (grid.GetGridObject(mousePosition) != null) {
-                // Valid Grid Position
-                PlacedObject_Done placedObject = grid.GetGridObject(mousePosition).GetPlacedObject();
-                if (placedObject != null) {
-                    // Demolish
-                    placedObject.DestroySelf();
 
-                    List<Vector2Int> gridPositionList = placedObject.GetGridPositionList();
-                    foreach (Vector2Int gridPosition in gridPositionList) {
-                        grid.GetGridObject(gridPosition.x, gridPosition.y).ClearPlacedObject();
-                    }
-                }
-            }
         }
+
+
+        //if (Input.GetMouseButton(0))
+        //{
+        //    Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
+        //  //  grid.GetXZ(mousePosition, out int x, out int y);
+        //    //List<GridObject> path = pathfinding.FindPath(0, 0, x, y);
+
+
+        //    if (grid.GetGridObject(mousePosition) != null)
+        //    {
+        //        grid.GetXZ(mousePosition, out int x, out int z);
+
+        //        if (startNode == null)
+        //        {
+        //            startNode = grid.gridArray[x, z];
+        //            endNode = grid.gridArray[x, z];
+                    
+        //        }
+
+        //        endNode = grid.gridArray[x, z];
+
+        //        pathfinding.FindPath(startNode,endNode);
+
+        //    }
+
+        //    else
+        //    {
+        //        startNode = null;
+
+        //    }
+
+            
+        //}
+
+        //else
+        //{
+        //    startNode=null;
+        //}
+
+
+
+
+
+       
     }
 
     private void DeselectObjectType() {
@@ -177,3 +221,80 @@ public class GridBuildingSystem3D : MonoBehaviour {
     }
 
 }
+
+[System.Serializable]
+public class GridObject
+{
+    private GridXZ<GridObject> grid;
+    public int x;
+    public int y;
+    public PlacedObject_Done placedObject;
+
+    public int gCost;
+    public int hCost;
+    public int fCost;
+    public int comeDirection;
+    public int turnCost;
+    public GridObject cameFromNode;
+
+
+
+
+
+    public GridObject(GridXZ<GridObject> grid, int x, int y)
+    {
+        this.grid = grid;
+        this.x = x;
+        this.y = y;
+        placedObject = null;
+      
+    }
+
+
+    public void CalculateFCost()
+    {
+        fCost = gCost + hCost;
+    }
+
+    public override string ToString()
+    {
+        return x + ", " + y + "\n" + placedObject;
+    }
+
+    public void SetPlacedObject(PlacedObject_Done placedObject)
+    {
+        this.placedObject = placedObject;
+        grid.TriggerGridObjectChanged(x, y);
+    }
+
+    public void ClearPlacedObject()
+    {
+        placedObject = null;
+        grid.TriggerGridObjectChanged(x, y);
+    }
+
+    public PlacedObject_Done GetPlacedObject()
+    {
+        return placedObject;
+    }
+
+    public bool CanBuild()
+    {
+        return placedObject == null;
+    }
+
+}
+
+//public class Node
+//{
+//    public int x, z, gCost, hCost,fCost;
+//    public PlacedObjectTypeSO.Dir dir;
+//    public Node priviusNode;
+//    public bool canBuild;
+
+//    public Node(int x, int z)
+//    {
+//        this.x = x;
+//        this.z = z;
+//    }
+//}
