@@ -8,13 +8,14 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
     public static GridBuildingSystem3D Instance { get; private set; }
 
-    public event EventHandler OnSelectedChanged;
-    // public event EventHandler OnObjectPlaced;
+    public delegate void OnSelectedChangedDelegate();
     public delegate void GridSelectedDelagate(PlacedObjectTypeSO objectTypeSO);
+    public delegate void PathFoundDelagate(PlacedObjectTypeSO objectTypeSO,Vector3 position , Quaternion quaternion);
     public delegate void ObjectPlacedDelegate(GridObject objectTypeSO);
     public GridSelectedDelagate OnGridSelected;
+    public PathFoundDelagate OnPathFound;
     public ObjectPlacedDelegate OnObjectPlaced;
-
+    public OnSelectedChangedDelegate OnSelectedChanged;
 
 
     public GridXZ<GridObject> grid;
@@ -42,24 +43,19 @@ public class GridBuildingSystem3D : MonoBehaviour {
     {
         OnObjectPlaced += CreateNewBuilding;
     }
-
-    private void Start()
+    private void OnDisable()
     {
-        startNode = grid.gridArray[2, 2];
-        endNode = grid.gridArray[3, 4];
-        // pathFinding.CalculateThePath(startNode, endNode);
-        
-
+         OnObjectPlaced -= CreateNewBuilding;
 
     }
 
-    public void CreateNewBuilding(GridObject gridObjects)
+
+    public void CreateNewBuilding(GridObject gridObject)
     {
+      
 
-        Debug.Log("Calisti");
-
-        Vector2Int placedObjectOrigin = new Vector2Int(gridObjects.x, gridObjects.y);
-        placedObjectOrigin = grid.ValidateGridPosition(placedObjectOrigin);
+        Vector2Int placedObjectOrigin = new Vector2Int(gridObject.x, gridObject.y);
+        //  placedObjectOrigin = grid.ValidateGridPosition(placedObjectOrigin);
         Vector2Int rotationOffset = placedObjectTypeSO.GetRotationOffset(dir);
         Vector3 placedObjectWorldPosition = grid.GetWorldPosition(placedObjectOrigin.x, placedObjectOrigin.y) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
         PlacedObject_Done placedObject = PlacedObject_Done.Create(placedObjectWorldPosition, placedObjectOrigin, dir, placedObjectTypeSO);
@@ -100,8 +96,6 @@ public class GridBuildingSystem3D : MonoBehaviour {
             if (canBuild) 
             {
                
-
-              
                 OnGridSelected?.Invoke(placedObjectTypeSO);
 
                 //DeselectObjectType();
@@ -181,12 +175,17 @@ public class GridBuildingSystem3D : MonoBehaviour {
        
     }
 
+    public PlacedObjectTypeSO.Dir GetDirection()
+    {
+        return dir;
+    }
+
     private void DeselectObjectType() {
         placedObjectTypeSO = null; RefreshSelectedObjectType();
     }
 
     private void RefreshSelectedObjectType() {
-        OnSelectedChanged?.Invoke(this, EventArgs.Empty);
+        OnSelectedChanged?.Invoke();
     }
 
 

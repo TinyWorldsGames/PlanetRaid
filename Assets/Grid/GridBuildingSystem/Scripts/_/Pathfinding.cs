@@ -19,7 +19,9 @@ public class Pathfinding : MonoBehaviour
     [SerializeField]
     List<GridObject> path = new List<GridObject>();
 
-   
+    PlacedObjectTypeSO placedObjectType;
+    PlacedObjectTypeSO.Dir dir;
+
     GridObject startNode, endNode,selectedNode;
   
 
@@ -80,6 +82,29 @@ public class Pathfinding : MonoBehaviour
 
                 endNode = grid.gridArray[x, z];
                 finalPath = FindPath(startNode, endNode);
+                dir = GridBuildingSystem3D.Instance.GetDirection();
+                Vector2Int rotationOffset = placedObjectType.GetRotationOffset(dir);
+                GridBuildingSystem3D.Instance.OnSelectedChanged?.Invoke();
+
+                if (finalPath!=null)
+                {
+                    for (int i = 0; i < finalPath.Count; i++)
+                    {
+
+                        Vector2Int placedObjectOrigin = new Vector2Int(finalPath[i].x, finalPath[i].y);
+                        Vector3 placedObjectWorldPosition = grid.GetWorldPosition(placedObjectOrigin.x, placedObjectOrigin.y) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
+                        List<Vector2Int> gridPositionList = placedObjectType.GetGridPositionList(placedObjectOrigin, dir);
+                        GridBuildingSystem3D.Instance.OnPathFound?.Invoke(placedObjectType, placedObjectWorldPosition, Quaternion.Euler(0, placedObjectType.GetRotationAngle(dir), 0));
+
+
+
+                    }
+                }
+                else
+                {
+
+                }
+                
 
 
             }
@@ -95,19 +120,20 @@ public class Pathfinding : MonoBehaviour
 
             if (finalPath!=null&&!secondGridSelected)
             {
-                Debug.Log("Final Path Bulundu");
 
                 if (Input.GetMouseButtonDown(0))
                 {
+
                     for (int i = 0; i < finalPath.Count; i++)
                     {
                         selectedNode = endNode;
                         secondGridSelected = true;
-                        GridBuildingSystem3D.Instance.OnObjectPlaced(finalPath[i]);
-                        Debug.Log("SAG TIK BASILDI"+"Final Path Count" + finalPath.Count);
+                        GridBuildingSystem3D.Instance.OnObjectPlaced?.Invoke(finalPath[i]);
+                        GridBuildingSystem3D.Instance.OnSelectedChanged?.Invoke();
+
                     }
 
-                  
+
 
 
                 }
@@ -131,6 +157,8 @@ public class Pathfinding : MonoBehaviour
 
     public void CreateNewBuilding(PlacedObjectTypeSO objectTypeSO)
     {
+
+        placedObjectType = objectTypeSO;
         if (objectTypeSO.isStackable&&!isWorking)
         {
             isWorking = true;
@@ -237,6 +265,7 @@ public class Pathfinding : MonoBehaviour
             }
         }
 
+        
         // Out of nodes on the openList
         return null;
     }
@@ -322,20 +351,13 @@ public class Pathfinding : MonoBehaviour
 
     private List<GridObject> CalculatePath(GridObject endNode)
     {
-        for (int i = 0; i < path.Count; i++)
-        {
-            grid.debugTextArray[path[i].x, path[i].y].text = path[i].x + " " + path[i].y;
-        }
-
         path.Clear();
         path.Add(endNode);
-        grid.debugTextArray[endNode.x, endNode.y].text = endNode.x + " " + endNode.y + "\n Furkan burda";
 
         GridObject currentNode = endNode;
         while (currentNode.cameFromNode != null)
         {
             path.Add(currentNode.cameFromNode);
-            grid.debugTextArray[currentNode.cameFromNode.x, currentNode.cameFromNode.y].text = currentNode.cameFromNode.x+" "+currentNode.cameFromNode.y+"\n Furkan burda";
             currentNode = currentNode.cameFromNode;
         }
         path.Reverse();
