@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public class DenemeClass :Pathfinding
+{
+
+}
+
 public class Pathfinding : MonoBehaviour
 {
 
+    int fudaylHocaYaniliyor = 23;
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
 
@@ -28,6 +35,7 @@ public class Pathfinding : MonoBehaviour
     int safer;
     bool secondGridSelected;
     bool isWorking;
+
     private void Start()
     {
         grid = GridBuildingSystem3D.Instance.grid;
@@ -74,6 +82,7 @@ public class Pathfinding : MonoBehaviour
                     if (startNode == null)
                     {
                         startNode = grid.gridArray[x, z];
+                        
                         endNode = grid.gridArray[x, z];
                     }
 
@@ -81,9 +90,13 @@ public class Pathfinding : MonoBehaviour
                 }
 
                 endNode = grid.gridArray[x, z];
+                
                 finalPath = FindPath(startNode, endNode);
+                
                 dir = GridBuildingSystem3D.Instance.GetDirection();
+                
                 Vector2Int rotationOffset = placedObjectType.GetRotationOffset(dir);
+                
                 GridBuildingSystem3D.Instance.OnSelectedChanged?.Invoke();
 
                 if (finalPath!=null)
@@ -123,7 +136,6 @@ public class Pathfinding : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-
                     for (int i = 0; i < finalPath.Count; i++)
                     {
                         selectedNode = endNode;
@@ -132,9 +144,6 @@ public class Pathfinding : MonoBehaviour
                         GridBuildingSystem3D.Instance.OnSelectedChanged?.Invoke();
 
                     }
-
-
-
 
                 }
 
@@ -170,33 +179,9 @@ public class Pathfinding : MonoBehaviour
 
 
 
-    //public List<Vector3> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition)
-    //{
-    //    grid.GetXZ(startWorldPosition, out int startX, out int startY);
-    //    grid.GetXZ(endWorldPosition, out int endX, out int endY);
-
-
-    //     path = FindPath(startX, startY, endX, endY);
-    //    if (path == null)
-    //    {
-    //        return null;
-    //    }
-    //    else
-    //    {
-    //        List<Vector3> vectorPath = new List<Vector3>();
-    //        foreach (GridObject pathNode in path)
-    //        {
-    //            vectorPath.Add(new Vector3(pathNode.x, pathNode.y) * grid.GetCellSize() + Vector3.one * grid.GetCellSize() * .5f);
-    //        }
-    //        return vectorPath;
-    //    }
-    //}
 
     public List<GridObject> FindPath(GridObject startNode, GridObject endNode)
     {
-
-
-    
 
         if (startNode == null || endNode == null)
         {
@@ -205,6 +190,7 @@ public class Pathfinding : MonoBehaviour
         }
 
         openList = new List<GridObject> { startNode };
+        
         closedList = new List<GridObject>();
 
         for (int x = 0; x < grid.GetWidth(); x++)
@@ -226,6 +212,7 @@ public class Pathfinding : MonoBehaviour
         while (openList.Count > 0)
         {
             GridObject currentNode = GetLowestFCostNode(openList);
+           
             if (currentNode == endNode)
             {
                 // Reached final node
@@ -239,11 +226,10 @@ public class Pathfinding : MonoBehaviour
             foreach (GridObject neighbourNode in GetNeighbourList(currentNode))
             {
                 if (closedList.Contains(neighbourNode)) continue;
-                if (!neighbourNode.CanBuild())
-                {
-                    closedList.Add(neighbourNode);
-                    continue;
-                }
+                
+             
+               
+
                 neighbourNode.cameFromNode = currentNode;
                 int turnCost = CalculateDirectionCost(currentNode, neighbourNode);
 
@@ -258,7 +244,9 @@ public class Pathfinding : MonoBehaviour
 
                     if (!openList.Contains(neighbourNode))
                     {
+                        
                         openList.Add(neighbourNode);
+
                     }
                 }
                
@@ -311,35 +299,33 @@ public class Pathfinding : MonoBehaviour
         next.turnCost = 0;
         return 0;
     }
+
     private List<GridObject> GetNeighbourList(GridObject currentNode)
     {
         List<GridObject> neighbourList = new List<GridObject>();
 
         if (currentNode.x - 1 >= 0)
         {
-            // Left
             neighbourList.Add(GetNode(currentNode.x - 1, currentNode.y));
-            //// Left Down
-            //if (currentNode.y - 1 >= 0) neighbourList.Add(GetNode(currentNode.x - 1, currentNode.y - 1));
-            //// Left Up
-            //if (currentNode.y + 1 < grid.GetHeight()) neighbourList.Add(GetNode(currentNode.x - 1, currentNode.y + 1));
+           
         }
         if (currentNode.x + 1 < grid.GetWidth())
         {
-            // Right
             neighbourList.Add(GetNode(currentNode.x + 1, currentNode.y));
 
-            // Right Down
-            //if (currentNode.y - 1 >= 0) 
-            //    neighbourList.Add(GetNode(currentNode.x + 1, currentNode.y - 1));
-            //// Right Up
-            //if (currentNode.y + 1 < grid.GetHeight()) 
-            //    neighbourList.Add(GetNode(currentNode.x + 1, currentNode.y + 1));
         }
-        // Down
-        if (currentNode.y - 1 >= 0) neighbourList.Add(GetNode(currentNode.x, currentNode.y - 1));
-        // Up
-        if (currentNode.y + 1 < grid.GetHeight()) neighbourList.Add(GetNode(currentNode.x, currentNode.y + 1));
+       
+        if (currentNode.y - 1 >= 0) 
+        {
+            neighbourList.Add(GetNode(currentNode.x, currentNode.y - 1));
+
+        }
+       
+        if (currentNode.y + 1 < grid.GetHeight())
+        {
+            neighbourList.Add(GetNode(currentNode.x, currentNode.y + 1));
+
+        }
 
         return neighbourList;
     }

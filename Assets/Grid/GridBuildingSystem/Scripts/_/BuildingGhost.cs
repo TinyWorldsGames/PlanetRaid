@@ -10,6 +10,7 @@ public class BuildingGhost : MonoBehaviour {
 
     private void OnEnable()
     {
+        
     }
     private void Start()
     {
