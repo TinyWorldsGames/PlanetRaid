@@ -4,50 +4,64 @@ using UnityEngine;
 
 public class BuildingGhost : MonoBehaviour {
 
-    private Transform visual;
-    private PlacedObjectTypeSO placedObjectTypeSO;
+    [SerializeField]
+    private List<Transform> visuals = new List<Transform>();
+    private PlacedObjectTypeSO.Dir dir;
 
-    private void Start() {
-        RefreshVisual();
+    private void OnEnable()
+    {
+        
+    }
+    private void Start()
+    {
+        GridBuildingSystem3D.Instance.OnSelectedChanged += RefreshVisual;
+        GridBuildingSystem3D.Instance.OnPathFound += CreateVisual;
 
-        GridBuildingSystem3D.Instance.OnSelectedChanged += Instance_OnSelectedChanged;
     }
 
-    private void Instance_OnSelectedChanged(object sender, System.EventArgs e) {
-        RefreshVisual();
+    private void OnDisable()
+    {
+        GridBuildingSystem3D.Instance.OnSelectedChanged -= RefreshVisual;
+        GridBuildingSystem3D.Instance.OnPathFound -= CreateVisual;
+
     }
 
-    private void LateUpdate() {
-        Vector3 targetPosition = GridBuildingSystem3D.Instance.GetMouseWorldSnappedPosition();
-        targetPosition.y = 1f;
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 15f);
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, GridBuildingSystem3D.Instance.GetPlacedObjectRotation(), Time.deltaTime * 15f);
-    }
-
-    private void RefreshVisual() {
-        if (visual != null) {
-            Destroy(visual.gameObject);
-            visual = null;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            dir = PlacedObjectTypeSO.GetNextDir(dir);
         }
 
-        PlacedObjectTypeSO placedObjectTypeSO = GridBuildingSystem3D.Instance.GetPlacedObjectTypeSO();
+    }
 
+    private void RefreshVisual()
+    {
+
+        for (int i = 0; i < visuals.Count; i++)
+        {
+            Destroy(visuals[i].gameObject);
+        }
+
+        visuals.Clear();
+    }
+
+
+
+    private void CreateVisual(PlacedObjectTypeSO placedObjectTypeSO,Vector3 placedObjectWorldPosition,Quaternion roation)
+    {
+       // RefreshVisual();
+        
         if (placedObjectTypeSO != null) {
-            visual = Instantiate(placedObjectTypeSO.visual, Vector3.zero, Quaternion.identity);
+            Transform visual;
+            visual = Instantiate(placedObjectTypeSO.visual, placedObjectWorldPosition, roation);
             visual.parent = transform;
-            visual.localPosition = Vector3.zero;
-            visual.localEulerAngles = Vector3.zero;
-            SetLayerRecursive(visual.gameObject, 11);
+            visuals.Add(visual);
+
         }
     }
 
-    private void SetLayerRecursive(GameObject targetGameObject, int layer) {
-        targetGameObject.layer = layer;
-        foreach (Transform child in targetGameObject.transform) {
-            SetLayerRecursive(child.gameObject, layer);
-        }
-    }
+    
 
 }
 
