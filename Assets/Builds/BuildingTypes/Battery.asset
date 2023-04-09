@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e7747bdf78fa6141a2f81d16ff91e5f, type: 3}
-  m_Name: Turret
+  m_Name: Battery
   m_EditorClassIdentifier: 
-  nameString: Turret
-  prefab: {fileID: 4782235985580720507, guid: 7ca49e627ebd22041bdbe7476c339167, type: 3}
-  visual: {fileID: 2499414142690952232, guid: 76240aae06a5c7d418728438366277a9, type: 3}
-  width: 2
-  height: 1
-  isStackable: 0
+  nameString: Wall
+  prefab: {fileID: 1406036821435700011, guid: a54fb2131c85bad498f051c9ea8b803a, type: 3}
+  visual: {fileID: 1406036821435700011, guid: d27916b325b9a774ca9e06743b6c3531, type: 3}
+  width: 4
+  height: 2
+  isStackable: 1
