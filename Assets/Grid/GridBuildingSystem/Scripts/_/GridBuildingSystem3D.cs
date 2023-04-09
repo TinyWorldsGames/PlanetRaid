@@ -10,18 +10,21 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
     public delegate void OnSelectedChangedDelegate();
     public delegate void GridSelectedDelagate(PlacedObjectTypeSO objectTypeSO);
-    public delegate void PathFoundDelagate(PlacedObjectTypeSO objectTypeSO,Vector3 position , Quaternion quaternion);
+    //public delegate void PathFoundDelagate(bool canBuild,PlacedObjectTypeSO objectTypeSO,Vector3 position , Quaternion quaternion);
+    public delegate void PathFoundDelagate(GridObject gridObject);
+
     public delegate void ObjectPlacedDelegate(GridObject objectTypeSO);
     public GridSelectedDelagate OnGridSelected;
     public PathFoundDelagate OnPathFound;
     public ObjectPlacedDelegate OnObjectPlaced;
+    public OnSelectedChangedDelegate OnSelectedChangedStackable;
     public OnSelectedChangedDelegate OnSelectedChanged;
-
 
     public GridXZ<GridObject> grid;
     [SerializeField] private List<PlacedObjectTypeSO> placedObjectTypeSOList = null;
     [SerializeField]
     private PlacedObjectTypeSO placedObjectTypeSO;
+    [SerializeField]
     private PlacedObjectTypeSO.Dir dir;
     private GridObject startNode, endNode;
     [SerializeField]
@@ -31,9 +34,9 @@ public class GridBuildingSystem3D : MonoBehaviour {
     private void Awake() {
         Instance = this;
 
-        int gridWidth = 10;
-        int gridHeight = 10;
-        float cellSize = 10f;
+        int gridWidth = 30;
+        int gridHeight = 30;
+        float cellSize = 4;
         grid = new GridXZ<GridObject>(gridWidth, gridHeight, cellSize, new Vector3(0, 0, 0), (GridXZ<GridObject> g, int x, int y) => new GridObject(g, x, y));
 
         placedObjectTypeSO = null;// placedObjectTypeSOList[0];
@@ -53,6 +56,13 @@ public class GridBuildingSystem3D : MonoBehaviour {
     public void CreateNewBuilding(GridObject gridObject)
     {
       
+      if(gridObject.CanBuild())
+      {
+
+        if(placedObjectTypeSO.isStackable)
+        {
+            dir=gridObject.dir;
+        }
 
         Vector2Int placedObjectOrigin = new Vector2Int(gridObject.x, gridObject.y);
         //  placedObjectOrigin = grid.ValidateGridPosition(placedObjectOrigin);
@@ -66,6 +76,10 @@ public class GridBuildingSystem3D : MonoBehaviour {
         {
             grid.GetGridObject(gridPosition.x, gridPosition.y).SetPlacedObject(placedObject);
         }
+     
+      }
+
+      
 
     }
 
@@ -122,12 +136,7 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha0)) { DeselectObjectType(); }
 
-        if (Input.GetKeyDown(KeyCode.Alpha7)) 
-        {
-            Debug.Log(grid.gridArray[3, 2].CanBuild());
-
-
-        }
+       
 
 
         //if (Input.GetMouseButton(0))
@@ -228,6 +237,8 @@ public class GridObject
     public int x;
     public int y;
     public PlacedObject_Done placedObject;
+
+    public PlacedObjectTypeSO.Dir dir;
 
     public int gCost;
     public int hCost;

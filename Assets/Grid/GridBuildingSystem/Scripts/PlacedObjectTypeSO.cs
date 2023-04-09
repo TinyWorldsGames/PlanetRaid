@@ -40,6 +40,8 @@ public class PlacedObjectTypeSO : ScriptableObject {
         }
     }
 
+
+
     public Vector2Int GetRotationOffset(Dir dir) {
         switch (dir) {
             default:

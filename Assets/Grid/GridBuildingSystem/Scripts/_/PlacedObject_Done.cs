@@ -13,6 +13,12 @@ public class PlacedObject_Done : MonoBehaviour {
         return placedObject;
     }
 
+    public static Transform  CreateVisual(Vector3 worldPosition, Vector2Int origin, PlacedObjectTypeSO.Dir dir, PlacedObjectTypeSO placedObjectTypeSO) {
+        Transform placedObjectTransform = Instantiate(placedObjectTypeSO.visual, worldPosition, Quaternion.Euler(0, placedObjectTypeSO.GetRotationAngle(dir), 0));
+
+       
+        return placedObjectTransform;
+    }
 
 
 

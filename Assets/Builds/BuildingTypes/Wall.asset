@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Wall
   m_EditorClassIdentifier: 
   nameString: Wall
-  prefab: {fileID: 4782235985580720507, guid: 1ac48c193de00574b9261656e7839d1c, type: 3}
-  visual: {fileID: 2499414142690952232, guid: 24602e9b848b1d040bf7e2b4f47f2d19, type: 3}
+  prefab: {fileID: 5985652911895114890, guid: 28b6f2e5342147e44bc3d6545cd9a444, type: 3}
+  visual: {fileID: 6135777733466161111, guid: 2c66f8ad131442e44a0b08b6c7346682, type: 3}
   width: 1
   height: 1
   isStackable: 1
