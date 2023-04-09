@@ -36,7 +36,7 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
         int gridWidth = 30;
         int gridHeight = 30;
-        float cellSize = 4;
+        float cellSize = 1;
         grid = new GridXZ<GridObject>(gridWidth, gridHeight, cellSize, new Vector3(0, 0, 0), (GridXZ<GridObject> g, int x, int y) => new GridObject(g, x, y));
 
         placedObjectTypeSO = null;// placedObjectTypeSOList[0];
