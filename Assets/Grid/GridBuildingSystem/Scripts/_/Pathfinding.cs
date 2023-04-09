@@ -29,7 +29,7 @@ public class Pathfinding : MonoBehaviour
     PlacedObjectTypeSO placedObjectType;
     PlacedObjectTypeSO.Dir dir;
 
-    GridObject startNode, endNode,selectedNode;
+    GridObject startNode, endNode,selectedNode,pastEndNode;
   
 
     int safer;
@@ -60,17 +60,20 @@ public class Pathfinding : MonoBehaviour
 
     IEnumerator CreatingStackableBuild()
     {
+
+       
+
         startNode = null;
         selectedNode = null;
         List<GridObject> finalPath=null;
         secondGridSelected = true;
         isWorking = true;
 
-        while (selectedNode==null&&safer<5000)
+        while (selectedNode==null)
         {
             Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
 
-            safer++;
+            
 
             if (grid.GetGridObject(mousePosition) != null)
             {
@@ -91,32 +94,89 @@ public class Pathfinding : MonoBehaviour
 
                 endNode = grid.gridArray[x, z];
                 
+                if(endNode!=pastEndNode)
+                {
+                
                 finalPath = FindPath(startNode, endNode);
                 
-                dir = GridBuildingSystem3D.Instance.GetDirection();
+              
+
                 
                 Vector2Int rotationOffset = placedObjectType.GetRotationOffset(dir);
                 
-                GridBuildingSystem3D.Instance.OnSelectedChanged?.Invoke();
+                GridBuildingSystem3D.Instance.OnSelectedChangedStackable?.Invoke();
+
+                // Up 1
+                // Down 2
+                // Left 3
+                // Righ 4
 
                 if (finalPath!=null)
                 {
+
+                    for (int i = 0; i < finalPath.Count-1; i++)
+                    {
+                        
+                         
+
+                       switch (finalPath[i+1].comeDirection)
+                       {
+                        case 1:
+                            finalPath[i].dir = PlacedObjectTypeSO.Dir.Left;
+                            //Debug.Log("1");
+                        break;
+                        case 2:
+                            finalPath[i].dir = PlacedObjectTypeSO.Dir.Right;
+                            //Debug.Log("2");
+                        break;
+                         case 3:
+                            finalPath[i].dir = PlacedObjectTypeSO.Dir.Up;
+                            //Debug.Log("3");
+                        break;
+                         case 4:
+                            finalPath[i].dir = PlacedObjectTypeSO.Dir.Up;
+                            //Debug.Log("4");
+
+                        break;
+
+                        default:
+                        break;
+                       
+                       }
+
+
+                    }
+
+                    if(finalPath.Count>1)
+                    {
+                    
+                        finalPath[finalPath.Count-1].dir=finalPath[finalPath.Count-2].dir;
+
+                    }
+
+                    
+
                     for (int i = 0; i < finalPath.Count; i++)
                     {
+                       //Debug.Log(finalPath[i].dir);
+                        dir = finalPath[i].dir;
+                        GridBuildingSystem3D.Instance.OnPathFound?.Invoke(finalPath[i]);
 
-                        Vector2Int placedObjectOrigin = new Vector2Int(finalPath[i].x, finalPath[i].y);
-                        Vector3 placedObjectWorldPosition = grid.GetWorldPosition(placedObjectOrigin.x, placedObjectOrigin.y) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
-                        List<Vector2Int> gridPositionList = placedObjectType.GetGridPositionList(placedObjectOrigin, dir);
-                        GridBuildingSystem3D.Instance.OnPathFound?.Invoke(placedObjectType, placedObjectWorldPosition, Quaternion.Euler(0, placedObjectType.GetRotationAngle(dir), 0));
+                        // Vector2Int placedObjectOrigin = new Vector2Int(finalPath[i].x, finalPath[i].y);
+                        // Vector3 placedObjectWorldPosition =  grid.GetWorldPosition(placedObjectOrigin.x, placedObjectOrigin.y) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
+                        // List<Vector2Int> gridPositionList = placedObjectType.GetGridPositionList(placedObjectOrigin, dir);
+                        // GridBuildingSystem3D.Instance.OnPathFound?.Invoke(finalPath[i].CanBuild(),placedObjectType, placedObjectWorldPosition, Quaternion.Euler(0, placedObjectType.GetRotationAngle(dir), 0));
 
 
 
                     }
                 }
-                else
-                {
+
 
                 }
+                
+                
+              
                 
 
 
@@ -141,7 +201,7 @@ public class Pathfinding : MonoBehaviour
                         selectedNode = endNode;
                         secondGridSelected = true;
                         GridBuildingSystem3D.Instance.OnObjectPlaced?.Invoke(finalPath[i]);
-                        GridBuildingSystem3D.Instance.OnSelectedChanged?.Invoke();
+                        GridBuildingSystem3D.Instance.OnSelectedChangedStackable?.Invoke();
 
                     }
 
@@ -149,6 +209,8 @@ public class Pathfinding : MonoBehaviour
 
 
             }
+
+            pastEndNode=endNode;
 
             yield return new WaitForSeconds(0);
            
@@ -168,13 +230,25 @@ public class Pathfinding : MonoBehaviour
     {
 
         placedObjectType = objectTypeSO;
+       
         if (objectTypeSO.isStackable&&!isWorking)
         {
             isWorking = true;
             StartCoroutine(CreatingStackableBuild());
         }
+        
+        else
+        {
+            Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
+            grid.GetXZ(mousePosition, out int x, out int z);
+            GridObject gridObject = grid.GetGridObject(x,z);
+            GridBuildingSystem3D.Instance.OnObjectPlaced?.Invoke(gridObject);
+            GridBuildingSystem3D.Instance.OnSelectedChanged?.Invoke();
 
-        return;
+        }
+        
+
+      
     }
 
 
@@ -235,6 +309,7 @@ public class Pathfinding : MonoBehaviour
 
                
                 int tentativeGCost = currentNode.gCost + CalculateDistanceCost(currentNode, neighbourNode) + turnCost;
+                
                 if (tentativeGCost < neighbourNode.gCost)
                 {
                    
