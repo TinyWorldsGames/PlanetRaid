@@ -19,4 +19,20 @@ MonoBehaviour:
   height: 1
   isStackable: 0
   isNeedControl: 0
-  buildVariations: []
+  buildVariations:
+  - {fileID: 0}
+  - {fileID: 4965796568368903046, guid: 71953a9f22942f14689ba9e13fdf1a3a, type: 3}
+  - {fileID: 4965796568368903046, guid: eafc99bf8d2b2bc44b1329aa6e09eda7, type: 3}
+  - {fileID: 4965796568368903046, guid: bd91f2ed8677cc24f8adfc8d92250dc1, type: 3}
+  - {fileID: 4965796568368903046, guid: 606b0cc3983547b48845cd20813ee337, type: 3}
+  - {fileID: 4965796568368903046, guid: 5a4695679ac4b504dbc703dd41c7495d, type: 3}
+  - {fileID: 4965796568368903046, guid: 26aa2c34ad64efa4eb46ab060b948d8f, type: 3}
+  - {fileID: 4965796568368903046, guid: bf2390dec8ecf834186003c71e613874, type: 3}
+  - {fileID: 4965796568368903046, guid: 00ae186fa92a0284196f9e2fd554a3a0, type: 3}
+  - {fileID: 4965796568368903046, guid: 095c541b5630912438d51964c4e98db1, type: 3}
+  - {fileID: 4965796568368903046, guid: e2722f29362eb044891d35816a06fbb8, type: 3}
+  - {fileID: 4965796568368903046, guid: c2278bb51f9fd874c84abb21dd3c52d4, type: 3}
+  - {fileID: 4965796568368903046, guid: 15d87c6a01e907a4f9166e5dfd715876, type: 3}
+  - {fileID: 4965796568368903046, guid: fa74ba24e9476f04e80542ce0a56e170, type: 3}
+  - {fileID: 4965796568368903046, guid: 5b33d81ee9c594f4b83aa507e1641d67, type: 3}
+  - {fileID: 4965796568368903046, guid: ecd092a848aab0d48987a76fc4757578, type: 3}
