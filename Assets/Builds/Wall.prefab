@@ -105,18 +105,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Visual
       objectReference: {fileID: 0}
-    - target: {fileID: 910312649430819668, guid: 1994654cb63f5ba409deabce91f51945, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3060361150866860452, guid: 1994654cb63f5ba409deabce91f51945, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564715862264678513, guid: 1994654cb63f5ba409deabce91f51945, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2550ca885dc1f364fb5d4ee5af0dcd1b, type: 2}
     - target: {fileID: 5270509430191917259, guid: 1994654cb63f5ba409deabce91f51945, type: 3}
       propertyPath: m_RootOrder
       value: 0

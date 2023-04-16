@@ -1,35 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class deneme : MonoBehaviour
+public class Deneme : MonoBehaviour
 {
-   [SerializeField]
-   Material redMat,blueMat,whiteMat;
-
-   int mat;
-    void Update()
+    [SerializeField]
+    Item newitem;
+    
+    void Start()
     {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            ChangeMat();
-
-        }
-        
+        newitem= ScriptableObject.CreateInstance<Item>();
+        AssetDatabase.CreateAsset(newitem, "Assets/NewScriptableObject.asset");
     }
-
-  void  ChangeMat()
-    {
-        if(mat==0)
-        {
-            GetComponent<SpriteRenderer>().material=redMat;
-            mat++;
-        }
-        else
-        {
-             GetComponent<SpriteRenderer>().material=blueMat;
-             mat=0;
-        }
-
-    }
+ 
 }

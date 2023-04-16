@@ -17,8 +17,8 @@ MonoBehaviour:
   visual: {fileID: 5270509430191917259, guid: 3e0cd37c9fca75e4f956990901312165, type: 3}
   width: 1
   height: 1
-  isStackable: 0
-  isNeedControl: 0
+  isStackable: 1
+  isNeedControl: 1
   buildVariations:
   - {fileID: 0}
   - {fileID: 4965796568368903046, guid: 71953a9f22942f14689ba9e13fdf1a3a, type: 3}
