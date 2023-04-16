@@ -92,7 +92,7 @@ MonoBehaviour:
     fCost: 0
     comeDirection: 0
     turnCost: 0
-  build: {fileID: 4713386406750345606}
+  build: {fileID: 7354288544707569042}
   state: 0
 --- !u!1001 &2334140322097256677
 PrefabInstance:
@@ -168,8 +168,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5270509430191917259, guid: 1994654cb63f5ba409deabce91f51945, type: 3}
   m_PrefabInstance: {fileID: 2334140322097256677}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4713386406750345606 stripped
+--- !u!1 &7354288544707569042 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6993465386461528419, guid: 1994654cb63f5ba409deabce91f51945, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5074191422450646391, guid: 1994654cb63f5ba409deabce91f51945, type: 3}
   m_PrefabInstance: {fileID: 2334140322097256677}
   m_PrefabAsset: {fileID: 0}
