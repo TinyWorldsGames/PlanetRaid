@@ -81,6 +81,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29007807c35615c418883b54b6a23802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectTypeSO: {fileID: 0}
+  gridObject:
+    x: 0
+    y: 0
+    placedObject: {fileID: 0}
+    dir: 0
+    gCost: 0
+    hCost: 0
+    fCost: 0
+    comeDirection: 0
+    turnCost: 0
+  build: {fileID: 0}
+  state: 0
 --- !u!1001 &2543727421791120628
 PrefabInstance:
   m_ObjectHideFlags: 0
