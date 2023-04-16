@@ -15,6 +15,6 @@ MonoBehaviour:
   nameString: Portable Miner
   prefab: {fileID: 1406036821435700011, guid: 4a2c0a62814092f459bcaddc399d4985, type: 3}
   visual: {fileID: 5963072227763096935, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-  width: 1
-  height: 1
+  width: 2
+  height: 2
   isStackable: 0

@@ -6,7 +6,7 @@ public class BuildingGhost : MonoBehaviour {
     private List<Transform> visuals = new List<Transform>();
     
     [SerializeField]
-    Material canBuildMaterial,cantBuildMaterial;
+    Material[] canBuildMaterial,cantBuildMaterial;
 
     [SerializeField]
     Transform visualsParent;
@@ -18,18 +18,17 @@ public class BuildingGhost : MonoBehaviour {
 
     private void Start()
     {
-        GridBuildingSystem3D.Instance.OnSelectedChanged += RefreshVisual;
-        GridBuildingSystem3D.Instance.OnSelectedChangedStackable += ClearVisuals;
-
-        GridBuildingSystem3D.Instance.OnPathFound += CreateVisual;
+        GameEvents.Instance.OnSelectedChanged += RefreshVisual;
+        GameEvents.Instance.OnSelectedChangedStackable += ClearVisuals;
+        GameEvents.Instance.OnPathFound += CreateVisual;
 
     }
 
     private void OnDisable()
     {
-        GridBuildingSystem3D.Instance.OnSelectedChanged -= RefreshVisual;
-        GridBuildingSystem3D.Instance.OnSelectedChangedStackable -= ClearVisuals;
-        GridBuildingSystem3D.Instance.OnPathFound -= CreateVisual;
+        GameEvents.Instance.OnSelectedChanged -= RefreshVisual;
+        GameEvents.Instance.OnSelectedChangedStackable -= ClearVisuals;
+        GameEvents.Instance.OnPathFound -= CreateVisual;
 
     }
 
@@ -98,7 +97,8 @@ public class BuildingGhost : MonoBehaviour {
 
                 for (int i = 0; i <visualsMaterials.Length; i++)
                 {
-                      visualsMaterials[i].material=cantBuildMaterial;
+                    
+                      visualsMaterials[i].materials=cantBuildMaterial;
                 }
             }
             visuals.Add(visual.transform);

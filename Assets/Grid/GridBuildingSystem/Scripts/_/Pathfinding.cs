@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class DenemeClass :Pathfinding
-{
-
-}
-
 public class Pathfinding : MonoBehaviour
 {
 
-    int fudaylHocaYaniliyor = 23;
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
 
@@ -44,19 +38,15 @@ public class Pathfinding : MonoBehaviour
 
     private void OnEnable()
     {
-        GridBuildingSystem3D.Instance.OnGridSelected += CreateNewBuilding;
+       GameEvents.Instance.OnGridSelected += CreateNewBuilding;
     }
 
     private void OnDisable()
     {
-        
+        GameEvents.Instance.OnGridSelected -= CreateNewBuilding;
     }
 
-    private void Awake()
-    {
-      
-    }
-
+   
 
     IEnumerator CreatingStackableBuild()
     {
@@ -104,7 +94,7 @@ public class Pathfinding : MonoBehaviour
                 
                 Vector2Int rotationOffset = placedObjectType.GetRotationOffset(dir);
                 
-                GridBuildingSystem3D.Instance.OnSelectedChangedStackable?.Invoke();
+                GameEvents.Instance.OnSelectedChangedStackable?.Invoke();
 
                 // Up 1
                 // Down 2
@@ -113,6 +103,7 @@ public class Pathfinding : MonoBehaviour
 
                 if (finalPath!=null)
                 {
+                    
 
                     for (int i = 0; i < finalPath.Count-1; i++)
                     {
@@ -153,24 +144,21 @@ public class Pathfinding : MonoBehaviour
                         finalPath[finalPath.Count-1].dir=finalPath[finalPath.Count-2].dir;
 
                     }
+                    else
+                    {
+                        finalPath[0].dir=GridBuildingSystem3D.Instance.GetDirection();
+                    }
 
                     
 
                     for (int i = 0; i < finalPath.Count; i++)
                     {
-                       //Debug.Log(finalPath[i].dir);
                         dir = finalPath[i].dir;
-                        GridBuildingSystem3D.Instance.OnPathFound?.Invoke(finalPath[i]);
-
-                        // Vector2Int placedObjectOrigin = new Vector2Int(finalPath[i].x, finalPath[i].y);
-                        // Vector3 placedObjectWorldPosition =  grid.GetWorldPosition(placedObjectOrigin.x, placedObjectOrigin.y) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
-                        // List<Vector2Int> gridPositionList = placedObjectType.GetGridPositionList(placedObjectOrigin, dir);
-                        // GridBuildingSystem3D.Instance.OnPathFound?.Invoke(finalPath[i].CanBuild(),placedObjectType, placedObjectWorldPosition, Quaternion.Euler(0, placedObjectType.GetRotationAngle(dir), 0));
-
-
+                        GameEvents.Instance.OnPathFound?.Invoke(finalPath[i]);
 
                     }
                 }
+               
 
 
                 }
@@ -200,9 +188,14 @@ public class Pathfinding : MonoBehaviour
                     {
                         selectedNode = endNode;
                         secondGridSelected = true;
-                        GridBuildingSystem3D.Instance.OnObjectPlaced?.Invoke(finalPath[i]);
-                        GridBuildingSystem3D.Instance.OnSelectedChangedStackable?.Invoke();
+                        GameEvents.Instance.OnObjectPlaced?.Invoke(finalPath[i]);
+                        GameEvents.Instance.OnSelectedChangedStackable?.Invoke();
 
+                    }
+
+                    if(placedObjectType.isNeedControl)
+                    {
+                        GameEvents.Instance.OnControlBuildings?.Invoke();
                     }
 
                 }
@@ -242,8 +235,9 @@ public class Pathfinding : MonoBehaviour
             Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
             grid.GetXZ(mousePosition, out int x, out int z);
             GridObject gridObject = grid.GetGridObject(x,z);
-            GridBuildingSystem3D.Instance.OnObjectPlaced?.Invoke(gridObject);
-            GridBuildingSystem3D.Instance.OnSelectedChanged?.Invoke();
+            
+            GameEvents.Instance.OnObjectPlaced?.Invoke(gridObject);
+            GameEvents.Instance.OnSelectedChanged?.Invoke();
 
         }
         

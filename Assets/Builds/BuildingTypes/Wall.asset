@@ -18,3 +18,21 @@ MonoBehaviour:
   width: 1
   height: 1
   isStackable: 1
+  isNeedControl: 1
+  buildVariations:
+  - {fileID: 0}
+  - {fileID: 8798744348156659787, guid: 6c49dd74cac3e59459361103b243bea7, type: 3}
+  - {fileID: 8798744348156659787, guid: 9aef534b85d9c47458d4dbd8d6b1d4b1, type: 3}
+  - {fileID: 8798744348156659787, guid: 662a259bb9da0c743993762f3ad41a52, type: 3}
+  - {fileID: 8798744348156659787, guid: 5445ebeba993444449c8b224eada0d28, type: 3}
+  - {fileID: 8798744348156659787, guid: e455261e25ac0cf4c8109ebb808d758d, type: 3}
+  - {fileID: 8798744348156659787, guid: 7e846c6927815b24e93179944540c44b, type: 3}
+  - {fileID: 8798744348156659787, guid: fa65d484b2c932946ae86586ec4ac792, type: 3}
+  - {fileID: 8798744348156659787, guid: ba37ac8c34dfa564ca0b4753ab92eb25, type: 3}
+  - {fileID: 8798744348156659787, guid: e96bb8d7bab03c946afabaf0c3ae27b5, type: 3}
+  - {fileID: 8798744348156659787, guid: 664857c1c168dde47a1d3da93a1383a9, type: 3}
+  - {fileID: 8798744348156659787, guid: 893e031ff90cf5341958e68e4be605fd, type: 3}
+  - {fileID: 8798744348156659787, guid: 87882bb8121bbf54cb75a604fc12728c, type: 3}
+  - {fileID: 8798744348156659787, guid: e555de90b35632646a95dafb7e52d8eb, type: 3}
+  - {fileID: 8798744348156659787, guid: ae4c49931f8ad6b41b39aa6c94ab4645, type: 3}
+  - {fileID: 8798744348156659787, guid: ce90f953c2a744643a7dc6886b490ded, type: 3}

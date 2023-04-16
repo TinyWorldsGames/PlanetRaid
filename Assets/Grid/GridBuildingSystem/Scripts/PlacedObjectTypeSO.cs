@@ -28,6 +28,9 @@ public class PlacedObjectTypeSO : ScriptableObject {
     public int width;
     public int height;
     public bool isStackable;
+    public bool isNeedControl;
+
+    public List<GameObject> buildVariations;
 
 
     public int GetRotationAngle(Dir dir) {

@@ -8,22 +8,13 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
     public static GridBuildingSystem3D Instance { get; private set; }
 
-    public delegate void OnSelectedChangedDelegate();
-    public delegate void GridSelectedDelagate(PlacedObjectTypeSO objectTypeSO);
-    //public delegate void PathFoundDelagate(bool canBuild,PlacedObjectTypeSO objectTypeSO,Vector3 position , Quaternion quaternion);
-    public delegate void PathFoundDelagate(GridObject gridObject);
 
-    public delegate void ObjectPlacedDelegate(GridObject objectTypeSO);
-    public GridSelectedDelagate OnGridSelected;
-    public PathFoundDelagate OnPathFound;
-    public ObjectPlacedDelegate OnObjectPlaced;
-    public OnSelectedChangedDelegate OnSelectedChangedStackable;
-    public OnSelectedChangedDelegate OnSelectedChanged;
+
 
     public GridXZ<GridObject> grid;
     [SerializeField] private List<PlacedObjectTypeSO> placedObjectTypeSOList = null;
     [SerializeField]
-    private PlacedObjectTypeSO placedObjectTypeSO;
+    public PlacedObjectTypeSO placedObjectTypeSO;
     [SerializeField]
     private PlacedObjectTypeSO.Dir dir;
     private GridObject startNode, endNode;
@@ -36,7 +27,7 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
         int gridWidth = 30;
         int gridHeight = 30;
-        float cellSize = 1;
+        float cellSize = 2;
         grid = new GridXZ<GridObject>(gridWidth, gridHeight, cellSize, new Vector3(0, 0, 0), (GridXZ<GridObject> g, int x, int y) => new GridObject(g, x, y));
 
         placedObjectTypeSO = null;// placedObjectTypeSOList[0];
@@ -44,11 +35,11 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
     private void OnEnable()
     {
-        OnObjectPlaced += CreateNewBuilding;
+       GameEvents.Instance.OnObjectPlaced += CreateNewBuilding;
     }
     private void OnDisable()
     {
-         OnObjectPlaced -= CreateNewBuilding;
+         GameEvents.Instance.OnObjectPlaced -= CreateNewBuilding;
 
     }
 
@@ -69,6 +60,8 @@ public class GridBuildingSystem3D : MonoBehaviour {
         Vector2Int rotationOffset = placedObjectTypeSO.GetRotationOffset(dir);
         Vector3 placedObjectWorldPosition = grid.GetWorldPosition(placedObjectOrigin.x, placedObjectOrigin.y) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
         PlacedObject_Done placedObject = PlacedObject_Done.Create(placedObjectWorldPosition, placedObjectOrigin, dir, placedObjectTypeSO);
+        placedObject.objectTypeSO=placedObjectTypeSO;
+        placedObject.gridObject = gridObject;
         List<Vector2Int> gridPositionList = placedObjectTypeSO.GetGridPositionList(placedObjectOrigin, dir);
 
 
@@ -110,7 +103,7 @@ public class GridBuildingSystem3D : MonoBehaviour {
             if (canBuild) 
             {
                
-                OnGridSelected?.Invoke(placedObjectTypeSO);
+                GameEvents.Instance.OnGridSelected?.Invoke(placedObjectTypeSO);
 
                 //DeselectObjectType();
             } 
@@ -194,7 +187,7 @@ public class GridBuildingSystem3D : MonoBehaviour {
     }
 
     private void RefreshSelectedObjectType() {
-        OnSelectedChanged?.Invoke();
+        GameEvents.Instance.OnSelectedChanged?.Invoke();
     }
 
 

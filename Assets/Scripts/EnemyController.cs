@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public EnemySO enemySO;
+    [SerializeField]
+    private EnemySO enemySO;
 
     private EnemySO enemy;
 
@@ -24,9 +25,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        enemy.health = 50;
-        enemySO.health = 76;
-        Debug.Log(enemy.health);
+       
 
         
     }
