@@ -10,8 +10,8 @@ public class Deneme : MonoBehaviour
     
     void Start()
     {
-        newitem= ScriptableObject.CreateInstance<Item>();
-        AssetDatabase.CreateAsset(newitem, "Assets/NewScriptableObject.asset");
+        //newitem= ScriptableObject.CreateInstance<Item>();
+        //AssetDatabase.CreateAsset(newitem, "Assets/NewScriptableObject.asset");
     }
  
 }

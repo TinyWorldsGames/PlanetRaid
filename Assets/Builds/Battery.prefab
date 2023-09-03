@@ -81,7 +81,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29007807c35615c418883b54b6a23802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectTypeSO: {fileID: 0}
   gridObject:
     x: 0
     y: 0
@@ -92,6 +91,7 @@ MonoBehaviour:
     fCost: 0
     comeDirection: 0
     turnCost: 0
+  placedObjectTypeSO: {fileID: 0}
   build: {fileID: 0}
   state: 0
 --- !u!1001 &2543727421791120628
@@ -104,6 +104,10 @@ PrefabInstance:
     - target: {fileID: 811968983371002065, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
       propertyPath: m_Name
       value: Barrery Visual
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120198206225651525, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5335981307944893658, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
       propertyPath: m_RootOrder

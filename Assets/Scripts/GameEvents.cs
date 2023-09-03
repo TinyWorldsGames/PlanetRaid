@@ -8,18 +8,18 @@ public class GameEvents : MonoBehaviour
 
     // Delegates;
     public delegate void OnSelectedChangedDelegate();
-    public delegate void GridSelectedDelagate(PlacedObjectTypeSO objectTypeSO);
+    public delegate void GridSelectedDelagate(PlacedObjectTypeSO objectTypeSO,GridObject gridObject);
     public delegate void PathFoundDelagate(GridObject gridObject);
     public delegate void ObjectPlacedDelegate(GridObject objectTypeSO);
     public delegate void ResourceChangedDelegate(Enums.ResourceTypes resourceType,int count);
-    public delegate void ControlBuildings();
+   // public delegate void ControlBuildings();
 
     
     // Delegate Instance
     public GridSelectedDelagate OnGridSelected;
     public PathFoundDelagate OnPathFound;
     public ObjectPlacedDelegate OnObjectPlaced;
-    public ControlBuildings OnControlBuildings;
+   // public ControlBuildings OnControlBuildings;
     public OnSelectedChangedDelegate OnSelectedChangedStackable;
     public OnSelectedChangedDelegate OnSelectedChanged;
     public ResourceChangedDelegate OnResourceChanged;

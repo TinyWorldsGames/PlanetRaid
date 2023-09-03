@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enums : MonoBehaviour
 {
-    public enum ResourceTypes {Iron,Copper};
-    public enum ItemTypes {Empty};
+    public enum ResourceTypes {Iron,Copper,Wood};
+    public enum ItemTypes {Empty,Test};
+
+
+    public enum Weapons {RightPunch, LeftPunch}
 }

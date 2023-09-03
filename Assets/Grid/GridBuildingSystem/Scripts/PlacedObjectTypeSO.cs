@@ -29,6 +29,7 @@ public class PlacedObjectTypeSO : ScriptableObject {
     public int height;
     public bool isStackable;
     public bool isNeedControl;
+    public bool isUnderground;
 
     public List<GameObject> buildVariations;
 

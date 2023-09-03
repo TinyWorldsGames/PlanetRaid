@@ -20,16 +20,32 @@ public class PlayerAnimationController : MonoBehaviour
     private void Update()
     {
         directionStates = (DirectionStates)Mathf.CeilToInt((((transform.rotation.eulerAngles.y + 45) % 360) / 90));
-        animator.SetInteger("State", (int)directionStates);
     }
 
     private void OnMove(InputValue value)
     {
         movement=value.Get<Vector2>();
 
-        animator.SetFloat("SpeedX", movement.x);
+        if(movement.magnitude>0.1f)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+        
+    }
 
-        animator.SetFloat("SpeedZ", movement.y);
+    private void OnRoll(InputValue value)
+    {
+        animator.SetTrigger("Roll");
+    }
+
+    private void OnAttack(InputValue value)
+    {
+        
+        animator.SetTrigger("Attack");
 
     }
 

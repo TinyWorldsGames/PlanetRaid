@@ -193,10 +193,7 @@ public class Pathfinding : MonoBehaviour
 
                     }
 
-                    if(placedObjectType.isNeedControl)
-                    {
-                        GameEvents.Instance.OnControlBuildings?.Invoke();
-                    }
+                    
 
                 }
 
@@ -219,7 +216,7 @@ public class Pathfinding : MonoBehaviour
 
 
 
-    public void CreateNewBuilding(PlacedObjectTypeSO objectTypeSO)
+    public void CreateNewBuilding(PlacedObjectTypeSO objectTypeSO,GridObject gridObject)
     {
 
         placedObjectType = objectTypeSO;
@@ -232,10 +229,7 @@ public class Pathfinding : MonoBehaviour
         
         else
         {
-            Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
-            grid.GetXZ(mousePosition, out int x, out int z);
-            GridObject gridObject = grid.GetGridObject(x,z);
-            
+           
             GameEvents.Instance.OnObjectPlaced?.Invoke(gridObject);
             GameEvents.Instance.OnSelectedChanged?.Invoke();
 

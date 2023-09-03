@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+
     [SerializeField] private float moveSpeed = 5f;
     private Vector2 movement;
 
@@ -18,39 +20,103 @@ public class PlayerController : MonoBehaviour
 
     public Quaternion characterSpineRotation;
 
+    Vector3 direction;
+    [SerializeField]
+    Transform[] hitWeapons;
 
+    Transform _weapon;
+
+   public Transform collectPoint;
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(Instance);
+        }
+
         rb = GetComponent<Rigidbody>();
     }
 
     private void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
-        
+
+        direction = new Vector3(movement.x, 0f, movement.y);
+
+        if (movement.magnitude > 0.1f)
+        {
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
+
     }
+
+    public void ChangeMoveSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
+  
+  
+
+    public void OnAttackStart()
+    {
+        moveSpeed = 0f;
+    }
+
+    public void OnAttackRelease()
+    {
+        moveSpeed = 5f;
+    }
+
+
 
     private void FixedUpdate()
     {
-        Vector3 direction = new Vector3(movement.x, 0f, movement.y);
+
         rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
 
-        mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.transform.position.y));
-        Vector3 lookDirection = mousePos - transform.position;
-        lookDirection.y = 0;
-        Quaternion newRotation = Quaternion.LookRotation(lookDirection);
-        characterSpineRotation = newRotation;
-        // transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, turnSpeed * Time.deltaTime);
-
-        if (Mathf.Abs(newRotation.eulerAngles.y - transform.rotation.eulerAngles.y) >= 90)
-        {
-
-            transform.rotation = newRotation;
-        }
-
-       
 
     }
+
+
+
+    public void PerformPunch(Enums.Weapons hitWeapon)
+    {
+        _weapon = hitWeapons[(int)hitWeapon];
+
+        Collider[] hitDamagables = Physics.OverlapSphere(_weapon.position, 0.5f);
+
+        foreach (Collider hit in hitDamagables)
+        {
+            if (hit.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.TakeDamage(2);
+            }
+
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out ICollectable collectable))
+        {
+            collectable.Collect(collectPoint);
+        }
+    }
+
+    // private void OnCollisionEnter(Collision other)
+    // {
+    //     if (other.gameObject.TryGetComponent(out ICollectable collectable))
+    //     {
+    //         collectable.Collect();
+    //     }
+    // }
+
+
 
 }
