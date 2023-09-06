@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
 
-    [SerializeField] private float moveSpeed = 5f;
+    private float moveSpeed = 5f;
+    [SerializeField] private float startMoveSpeed = 5f;
+
     private Vector2 movement;
 
     private Rigidbody rb;
@@ -26,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     Transform _weapon;
 
-   public Transform collectPoint;
+    public Transform collectPoint;
 
     private void Awake()
     {
@@ -59,8 +61,8 @@ public class PlayerController : MonoBehaviour
     {
         moveSpeed = speed;
     }
-  
-  
+
+
 
     public void OnAttackStart()
     {
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttackRelease()
     {
-        moveSpeed = 5f;
+        moveSpeed = startMoveSpeed;
     }
 
 

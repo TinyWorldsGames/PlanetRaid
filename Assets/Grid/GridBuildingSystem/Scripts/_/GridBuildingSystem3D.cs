@@ -28,9 +28,9 @@ public class GridBuildingSystem3D : MonoBehaviour
     {
         Instance = this;
 
-        int gridWidth = 30;
-        int gridHeight = 30;
-        float cellSize = 2;
+        int gridWidth = 500;
+        int gridHeight = 500;
+        float cellSize = 1;
         grid = new GridXZ<GridObject>(gridWidth, gridHeight, cellSize, new Vector3(0, 0, 0), (GridXZ<GridObject> g, int x, int y) => new GridObject(g, x, y));
 
         placedObjectTypeSO = null;// placedObjectTypeSOList[0];
@@ -47,8 +47,13 @@ public class GridBuildingSystem3D : MonoBehaviour
     }
 
 
-    public void CreateNewBuilding(GridObject gridObject)
+
+
+    public void CreateNewBuilding(GridObject gridObject, PlacedObjectTypeSO _placedObjectTypeSO)
     {
+        placedObjectTypeSO = _placedObjectTypeSO;
+
+
 
         if ((gridObject.CanBuild() == 0) || (gridObject.CanBuild() == 1 && (placedObjectTypeSO.isUnderground)) || (gridObject.CanBuild() == 2 && (!placedObjectTypeSO.isUnderground)))
         {
@@ -73,12 +78,17 @@ public class GridBuildingSystem3D : MonoBehaviour
             }
 
 
-            placedObjectTypeSO = null;
-            RefreshSelectedObjectType();
+
+
+
 
 
 
         }
+
+        placedObjectTypeSO = null;
+
+        RefreshSelectedObjectType();
 
 
 
@@ -135,6 +145,18 @@ public class GridBuildingSystem3D : MonoBehaviour
 
     private void Update()
     {
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
+            grid.GetXZ(mousePosition, out int x, out int z);
+            GridObject test = grid.GetGridObject(x, z);
+            Debug.Log(test.placedObject + "X: " + x + " Z: " + z + " Canbuild: " + test.CanBuild());
+
+        }
+
+
         if (Input.GetMouseButtonDown(0) && placedObjectTypeSO != null)
         {
             BuildObject();
@@ -162,13 +184,41 @@ public class GridBuildingSystem3D : MonoBehaviour
 
         if (!inventory.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) { placedObjectTypeSO = placedObjectTypeSOList[0]; RefreshSelectedObjectType(); }
-            if (Input.GetKeyDown(KeyCode.Alpha2)) { placedObjectTypeSO = placedObjectTypeSOList[1]; RefreshSelectedObjectType(); }
-            if (Input.GetKeyDown(KeyCode.Alpha3)) { placedObjectTypeSO = placedObjectTypeSOList[2]; RefreshSelectedObjectType(); }
-            if (Input.GetKeyDown(KeyCode.Alpha4)) { placedObjectTypeSO = placedObjectTypeSOList[3]; RefreshSelectedObjectType(); }
-            if (Input.GetKeyDown(KeyCode.Alpha5)) { placedObjectTypeSO = placedObjectTypeSOList[4]; RefreshSelectedObjectType(); }
-            if (Input.GetKeyDown(KeyCode.Alpha6)) { placedObjectTypeSO = placedObjectTypeSOList[5]; RefreshSelectedObjectType(); }
-            if (Input.GetKeyDown(KeyCode.Escape)) { placedObjectTypeSO = null; RefreshSelectedObjectType(); }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                placedObjectTypeSO = placedObjectTypeSOList[0]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+                RefreshSelectedObjectType();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                placedObjectTypeSO = placedObjectTypeSOList[1]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+                RefreshSelectedObjectType();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                placedObjectTypeSO = placedObjectTypeSOList[2]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+                RefreshSelectedObjectType();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                placedObjectTypeSO = placedObjectTypeSOList[3]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+                RefreshSelectedObjectType();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                placedObjectTypeSO = placedObjectTypeSOList[4]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+                RefreshSelectedObjectType();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                placedObjectTypeSO = placedObjectTypeSOList[5]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+                RefreshSelectedObjectType();
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                placedObjectTypeSO = null; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+                RefreshSelectedObjectType();
+            }
 
             if (Input.GetKeyDown(KeyCode.Alpha0)) { DeselectObjectType(); }
         }
@@ -178,6 +228,29 @@ public class GridBuildingSystem3D : MonoBehaviour
 
 
 
+
+    }
+
+    public List<GridObject> GetActiveGridObjectList()
+    {
+        List<GridObject> gridObjectList = new List<GridObject>();
+
+        Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
+
+        grid.GetXZ(mousePosition, out int x, out int z);
+
+        Vector2Int placedObjectOrigin = new Vector2Int(x, z);
+
+        placedObjectOrigin = grid.ValidateGridPosition(placedObjectOrigin);
+
+        List<Vector2Int> gridPositionList = placedObjectTypeSO.GetGridPositionList(placedObjectOrigin, dir);
+
+        foreach (Vector2Int gridPosition in gridPositionList)
+        {
+            gridObjectList.Add(grid.GetGridObject(gridPosition.x, gridPosition.y));
+        }
+
+        return gridObjectList;
 
     }
 
@@ -193,6 +266,7 @@ public class GridBuildingSystem3D : MonoBehaviour
 
     private void RefreshSelectedObjectType()
     {
+
         GameEvents.Instance.OnSelectedChanged?.Invoke();
     }
 
@@ -300,9 +374,9 @@ public class GridObject
     public int CanBuild()
     {
 
-        // 0 o kare boş her şey kurulabilir
-        // 1 o kare dolu Underground olan kurulabilir
-        // 2 O karer dolu Underground olmayan kurulabilir
+        // 0  kare boş her şey kurulabilir
+        // 1  kare dolu Underground olan kurulabilir
+        // 2  kare dolu Underground olmayan kurulabilir
 
         if (placedObject == null)
         {

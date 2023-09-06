@@ -19,16 +19,6 @@ public class PlacedObject_Done : MonoBehaviour
     [SerializeField]
     int state;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GridObject test = GetNode(2, 2);
-            Debug.Log(test.placedObject);
-        }
-    }
-
-
 
 
     // Üst 1 
@@ -179,7 +169,7 @@ public class PlacedObject_Done : MonoBehaviour
 
 
 
-    private void Setup(PlacedObjectTypeSO placedObjectTypeSO, Vector2Int origin, PlacedObjectTypeSO.Dir dir, GridObject gridObject)
+    public void Setup(PlacedObjectTypeSO placedObjectTypeSO, Vector2Int origin, PlacedObjectTypeSO.Dir dir, GridObject gridObject)
     {
         this.placedObjectTypeSO = placedObjectTypeSO;
         this.origin = origin;

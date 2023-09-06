@@ -19,6 +19,7 @@ MonoBehaviour:
   height: 1
   isStackable: 1
   isNeedControl: 1
+  isUnderground: 0
   buildVariations:
   - {fileID: 0}
   - {fileID: 8798744348156659787, guid: b1fcb098d9b6ace418f81cacb4f9d476, type: 3}

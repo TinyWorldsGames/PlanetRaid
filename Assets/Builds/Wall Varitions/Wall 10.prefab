@@ -75,9 +75,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1406036821435700011}
     m_Modifications:
+    - target: {fileID: 5369057592395806712, guid: cc477604456dd7348b8cb04e6ed71bc9, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: e25699ece527a2a4382be323be6cf343, type: 2}
     - target: {fileID: 6278104959346616335, guid: cc477604456dd7348b8cb04e6ed71bc9, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278104959346616335, guid: cc477604456dd7348b8cb04e6ed71bc9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2465
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278104959346616335, guid: cc477604456dd7348b8cb04e6ed71bc9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2465
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278104959346616335, guid: cc477604456dd7348b8cb04e6ed71bc9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2465
       objectReference: {fileID: 0}
     - target: {fileID: 6278104959346616335, guid: cc477604456dd7348b8cb04e6ed71bc9, type: 3}
       propertyPath: m_LocalPosition.x

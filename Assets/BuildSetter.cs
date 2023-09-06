@@ -5,35 +5,35 @@ using UnityEngine;
 public class BuildSetter : MonoBehaviour
 {
 
-    GridBuildingSystem3D gridBuldingSystem;
     public GridXZ<GridObject> grid;
 
     [SerializeField] PlacedObjectTypeSO placedObjectTypeSO;
+    [SerializeField] PlacedObject_Done placedObject;
 
     private void Start()
     {
-        gridBuldingSystem = GridBuildingSystem3D.Instance;
-        grid = gridBuldingSystem.grid;
+        grid = GridBuildingSystem3D.Instance.grid;
 
         BuildObject();
-
     }
 
     void BuildObject()
     {
-        gridBuldingSystem.placedObjectTypeSO = placedObjectTypeSO;
+
         grid.GetXZ(transform.position, out int x, out int z);
 
         Vector2Int placedObjectOrigin = new Vector2Int(x, z);
+
         placedObjectOrigin = grid.ValidateGridPosition(placedObjectOrigin);
 
-        // Test Can Build
         List<Vector2Int> gridPositionList = placedObjectTypeSO.GetGridPositionList(placedObjectOrigin, PlacedObjectTypeSO.Dir.Up);
         bool canBuild = true;
 
         foreach (Vector2Int gridPosition in gridPositionList)
         {
             GridObject gridObject1 = grid.GetGridObject(gridPosition.x, gridPosition.y);
+            Vector2Int rotationOffset = placedObjectTypeSO.GetRotationOffset(PlacedObjectTypeSO.Dir.Up);
+            Vector3 placedObjectWorldPosition = grid.GetWorldPosition(placedObjectOrigin.x, placedObjectOrigin.y) + new Vector3(rotationOffset.x, 0, rotationOffset.y) * grid.GetCellSize();
 
             if ((gridObject1.CanBuild() == 0) || (gridObject1.CanBuild() == 1 && (placedObjectTypeSO.isUnderground)) || (gridObject1.CanBuild() == 2 && (!placedObjectTypeSO.isUnderground)))
             {
@@ -49,13 +49,11 @@ public class BuildSetter : MonoBehaviour
 
         if (canBuild)
         {
-           
             GridObject gridObject = grid.GetGridObject(x, z);
-            GameEvents.Instance.OnGridSelected?.Invoke(placedObjectTypeSO,gridObject);
 
-            //DeselectObjectType();
+            placedObject.Setup(placedObjectTypeSO, placedObjectOrigin, PlacedObjectTypeSO.Dir.Up, gridObject);
+
         }
-       
 
     }
 

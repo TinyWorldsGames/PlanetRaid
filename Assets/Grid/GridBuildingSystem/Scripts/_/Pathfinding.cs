@@ -23,8 +23,8 @@ public class Pathfinding : MonoBehaviour
     PlacedObjectTypeSO placedObjectType;
     PlacedObjectTypeSO.Dir dir;
 
-    GridObject startNode, endNode,selectedNode,pastEndNode;
-  
+    GridObject startNode, endNode, selectedNode, pastEndNode;
+
 
     int safer;
     bool secondGridSelected;
@@ -38,134 +38,141 @@ public class Pathfinding : MonoBehaviour
 
     private void OnEnable()
     {
-       GameEvents.Instance.OnGridSelected += CreateNewBuilding;
+        GameEvents.Instance.OnGridSelected += CreateNewBuilding;
+        GameEvents.Instance.OnBuildMenuClosed += ClearPath;
     }
 
     private void OnDisable()
     {
         GameEvents.Instance.OnGridSelected -= CreateNewBuilding;
+        GameEvents.Instance.OnBuildMenuClosed -= ClearPath;
     }
 
-   
+
+    void ClearPath()
+    {
+        StopAllCoroutines();
+        isWorking = false;
+
+
+    }
+
 
     IEnumerator CreatingStackableBuild()
     {
-
-       
-
         startNode = null;
         selectedNode = null;
-        List<GridObject> finalPath=null;
+        List<GridObject> finalPath = null;
         secondGridSelected = true;
         isWorking = true;
 
-        while (selectedNode==null)
+        while (selectedNode == null)
         {
-            Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
 
-            
+
+            Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
 
             if (grid.GetGridObject(mousePosition) != null)
             {
                 grid.GetXZ(mousePosition, out int x, out int z);
-                
+
                 if (Input.GetMouseButtonDown(0))
                 {
-                    
+
                     if (startNode == null)
                     {
                         startNode = grid.gridArray[x, z];
-                        
+
                         endNode = grid.gridArray[x, z];
                     }
 
-                   
+
                 }
 
                 endNode = grid.gridArray[x, z];
-                
-                if(endNode!=pastEndNode)
+
+                if (endNode != pastEndNode)
                 {
-                
-                finalPath = FindPath(startNode, endNode);
-                
-              
 
-                
-                Vector2Int rotationOffset = placedObjectType.GetRotationOffset(dir);
-                
-                GameEvents.Instance.OnSelectedChangedStackable?.Invoke();
+                    finalPath = FindPath(startNode, endNode);
 
-                // Up 1
-                // Down 2
-                // Left 3
-                // Righ 4
 
-                if (finalPath!=null)
-                {
-                    
 
-                    for (int i = 0; i < finalPath.Count-1; i++)
+
+                    Vector2Int rotationOffset = placedObjectType.GetRotationOffset(dir);
+
+                    GameEvents.Instance.OnSelectedChangedStackable?.Invoke();
+
+                    // Up 1
+                    // Down 2
+                    // Left 3
+                    // Righ 4
+
+                    if (finalPath != null)
                     {
-                        
-                         
-
-                       switch (finalPath[i+1].comeDirection)
-                       {
-                        case 1:
-                            finalPath[i].dir = PlacedObjectTypeSO.Dir.Left;
-                            //Debug.Log("1");
-                        break;
-                        case 2:
-                            finalPath[i].dir = PlacedObjectTypeSO.Dir.Right;
-                            //Debug.Log("2");
-                        break;
-                         case 3:
-                            finalPath[i].dir = PlacedObjectTypeSO.Dir.Up;
-                            //Debug.Log("3");
-                        break;
-                         case 4:
-                            finalPath[i].dir = PlacedObjectTypeSO.Dir.Up;
-                            //Debug.Log("4");
-
-                        break;
-
-                        default:
-                        break;
-                       
-                       }
 
 
+                        for (int i = 0; i < finalPath.Count - 1; i++)
+                        {
+
+
+
+                            switch (finalPath[i + 1].comeDirection)
+                            {
+                                case 1:
+                                    finalPath[i].dir = PlacedObjectTypeSO.Dir.Left;
+                                    //Debug.Log("1");
+                                    break;
+                                case 2:
+                                    finalPath[i].dir = PlacedObjectTypeSO.Dir.Right;
+                                    //Debug.Log("2");
+                                    break;
+                                case 3:
+                                    finalPath[i].dir = PlacedObjectTypeSO.Dir.Up;
+                                    //Debug.Log("3");
+                                    break;
+                                case 4:
+                                    finalPath[i].dir = PlacedObjectTypeSO.Dir.Up;
+                                    //Debug.Log("4");
+
+                                    break;
+
+                                default:
+                                    break;
+
+                            }
+
+
+                        }
+
+                        if (finalPath.Count > 1)
+                        {
+
+                            finalPath[finalPath.Count - 1].dir = finalPath[finalPath.Count - 2].dir;
+
+                        }
+                        else
+                        {
+                            finalPath[0].dir = GridBuildingSystem3D.Instance.GetDirection();
+                        }
+
+
+
+                        for (int i = 0; i < finalPath.Count; i++)
+                        {
+                            dir = finalPath[i].dir;
+                            GameEvents.Instance.OnPathFound?.Invoke(finalPath[i]);
+
+                        }
                     }
 
-                    if(finalPath.Count>1)
-                    {
-                    
-                        finalPath[finalPath.Count-1].dir=finalPath[finalPath.Count-2].dir;
 
-                    }
-                    else
-                    {
-                        finalPath[0].dir=GridBuildingSystem3D.Instance.GetDirection();
-                    }
 
-                    
-
-                    for (int i = 0; i < finalPath.Count; i++)
-                    {
-                        dir = finalPath[i].dir;
-                        GameEvents.Instance.OnPathFound?.Invoke(finalPath[i]);
-
-                    }
                 }
-               
 
 
-                }
-                
-                
-              
-                
+
+
 
 
             }
@@ -174,12 +181,12 @@ public class Pathfinding : MonoBehaviour
             {
                 finalPath = null;
             }
-            
 
 
-           
 
-            if (finalPath!=null&&!secondGridSelected)
+
+
+            if (finalPath != null && !secondGridSelected)
             {
 
                 if (Input.GetMouseButtonDown(0))
@@ -188,22 +195,22 @@ public class Pathfinding : MonoBehaviour
                     {
                         selectedNode = endNode;
                         secondGridSelected = true;
-                        GameEvents.Instance.OnObjectPlaced?.Invoke(finalPath[i]);
-                        GameEvents.Instance.OnSelectedChangedStackable?.Invoke();
+                        GameEvents.Instance.OnObjectPlaced?.Invoke(finalPath[i], placedObjectType);
+
 
                     }
 
-                    
+                    GameEvents.Instance.OnSelectedChangedStackable?.Invoke();
 
                 }
 
 
             }
 
-            pastEndNode=endNode;
+            pastEndNode = endNode;
 
-            yield return new WaitForSeconds(0);
-           
+            yield return null;
+
             secondGridSelected = false;
 
         }
@@ -216,27 +223,27 @@ public class Pathfinding : MonoBehaviour
 
 
 
-    public void CreateNewBuilding(PlacedObjectTypeSO objectTypeSO,GridObject gridObject)
+    public void CreateNewBuilding(PlacedObjectTypeSO objectTypeSO, GridObject gridObject)
     {
 
         placedObjectType = objectTypeSO;
-       
-        if (objectTypeSO.isStackable&&!isWorking)
+
+        if (objectTypeSO.isStackable && !isWorking)
         {
             isWorking = true;
             StartCoroutine(CreatingStackableBuild());
         }
-        
+
         else
         {
-           
-            GameEvents.Instance.OnObjectPlaced?.Invoke(gridObject);
+
+            GameEvents.Instance.OnObjectPlaced?.Invoke(gridObject, placedObjectType);
             GameEvents.Instance.OnSelectedChanged?.Invoke();
 
         }
-        
 
-      
+
+
     }
 
 
@@ -252,7 +259,7 @@ public class Pathfinding : MonoBehaviour
         }
 
         openList = new List<GridObject> { startNode };
-        
+
         closedList = new List<GridObject>();
 
         for (int x = 0; x < grid.GetWidth(); x++)
@@ -270,15 +277,15 @@ public class Pathfinding : MonoBehaviour
         startNode.hCost = CalculateDistanceCost(startNode, endNode);
         startNode.CalculateFCost();
 
-       
+
         while (openList.Count > 0)
         {
             GridObject currentNode = GetLowestFCostNode(openList);
-           
+
             if (currentNode == endNode)
             {
                 // Reached final node
-             
+
                 return CalculatePath(endNode);
             }
 
@@ -288,35 +295,35 @@ public class Pathfinding : MonoBehaviour
             foreach (GridObject neighbourNode in GetNeighbourList(currentNode))
             {
                 if (closedList.Contains(neighbourNode)) continue;
-                
-             
-               
+
+
+
 
                 neighbourNode.cameFromNode = currentNode;
                 int turnCost = CalculateDirectionCost(currentNode, neighbourNode);
 
-               
+
                 int tentativeGCost = currentNode.gCost + CalculateDistanceCost(currentNode, neighbourNode) + turnCost;
-                
+
                 if (tentativeGCost < neighbourNode.gCost)
                 {
-                   
+
                     neighbourNode.gCost = tentativeGCost - turnCost;
                     neighbourNode.hCost = CalculateDistanceCost(neighbourNode, endNode);
                     neighbourNode.CalculateFCost();
 
                     if (!openList.Contains(neighbourNode))
                     {
-                        
+
                         openList.Add(neighbourNode);
 
                     }
                 }
-               
+
             }
         }
 
-        
+
         // Out of nodes on the openList
         return null;
     }
@@ -336,7 +343,7 @@ public class Pathfinding : MonoBehaviour
 
         else if (current.x < next.x)
         {
-       
+
             next.comeDirection = 3;
         }
 
@@ -347,7 +354,7 @@ public class Pathfinding : MonoBehaviour
 
         else if (current.y < next.y)
         {
-          
+
             next.comeDirection = 2;
 
         }
@@ -370,20 +377,20 @@ public class Pathfinding : MonoBehaviour
         if (currentNode.x - 1 >= 0)
         {
             neighbourList.Add(GetNode(currentNode.x - 1, currentNode.y));
-           
+
         }
         if (currentNode.x + 1 < grid.GetWidth())
         {
             neighbourList.Add(GetNode(currentNode.x + 1, currentNode.y));
 
         }
-       
-        if (currentNode.y - 1 >= 0) 
+
+        if (currentNode.y - 1 >= 0)
         {
             neighbourList.Add(GetNode(currentNode.x, currentNode.y - 1));
 
         }
-       
+
         if (currentNode.y + 1 < grid.GetHeight())
         {
             neighbourList.Add(GetNode(currentNode.x, currentNode.y + 1));

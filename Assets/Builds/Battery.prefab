@@ -105,10 +105,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrery Visual
       objectReference: {fileID: 0}
-    - target: {fileID: 1120198206225651525, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5335981307944893658, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -190,6 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5963072227763096935}
+  - component: {fileID: 5801605811656435312}
   m_Layer: 0
   m_Name: Portable Miner Visual
   m_TagString: Untagged
@@ -213,6 +214,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5801605811656435312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407534722968076652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94894ab446203774199d9c7a06fe3fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 2104597177472785248}
 --- !u!1 &2620665422576434842
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +451,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -3846018093981099296, guid: 00f5b16ceb8ea8e46b8a972e7de5c8ec, type: 3}
-  - {fileID: 2100000, guid: 55acc97717b289042990c84e15cf0681, type: 2}
+  - {fileID: 2100000, guid: 342e70ab678063941965df8fa241af30, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -632,8 +646,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5627614730741409938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 1}
-  m_LocalScale: {x: 2, y: 0.2, z: 2}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0.5}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 5443445396726697718}
   m_Father: {fileID: 5963072227763096935}

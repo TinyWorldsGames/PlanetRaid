@@ -105,10 +105,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: tileHigh_forest Visual
       objectReference: {fileID: 0}
-    - target: {fileID: 3250943559795830197, guid: 6c8f814b0555e66458b056fe21bd7304, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7537657015611983402, guid: 6c8f814b0555e66458b056fe21bd7304, type: 3}
       propertyPath: m_RootOrder
       value: 0
