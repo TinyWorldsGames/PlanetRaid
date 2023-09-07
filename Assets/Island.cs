@@ -43,12 +43,9 @@ public class Island
             for (int j = 0; j < (int)(endPosition.y - startPosition.y); j++)
             {
                 gridObjects[i, j] = GridBuildingSystem3D.Instance.grid.GetGridObject(i + (int)startPosition.x, j + (int)startPosition.y);
+                
             }
         }
-
-       
-
-
 
 
     }

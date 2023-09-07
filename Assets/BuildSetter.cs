@@ -19,7 +19,6 @@ public class BuildSetter : MonoBehaviour
 
     void BuildObject()
     {
-
         grid.GetXZ(transform.position, out int x, out int z);
 
         Vector2Int placedObjectOrigin = new Vector2Int(x, z);

@@ -147,15 +147,7 @@ public class GridBuildingSystem3D : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
-            grid.GetXZ(mousePosition, out int x, out int z);
-            GridObject test = grid.GetGridObject(x, z);
-            Debug.Log(test.placedObject + "X: " + x + " Z: " + z + " Canbuild: " + test.CanBuild());
-
-        }
-
+    
 
         if (Input.GetMouseButtonDown(0) && placedObjectTypeSO != null)
         {
