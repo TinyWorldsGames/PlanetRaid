@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -105,6 +105,7 @@ public class PlacedObject_Done : MonoBehaviour
 
 
                     newState += 1;
+                    
                     if (isMe)
                     {
                         newGridobject.placedObject.Control(false);
