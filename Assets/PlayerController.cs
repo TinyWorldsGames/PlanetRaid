@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour
     {
         hasAnimator = TryGetComponent(out animator);
         characterController = GetComponent<CharacterController>();
-        playerInput = GetComponent<PlayerInputHandler>();
 
         AssignAnimationIDs();
 
