@@ -19,15 +19,15 @@ public class PlayerController : MonoBehaviour
     public float jumpTimeout = 0.50f;
     public float fallTimeout = 0.15f;
 
+    [HideInInspector]
     public bool isGrounded = true;
-    public float groundedOffset = -0.14f;
-    public float groundedRadius = 0.28f;
+    float groundedOffset = -0.14f;
+    float groundedRadius = 0.28f;
     public LayerMask groundLayers;
 
     public GameObject cameraTarget;
-    public float topClamp = 70.0f;
-    public float bottomClamp = -30.0f;
-    public float cameraAngleOverride = 0.0f;
+
+
     public bool lockCameraPosition = false;
 
     private float cinemachineTargetYaw;
@@ -53,11 +53,22 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     [SerializeField] PlayerInputHandler playerInput;
     [SerializeField] private GameObject mainCamera;
-    private bool rotateOnMove = true;
+    [SerializeField] bool rotateOnMove = true;
 
     private const float threshold = 0.01f;
 
     private bool hasAnimator;
+
+
+    private Vector2 movement;
+
+
+    Vector3 direction;
+    [SerializeField]
+    Transform[] hitWeapons;
+
+    Transform _weapon;
+
 
     private void Awake()
     {
@@ -90,6 +101,8 @@ public class PlayerController : MonoBehaviour
         JumpAndGravity();
         GroundedCheck();
         Move();
+
+
     }
 
     private void LateUpdate()
@@ -117,18 +130,85 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Build Mode Player Controllers
+
+    private void OnMove(InputValue value)
+    {
+        if (!playerInput.buildMode)
+            return;
+
+        movement = value.Get<Vector2>();
+
+        direction = new Vector3(movement.x, 0f, movement.y);
+
+        if (movement.magnitude > 0.1f)
+        {
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
+
+    }
+
+
+
+    public void OnAttackStart()
+    {
+        moveSpeed = 0f;
+    }
+
+    public void OnAttackRelease()
+    {
+        moveSpeed = 2;
+    }
+
+
+
+
+
+
+
+    public void PerformPunch(Enums.Weapons hitWeapon)
+    {
+        _weapon = hitWeapons[(int)hitWeapon];
+
+        Collider[] hitDamagables = Physics.OverlapSphere(_weapon.position, 0.5f);
+
+        foreach (Collider hit in hitDamagables)
+        {
+            if (hit.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.TakeDamage(2);
+            }
+
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out ICollectable collectable))
+        {
+            collectable.Collect(collectPoint);
+        }
+    }
+
+
+    //
+
+
+
+
     private void CameraRotation()
     {
+        if (playerInput.buildMode)
+            return;
+
         if (playerInput.look.sqrMagnitude >= threshold && !lockCameraPosition)
         {
             cinemachineTargetYaw += playerInput.look.x * Time.deltaTime * sensitivity;
             cinemachineTargetPitch += playerInput.look.y * Time.deltaTime * sensitivity;
         }
 
-        cinemachineTargetYaw = ClampAngle(cinemachineTargetYaw, float.MinValue, float.MaxValue);
-        cinemachineTargetPitch = ClampAngle(cinemachineTargetPitch, bottomClamp, topClamp);
-
-        cameraTarget.transform.rotation = Quaternion.Euler(cinemachineTargetPitch + cameraAngleOverride, cinemachineTargetYaw, 0.0f);
+        cameraTarget.transform.rotation = Quaternion.Euler(cinemachineTargetPitch, cinemachineTargetYaw, 0.0f);
     }
 
     private void Move()
@@ -160,15 +240,26 @@ public class PlayerController : MonoBehaviour
             targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, rotationSmoothTime);
 
-            if (rotateOnMove)
+            if (rotateOnMove && !playerInput.buildMode)
             {
                 transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+
             }
         }
 
         Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
 
-        characterController.Move(targetDirection.normalized * (speed * Time.deltaTime) + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime);
+        if (!playerInput.buildMode)
+        {
+            characterController.Move(targetDirection.normalized * (speed * Time.deltaTime) + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime);
+
+        }
+        else
+        {
+            characterController.Move(direction * moveSpeed * Time.deltaTime);
+
+        }
+
 
         if (hasAnimator)
         {
@@ -234,22 +325,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private static float ClampAngle(float angle, float min, float max)
-    {
-        if (angle < -360f) angle += 360f;
-        if (angle > 360f) angle -= 360f;
-        return Mathf.Clamp(angle, min, max);
-    }
 
-    private void OnDrawGizmosSelected()
-    {
-        Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
-        Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
-
-        Gizmos.color = isGrounded ? transparentGreen : transparentRed;
-
-        Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - groundedOffset, transform.position.z), groundedRadius);
-    }
 
     public void SetSensitivity(float newSensitivity)
     {
