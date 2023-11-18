@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class OldPlayerController : MonoBehaviour
 {
-    public static PlayerController Instance;
+    public static OldPlayerController Instance;
 
     private float moveSpeed = 5f;
     [SerializeField] private float startMoveSpeed = 5f;

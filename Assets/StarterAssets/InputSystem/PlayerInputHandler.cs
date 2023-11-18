@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class StarterAssetsInputs : MonoBehaviour
+public class PlayerInputHandler : MonoBehaviour
 {
 	public Vector2 move;
 	public Vector2 look;
