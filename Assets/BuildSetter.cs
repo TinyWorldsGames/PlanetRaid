@@ -54,6 +54,9 @@ public class BuildSetter : MonoBehaviour
 
         }
 
+        Destroy(this);
+        
+
     }
 
 }

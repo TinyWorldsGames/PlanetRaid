@@ -295,11 +295,9 @@ public class Pathfinding : MonoBehaviour
             foreach (GridObject neighbourNode in GetNeighbourList(currentNode))
             {
                 if (closedList.Contains(neighbourNode)) continue;
-
-
-
-
+                
                 neighbourNode.cameFromNode = currentNode;
+
                 int turnCost = CalculateDirectionCost(currentNode, neighbourNode);
 
 

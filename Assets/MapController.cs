@@ -105,7 +105,7 @@ public class MapController : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                CreateIsland(_newIslanStartPoint, _newIslanEndPoint, islandTypes[4]);
+                CreateIsland(_newIslanStartPoint, _newIslanEndPoint, islandTypes[3]);
                 _newIslanStartPoint += new Vector2(islandSize, 0);
                 _newIslanEndPoint += new Vector2(islandSize, 0);
             }
@@ -125,7 +125,7 @@ public class MapController : MonoBehaviour
         {
             for (int x = 0; x < 8; x++)
             {
-                int randomIndex = Random.Range(0, 1) == 0 ? 1 : 4;
+                int randomIndex = Random.Range(0, 2) == 0 ? 1 : 4;
                 CreateIsland(_newIslanStartPoint, _newIslanEndPoint, islandTypes[randomIndex]);
                 _newIslanStartPoint += new Vector2(islandSize, 0);
                 _newIslanEndPoint += new Vector2(islandSize, 0);
@@ -168,7 +168,7 @@ public class MapController : MonoBehaviour
 
         // Down Right
 
-        
+
         _newIslanStartPoint = new Vector2(300, 0);
         _newIslanEndPoint = _newIslanStartPoint + new Vector2(islandSize, islandSize);
 
@@ -190,14 +190,14 @@ public class MapController : MonoBehaviour
 
         }
 
-      
+
 
 
 
 
         // Down Left
 
-       
+
         _newIslanStartPoint = new Vector2(0, 0);
         _newIslanEndPoint = _newIslanStartPoint + new Vector2(islandSize, islandSize);
 
@@ -242,7 +242,7 @@ public class MapController : MonoBehaviour
                 newGround.name = "Ground " + totalGroundCount;
 
                 totalGroundCount++;
-                
+
                 newGround.transform.parent = transform;
 
                // newGround.SetActive(false);
