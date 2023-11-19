@@ -32,6 +32,7 @@ public class PlacedObjectTypeSO : ScriptableObject
     public Transform prefab;
     public Transform visual;
     public Sprite buildMenuImage;
+    public string description;
     public int width;
     public int height;
     public bool isStackable;

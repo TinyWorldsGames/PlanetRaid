@@ -20,18 +20,49 @@ public class BuildMenuController : MonoBehaviour
 
     List<Tween> currentTweens = new List<Tween>();
 
+    [SerializeField] ToolTip toolTip;
+    bool isToolTipActive = false;
+
     private void OnEnable()
     {
         GameEvents.Instance.OnBuildMenuOpened += OpenBuildTypeMenu;
+        GameEvents.Instance.OnToolTipActivated += ToolTip;
     }
 
     private void OnDisable()
     {
+        GameEvents.Instance.OnToolTipActivated -= ToolTip;
         GameEvents.Instance.OnBuildMenuOpened -= OpenBuildTypeMenu;
+    }
+
+
+    void ToolTip(PlacedObjectTypeSO placedObjectTypeSO, bool isOn)
+    {
+        if (isOn)
+        {
+            toolTip.gameObject.SetActive(true);
+            toolTip.Init(placedObjectTypeSO);
+            isToolTipActive = true;
+        }
+        else
+        {
+            toolTip.gameObject.SetActive(false);
+            isToolTipActive = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (isToolTipActive)
+        {
+            toolTip.transform.position = Input.mousePosition;
+        }
     }
 
     void OpenBuildTypeMenu(bool isOpen)
     {
+        toolTip.gameObject.SetActive(false);
+
         foreach (Tween tween in currentTweens)
         {
             tween.Kill();

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7747bdf78fa6141a2f81d16ff91e5f, type: 3}
   m_Name: Battery
   m_EditorClassIdentifier: 
-  nameString: Battery
+  nameString: Elektrik Batarya
   buildResources:
     resource1: 10
     resource2: 10
   prefab: {fileID: 1406036821435700011, guid: a54fb2131c85bad498f051c9ea8b803a, type: 3}
   visual: {fileID: 5335981307944893658, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
   buildMenuImage: {fileID: 21300000, guid: b5122d925cb00e04482fef3c790426d8, type: 3}
+  description: Elektrik Enerjisi Depolar \n +250 Depolama
   width: 2
   height: 1
   isStackable: 0

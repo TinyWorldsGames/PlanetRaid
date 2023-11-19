@@ -21,7 +21,6 @@ public class GridBuildingSystem3D : MonoBehaviour
     private PlacedObjectTypeSO.Dir dir;
     private GridObject startNode, endNode;
     [SerializeField]
-    Pathfinding pathfinding;
 
 
     private void Awake()
@@ -55,7 +54,12 @@ public class GridBuildingSystem3D : MonoBehaviour
     {
         placedObjectTypeSO = _placedObjectTypeSO;
 
+        Debug.Log("CreateNewBuilding");
 
+        if (!GameEvents.Instance.OnResourceControl.Invoke(placedObjectTypeSO.buildResources))
+        {
+            return;
+        }
 
         if ((gridObject.CanBuild() == 0) || (gridObject.CanBuild() == 1 && (placedObjectTypeSO.isUnderground)) || (gridObject.CanBuild() == 2 && (!placedObjectTypeSO.isUnderground)))
         {
@@ -81,6 +85,11 @@ public class GridBuildingSystem3D : MonoBehaviour
 
 
 
+
+            GameEvents.Instance.OnResourceUsed?.Invoke(placedObjectTypeSO.buildResources);
+
+
+
         }
 
         placedObjectTypeSO = null;
@@ -99,6 +108,8 @@ public class GridBuildingSystem3D : MonoBehaviour
 
     void BuildObject()
     {
+        Debug.Log("BuildObject");
+
         Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
         grid.GetXZ(mousePosition, out int x, out int z);
 
