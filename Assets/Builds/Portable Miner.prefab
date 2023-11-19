@@ -127,34 +127,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portable Miner Visual
       objectReference: {fileID: 0}
-    - target: {fileID: 2957723993806971049, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-      propertyPath: m_Size.x
-      value: 1.1967839
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957723993806971049, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-      propertyPath: m_Size.y
-      value: 1.8405212
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957723993806971049, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-      propertyPath: m_Size.z
-      value: 1.0497245
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957723993806971049, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-      propertyPath: m_Center.x
-      value: 0.098391615
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957723993806971049, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-      propertyPath: m_Center.y
-      value: 1.14592
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957723993806971049, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-      propertyPath: m_Center.z
-      value: 0.024860624
-      objectReference: {fileID: 0}
-    - target: {fileID: 2957723993806971049, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5963072227763096935, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -206,20 +178,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5963072227763096935, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
   m_PrefabInstance: {fileID: 4287711336923356489}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8881611583041194245 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4665957998014829644, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-  m_PrefabInstance: {fileID: 4287711336923356489}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7573747576855785990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8881611583041194245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d310c33b79b8254d9a07a37d4ba47a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -58,19 +58,28 @@ public class GridBuildingSystem3D : MonoBehaviour
 
         if (!GameEvents.Instance.OnResourceControl.Invoke(placedObjectTypeSO.buildResources))
         {
-          
+
 
             GameEvents.Instance.OnWarningMessage?.Invoke("Yeterli Kaynak Yok!");
 
             placedObjectTypeSO = null;
-            
+
             RefreshSelectedObjectType();
             return;
         }
 
-        if(placedObjectTypeSO.isMiner)
+        if (placedObjectTypeSO.isMiner)
         {
-            // Miner
+            if (!GameEvents.Instance.OnMinerBuildControl.Invoke())
+            {
+
+
+                placedObjectTypeSO = null;
+                RefreshSelectedObjectType();
+                GameEvents.Instance.OnWarningMessage?.Invoke("Taşınabilir Maden Sondajı Bir Maden Kaynağının Üzerine Kurulmalı!!");
+                return;
+            }
+
 
         }
 
@@ -160,7 +169,7 @@ public class GridBuildingSystem3D : MonoBehaviour
         else
         {
             // Cannot build here
-          //  Utils.CreateWorldTextPopup("Cannot Build Here!", mousePosition);
+            //  Utils.CreateWorldTextPopup("Cannot Build Here!", mousePosition);
         }
 
     }

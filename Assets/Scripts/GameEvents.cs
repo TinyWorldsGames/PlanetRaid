@@ -28,10 +28,14 @@ public class GameEvents : MonoBehaviour
 
     public delegate void OnBuildMenuClosedDelegate();
 
+    public delegate bool OnMinerBuildControlDelegate();
+
     // public delegate void ControlBuildings();
 
 
     // Delegate Instance
+
+    public OnMinerBuildControlDelegate OnMinerBuildControl;
     public GridSelectedDelagate OnGridSelected;
 
     public OnNewBuildingSelectedDelegate OnNewBuildingSelected;

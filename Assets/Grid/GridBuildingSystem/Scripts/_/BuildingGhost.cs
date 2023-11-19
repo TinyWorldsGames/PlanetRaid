@@ -29,6 +29,7 @@ public class BuildingGhost : MonoBehaviour
         GameEvents.Instance.OnSelectedChanged += RefreshVisual;
         GameEvents.Instance.OnSelectedChangedStackable += ClearVisuals;
         GameEvents.Instance.OnPathFound += CreateVisual;
+        GameEvents.Instance.OnMinerBuildControl += ControlMiner;
 
     }
 
@@ -37,8 +38,26 @@ public class BuildingGhost : MonoBehaviour
         GameEvents.Instance.OnSelectedChanged -= RefreshVisual;
         GameEvents.Instance.OnSelectedChangedStackable -= ClearVisuals;
         GameEvents.Instance.OnPathFound -= CreateVisual;
+        GameEvents.Instance.OnMinerBuildControl -= ControlMiner;
 
     }
+
+    bool ControlMiner()
+    {
+        MinerController minerController = _visual.GetComponentInChildren<MinerController>();
+
+        if (minerController.canBuild)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+
 
     private void Update()
     {
@@ -103,6 +122,7 @@ public class BuildingGhost : MonoBehaviour
         {
             _visual.GetComponent<BuildMaterial>().meshRenderer.materials = defaultMaterials;
         }
+        
         else
         {
             _visual.GetComponent<BuildMaterial>().meshRenderer.materials = _cantBuildMaterials;
