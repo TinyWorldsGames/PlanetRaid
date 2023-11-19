@@ -13,6 +13,8 @@ public class GameEvents : MonoBehaviour
     public delegate void ObjectPlacedDelegate(GridObject objectTypeSO,PlacedObjectTypeSO placedObjectTypeSO);
     public delegate void ResourceChangedDelegate(Enums.ResourceTypes resourceType,int count);
 
+    public delegate void OnBuildMenuOpenedDelegate(bool isOpen);
+
     public delegate void OnBuildMenuClosedDelegate();
 
    // public delegate void ControlBuildings();
@@ -20,6 +22,8 @@ public class GameEvents : MonoBehaviour
     
     // Delegate Instance
     public GridSelectedDelagate OnGridSelected;
+    
+    public OnBuildMenuOpenedDelegate OnBuildMenuOpened;
     public PathFoundDelagate OnPathFound;
     public ObjectPlacedDelegate OnObjectPlaced;
    // public ControlBuildings OnControlBuildings;

@@ -53,6 +53,7 @@ public class CameraController : MonoBehaviour
         buildCamera.rotation = mainCamera.rotation;
         mainCamera.GetComponent<Camera>().enabled = true;
         buildCamera.gameObject.SetActive(true);
+        mainCamera.gameObject.tag = "Untagged";
         isDotweening = true;
         buildCamera.transform.DOMove(transform.position, 1f);
         buildCamera.transform.DORotate(transform.rotation.eulerAngles, 1f).OnComplete(() => isDotweening = false);
@@ -66,6 +67,7 @@ public class CameraController : MonoBehaviour
         buildCamera.transform.DOMove(mainCamera.position, 1f);
         buildCamera.transform.DORotate(mainCamera.rotation.eulerAngles, 1f).OnComplete(() =>
         {
+            mainCamera.gameObject.tag = "MainCamera";
             mainCamera.GetComponent<Camera>().enabled = true;
             buildCamera.gameObject.SetActive(false);
 
