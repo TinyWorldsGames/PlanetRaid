@@ -17,7 +17,7 @@ public class BuildElement : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        GameEvents.Instance.OnToolTipActivated?.Invoke(buildType,true);
+        GameEvents.Instance.OnToolTipActivated?.Invoke(buildType, true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -29,13 +29,18 @@ public class BuildElement : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void SelectBuildType()
     {
-        if(GameEvents.Instance.OnResourceControl.Invoke(buildType.buildResources))
+        if (GameEvents.Instance.OnResourceControl.Invoke(buildType.buildResources))
         {
             GameEvents.Instance.OnNewBuildingSelected?.Invoke(buildType);
 
         }
+        else
+        {
+            GameEvents.Instance.OnOutOfResources?.Invoke();
+
+        }
     }
 
- 
+
 
 }

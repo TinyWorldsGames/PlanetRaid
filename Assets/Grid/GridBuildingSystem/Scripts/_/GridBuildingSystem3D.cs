@@ -54,10 +54,17 @@ public class GridBuildingSystem3D : MonoBehaviour
     {
         placedObjectTypeSO = _placedObjectTypeSO;
 
-        Debug.Log("CreateNewBuilding");
+
 
         if (!GameEvents.Instance.OnResourceControl.Invoke(placedObjectTypeSO.buildResources))
         {
+          
+
+            GameEvents.Instance.OnOutOfResources?.Invoke();
+
+            placedObjectTypeSO = null;
+            
+            RefreshSelectedObjectType();
             return;
         }
 
@@ -147,7 +154,7 @@ public class GridBuildingSystem3D : MonoBehaviour
         else
         {
             // Cannot build here
-            Utils.CreateWorldTextPopup("Cannot Build Here!", mousePosition);
+          //  Utils.CreateWorldTextPopup("Cannot Build Here!", mousePosition);
         }
 
     }
@@ -162,7 +169,7 @@ public class GridBuildingSystem3D : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && placedObjectTypeSO != null)
         {
-             BuildObject();
+            BuildObject();
 
         }
 
