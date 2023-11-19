@@ -19,11 +19,11 @@ public class GameEvents : MonoBehaviour
 
     public delegate void OnBuildMenuOpenedDelegate(bool isOpen);
 
-    public delegate void OnToolTipActivatedDelegate(PlacedObjectTypeSO objectTypeSO,bool isActive);
+    public delegate void OnToolTipActivatedDelegate(PlacedObjectTypeSO objectTypeSO, bool isActive);
 
     public delegate void OnResourceUsedDelegate(BuildResources buildResources);
 
-        public delegate void OnOutOfResourcesDelegate();
+    public delegate void OnWarningMessageDelegate(string message);
 
 
     public delegate void OnBuildMenuClosedDelegate();
@@ -38,10 +38,10 @@ public class GameEvents : MonoBehaviour
 
     public OnResourceUsedDelegate OnResourceUsed;
 
-    public OnOutOfResourcesDelegate OnOutOfResources;
+    public OnWarningMessageDelegate OnWarningMessage;
 
     public OnToolTipActivatedDelegate OnToolTipActivated;
-    
+
     public OnResourceControlDelegate OnResourceControl;
     public OnBuildMenuOpenedDelegate OnBuildMenuOpened;
     public PathFoundDelagate OnPathFound;

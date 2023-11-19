@@ -5646,6 +5646,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2094992957339929602, guid: a6b34e5f1eaafc64fa29242ab4034c4a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2094992957339929724, guid: a6b34e5f1eaafc64fa29242ab4034c4a, type: 3}
       propertyPath: m_Name
       value: Aim Target
@@ -5705,6 +5709,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2094992957339929600, guid: a6b34e5f1eaafc64fa29242ab4034c4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094992957339929602, guid: a6b34e5f1eaafc64fa29242ab4034c4a, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2094992957339929724, guid: a6b34e5f1eaafc64fa29242ab4034c4a, type: 3}
@@ -5932,6 +5940,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Out of Resources
       objectReference: {fileID: 0}
+    - target: {fileID: 7255072832838265476, guid: 89d50b59d1f80a74eb97ea9c0500f4ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7255072832838265477, guid: 89d50b59d1f80a74eb97ea9c0500f4ee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6002,7 +6014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7255072832838265477, guid: 89d50b59d1f80a74eb97ea9c0500f4ee, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20.099976
+      value: -64.4
       objectReference: {fileID: 0}
     - target: {fileID: 7255072832838265477, guid: 89d50b59d1f80a74eb97ea9c0500f4ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11588,7 +11600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildResources:
     resource1: 1000
-    resource2: 1000
+    resource2: 15
   resources:
   - name: Iron
     count: 0
@@ -13864,7 +13876,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d29677146096e2e44a5d0dc42b09e592, type: 2}
+  - {fileID: 2100000, guid: 5846f1c3c4e5f1e42b95451831844600, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
