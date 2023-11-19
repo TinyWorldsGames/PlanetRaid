@@ -108,7 +108,6 @@ public class GridBuildingSystem3D : MonoBehaviour
 
     void BuildObject()
     {
-        Debug.Log("BuildObject");
 
         Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
         grid.GetXZ(mousePosition, out int x, out int z);
@@ -163,7 +162,7 @@ public class GridBuildingSystem3D : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && placedObjectTypeSO != null)
         {
-            BuildObject();
+             BuildObject();
 
         }
 
