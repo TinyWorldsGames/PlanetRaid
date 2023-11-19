@@ -121,9 +121,6 @@ public class BuildingGhost : MonoBehaviour
 
         visuals.Clear();
 
-
-
-
     }
 
     private void RefreshVisual()
