@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: c2532e378ee04fa45a2f8ed02f2ff6e8
 ModelImporter:
-  serializedVersion: 20300
-  internalIDToNameTable: []
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 5358457859207210129
+    second: KayKit Animated Character|Wave
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -96,7 +99,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

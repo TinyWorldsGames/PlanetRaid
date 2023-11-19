@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: 3222acb7ae33808409d6d99644279a98
 ModelImporter:
-  serializedVersion: 20300
-  internalIDToNameTable: []
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -4591534160563315405
+    second: KayKit Animated Character|Dance
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -96,7 +99,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

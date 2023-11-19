@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: 845bbcde6757929469327820b17be7ac
 ModelImporter:
-  serializedVersion: 20300
-  internalIDToNameTable: []
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 5593349898487233307
+    second: KayKit Animated Character|Cheer
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -96,7 +99,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

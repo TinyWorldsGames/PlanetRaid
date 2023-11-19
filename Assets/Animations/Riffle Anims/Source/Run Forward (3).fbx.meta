@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: 1fc6947b4bb5e3044acccbf70f37537b
 ModelImporter:
-  serializedVersion: 20300
-  internalIDToNameTable: []
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -515,7 +518,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

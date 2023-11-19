@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: c8c2dd0dbd532aa41aee88b2e9c74d31
 ModelImporter:
-  serializedVersion: 20300
-  internalIDToNameTable: []
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 1728088361261182183
+    second: KayKit Animated Character|Jump
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -96,7 +99,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

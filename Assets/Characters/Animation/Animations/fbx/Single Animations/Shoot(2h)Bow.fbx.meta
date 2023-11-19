@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: 0c540dff52d7cdb45a3b36c5d764fb90
 ModelImporter:
-  serializedVersion: 20300
-  internalIDToNameTable: []
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 3497880343267040202
+    second: KayKit Animated Character|Shoot(2h)Bow
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -96,7 +99,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
