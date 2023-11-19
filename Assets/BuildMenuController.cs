@@ -112,10 +112,13 @@ public class BuildMenuController : MonoBehaviour
             buttonImage.color = Color.white;
         }
 
-        buttonImages[index].color = Color.green;
 
-        for (int i = 0; i < buildTypes[i].builds.Count; i++)
+        buttonImages[index].color = Color.green;
+        
+
+        for (int i = 0; i < buildTypes[index].builds.Count; i++)
         {
+
             BuildElement newElement = Instantiate(buildElementPrefab, buildMenu.transform);
 
             newElement.buildType = buildTypes[index].builds[i];
@@ -124,7 +127,9 @@ public class BuildMenuController : MonoBehaviour
 
             buildElements.Add(newElement);
 
+
         }
+
     }
 
 }
