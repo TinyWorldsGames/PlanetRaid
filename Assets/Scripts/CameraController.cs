@@ -1,6 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 using DG.Tweening;
+using System.Collections.Generic;
 
 public class CameraController : MonoBehaviour
 {
@@ -30,8 +31,13 @@ public class CameraController : MonoBehaviour
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
+    List<Tween> currentTween = new List<Tween>();
+
+
     private void Update()
     {
+
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             if (isBuildCamera)
@@ -49,29 +55,40 @@ public class CameraController : MonoBehaviour
 
     public void SwitchToBuildCamera()
     {
+        foreach (Tween tween in currentTween)
+        {
+            tween.Kill();
+        }
+
         buildCamera.position = mainCamera.position;
         buildCamera.rotation = mainCamera.rotation;
         mainCamera.GetComponent<Camera>().enabled = true;
         buildCamera.gameObject.SetActive(true);
         mainCamera.gameObject.tag = "Untagged";
         isDotweening = true;
-        buildCamera.transform.DOMove(transform.position, 1f);
-        buildCamera.transform.DORotate(transform.rotation.eulerAngles, 1f).OnComplete(() => isDotweening = false);
+        currentTween.Add(buildCamera.transform.DOMove(transform.position, 1f));
+        currentTween.Add(buildCamera.transform.DORotate(transform.rotation.eulerAngles, 1f).OnComplete(() => isDotweening = false));
         isBuildCamera = true;
 
     }
 
     public void SwitchToPlayerCamera()
     {
-        isBuildCamera = false;
-        buildCamera.transform.DOMove(mainCamera.position, 1f);
-        buildCamera.transform.DORotate(mainCamera.rotation.eulerAngles, 1f).OnComplete(() =>
+        foreach (Tween tween in currentTween)
         {
-            mainCamera.gameObject.tag = "MainCamera";
-            mainCamera.GetComponent<Camera>().enabled = true;
-            buildCamera.gameObject.SetActive(false);
+            tween.Kill();
+        }
 
-        });
+        isBuildCamera = false;
+        currentTween.Add(buildCamera.transform.DOMove(mainCamera.position, 1f));
+        currentTween.Add(buildCamera.transform.DORotate(mainCamera.rotation.eulerAngles, 1f).OnComplete(() =>
+       {
+           mainCamera.gameObject.tag = "MainCamera";
+           mainCamera.GetComponent<Camera>().enabled = true;
+           buildCamera.gameObject.SetActive(false);
+
+
+       }));
 
 
     }

@@ -39,10 +39,12 @@ public class GridBuildingSystem3D : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.Instance.OnObjectPlaced += CreateNewBuilding;
+        GameEvents.Instance.OnNewBuildingSelected += SelectNewBuild;
     }
     private void OnDisable()
     {
         GameEvents.Instance.OnObjectPlaced -= CreateNewBuilding;
+        GameEvents.Instance.OnNewBuildingSelected -= SelectNewBuild;
 
     }
 
@@ -79,11 +81,6 @@ public class GridBuildingSystem3D : MonoBehaviour
 
 
 
-
-
-
-
-
         }
 
         placedObjectTypeSO = null;
@@ -91,9 +88,13 @@ public class GridBuildingSystem3D : MonoBehaviour
         RefreshSelectedObjectType();
 
 
+    }
 
-
-
+    void SelectNewBuild(PlacedObjectTypeSO _newPlacedObjectType)
+    {
+        placedObjectTypeSO = _newPlacedObjectType;
+        GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+        RefreshSelectedObjectType();
     }
 
     void BuildObject()
@@ -147,7 +148,7 @@ public class GridBuildingSystem3D : MonoBehaviour
     {
 
 
-    
+
 
         if (Input.GetMouseButtonDown(0) && placedObjectTypeSO != null)
         {
@@ -178,7 +179,8 @@ public class GridBuildingSystem3D : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                placedObjectTypeSO = placedObjectTypeSOList[0]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+                placedObjectTypeSO = placedObjectTypeSOList[0];
+                GameEvents.Instance.OnBuildMenuClosed?.Invoke();
                 RefreshSelectedObjectType();
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -258,7 +260,6 @@ public class GridBuildingSystem3D : MonoBehaviour
 
     private void RefreshSelectedObjectType()
     {
-
         GameEvents.Instance.OnSelectedChanged?.Invoke();
     }
 

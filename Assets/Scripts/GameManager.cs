@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
    public static GameManager Instance;
 
- 
+   public BuildResources buildResources;
 
 
    [SerializeField]
@@ -14,9 +14,28 @@ public class GameManager : MonoBehaviour
 
    void Awake()
    {
-
-    resources.Add(new Resource());
+      resources.Add(new Resource());
    }
 
- 
+   private void OnEnable()
+   {
+      GameEvents.Instance.OnResourceControl += ControlResource;
+   }
+
+   bool ControlResource(BuildResources buildResources)
+   {
+      if (buildResources.resource1 <= this.buildResources.resource1 && buildResources.resource2 <= this.buildResources.resource2)
+      {
+         return true;
+      }
+
+      else
+      {
+         return false;
+      }
+
+
+   }
+
+
 }
