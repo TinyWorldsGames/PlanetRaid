@@ -14,12 +14,34 @@ public class GameManager : MonoBehaviour
 
    void Awake()
    {
+      if (Instance == null)
+      {
+         Instance = this;
+      }
+      else
+      {
+         Destroy(gameObject);
+      }
+
       resources.Add(new Resource());
    }
 
    private void OnEnable()
    {
       GameEvents.Instance.OnResourceControl += ControlResource;
+      GameEvents.Instance.OnResourceUsed += UseResource;
+   }
+
+   private void OnDisable()
+   {
+      GameEvents.Instance.OnResourceControl -= ControlResource;
+      GameEvents.Instance.OnResourceUsed -= UseResource;
+   }
+
+   void UseResource(BuildResources buildResources)
+   {
+      this.buildResources.resource1 -= buildResources.resource1;
+      this.buildResources.resource2 -= buildResources.resource2;
    }
 
    bool ControlResource(BuildResources buildResources)

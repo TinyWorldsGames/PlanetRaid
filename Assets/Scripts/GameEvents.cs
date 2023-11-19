@@ -19,6 +19,10 @@ public class GameEvents : MonoBehaviour
 
     public delegate void OnBuildMenuOpenedDelegate(bool isOpen);
 
+    public delegate void OnToolTipActivatedDelegate(PlacedObjectTypeSO objectTypeSO,bool isActive);
+
+    public delegate void OnResourceUsedDelegate(BuildResources buildResources);
+
     public delegate void OnBuildMenuClosedDelegate();
 
     // public delegate void ControlBuildings();
@@ -28,6 +32,11 @@ public class GameEvents : MonoBehaviour
     public GridSelectedDelagate OnGridSelected;
 
     public OnNewBuildingSelectedDelegate OnNewBuildingSelected;
+
+    public OnResourceUsedDelegate OnResourceUsed;
+
+    public OnToolTipActivatedDelegate OnToolTipActivated;
+    
     public OnResourceControlDelegate OnResourceControl;
     public OnBuildMenuOpenedDelegate OnBuildMenuOpened;
     public PathFoundDelagate OnPathFound;
