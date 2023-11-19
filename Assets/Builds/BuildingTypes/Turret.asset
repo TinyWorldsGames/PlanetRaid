@@ -18,7 +18,7 @@ MonoBehaviour:
     resource2: 10
   prefab: {fileID: 4782235985580720507, guid: 7ca49e627ebd22041bdbe7476c339167, type: 3}
   visual: {fileID: 2499414142690952232, guid: 76240aae06a5c7d418728438366277a9, type: 3}
-  buildMenuImage: {fileID: 21300000, guid: d59f2e6b76abfb948bea2ae309f470e0, type: 3}
+  buildMenuImage: {fileID: 21300000, guid: 8aae6fd4631f1604fb7fe3758683af3b, type: 3}
   width: 2
   height: 1
   isStackable: 0
