@@ -60,12 +60,18 @@ public class GridBuildingSystem3D : MonoBehaviour
         {
           
 
-            GameEvents.Instance.OnOutOfResources?.Invoke();
+            GameEvents.Instance.OnWarningMessage?.Invoke("Yeterli Kaynak Yok!");
 
             placedObjectTypeSO = null;
             
             RefreshSelectedObjectType();
             return;
+        }
+
+        if(placedObjectTypeSO.isMiner)
+        {
+            // Miner
+
         }
 
         if ((gridObject.CanBuild() == 0) || (gridObject.CanBuild() == 1 && (placedObjectTypeSO.isUnderground)) || (gridObject.CanBuild() == 2 && (!placedObjectTypeSO.isUnderground)))
