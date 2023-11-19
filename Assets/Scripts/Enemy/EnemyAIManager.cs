@@ -27,17 +27,25 @@ public class EnemyAIManager : MonoBehaviour
 
     bool targetIsBase = false;
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
+    [SerializeField]
+    GameObject[] enemyModel;
 
-        agent = GetComponent<NavMeshAgent>();
-    }
+    [SerializeField] Transform targetInRange;
+
+
+
+
 
 
     public IEnumerator SetupSpawn(float time, Transform target)
     {
+        int randomModel = Random.Range(0, enemyModel.Length);
+
+        enemyModel[randomModel].SetActive(true);
+
         yield return new WaitForSeconds(time);
+
+        playerBase = target;
 
         targetIsBase = true;
 
@@ -77,7 +85,7 @@ public class EnemyAIManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
 
-            if (CheckArrive(0.2f))
+            if (CheckArrive(2f) || targetInRange != null)
             {
                 animator.SetBool("isRun", false);
 
@@ -115,12 +123,20 @@ public class EnemyAIManager : MonoBehaviour
                 _targetEnemy.GetComponent<IDamageable>().TakeDamage(attackDamage);
             }
 
+            else if (targetInRange != null)
+            {
+                targetInRange.GetComponent<IDamageable>().TakeDamage(attackDamage);
+            }
             else
             {
                 FindClosestEnemy();
             }
 
 
+        }
+        else
+        {
+            FindClosestEnemy();
         }
     }
 
@@ -131,24 +147,50 @@ public class EnemyAIManager : MonoBehaviour
 
         foreach (Transform enemy in targetPoints)
         {
-            if (Vector3.Distance(transform.position, enemy.position) < Vector3.Distance(transform.position, _targetEnemy.position))
+            if (enemy == null)
+            {
+                targetPoints.Remove(enemy);
+
+                GotoTarget(playerBase);
+
+                break;
+            }
+
+            if (_targetEnemy == null || Vector3.Distance(transform.position, enemy.position) < Vector3.Distance(transform.position, _targetEnemy.position))
             {
                 _targetEnemy = enemy;
             }
         }
 
-        if (Vector3.Distance(transform.position, playerBase.position) < Vector3.Distance(transform.position, _targetEnemy.position))
+        if (_targetEnemy == null || Vector3.Distance(transform.position, playerBase.position) < Vector3.Distance(transform.position, _targetEnemy.position))
         {
             GotoTarget(playerBase);
             targetIsBase = true;
         }
-        else
+
+        else 
         {
             GotoTarget(_targetEnemy);
             targetIsBase = false;
         }
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out IDamageable damageable))
+        {
+            targetInRange = other.transform;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out IDamageable damageable))
+        {
+            targetInRange = null;
+        }
     }
 
 

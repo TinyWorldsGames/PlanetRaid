@@ -18,9 +18,9 @@ TagManager:
   - Collactable
   - Character
   - BuildArea
-  - 
-  - 
-  - 
+  - Bullet
+  - Enemy
+  - TargetFinder
   - 
   - 
   - 

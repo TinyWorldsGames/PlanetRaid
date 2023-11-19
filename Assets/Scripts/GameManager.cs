@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
    public BuildResources buildResources;
 
+   public int batteryCount;
+
 
    [SerializeField]
    List<Resource> resources;
