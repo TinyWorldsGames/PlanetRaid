@@ -10,7 +10,7 @@ public class EnemyAIManager : AIManager
 
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
 
         agent = GetComponent<NavMeshAgent>();
     }
