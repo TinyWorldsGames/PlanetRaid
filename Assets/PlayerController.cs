@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
     private int animIDFreeFall;
     private int animIDMotionSpeed;
 
+    private int animIDAim;
+
     [SerializeField] private Animator animator;
     private CharacterController characterController;
     [SerializeField] PlayerInputHandler playerInput;
@@ -132,7 +134,8 @@ public class PlayerController : MonoBehaviour
             aimVirtualCamera.gameObject.SetActive(true);
             SetSensitivity(aimSensitivity);
             SetRotateOnMove(false);
-            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0.5f, Time.deltaTime * 13f));
+            // animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0.5f, Time.deltaTime * 13f));
+            animator.SetBool(animIDAim, true);
 
             aimRig.weight = Mathf.Lerp(aimRig.weight, 1f, Time.deltaTime * 13f);
             Vector3 worldAimTarget = mouseWorldPosition;
@@ -140,40 +143,32 @@ public class PlayerController : MonoBehaviour
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+
+            if (playerInput.shoot)
+            {
+
+                Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+                Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
+                playerInput.shoot = false;
+            }
         }
 
         else
         {
+            animator.SetBool(animIDAim, false);
+
             aimVirtualCamera.gameObject.SetActive(false);
             SetSensitivity(normalSensitivity);
             SetRotateOnMove(true);
-            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 13f));
+            //  animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 13f));
             aimRig.weight = Mathf.Lerp(aimRig.weight, 0f, Time.deltaTime * 13f);
-        }
 
-
-        if (playerInput.shoot)
-        {
-            /*
-            // Hit Scan Shoot
-            if (hitTransform != null) {
-                // Hit something
-                if (hitTransform.GetComponent<BulletTarget>() != null) {
-                    // Hit target
-                    Instantiate(vfxHitGreen, mouseWorldPosition, Quaternion.identity);
-                } else {
-                    // Hit something else
-                    Instantiate(vfxHitRed, mouseWorldPosition, Quaternion.identity);
-                }
-            }
-            //*/
-            //*
-            // Projectile Shoot
-            Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            //*/
             playerInput.shoot = false;
         }
+
+
+
 
     }
 
@@ -184,12 +179,17 @@ public class PlayerController : MonoBehaviour
 
         JumpAndGravity();
         GroundedCheck();
-        ShooterController();
+        if (!playerInput.buildMode)
+        {
+            ShooterController();
+
+
+        }
         Move();
 
 
     }
-   
+
 
     private void LateUpdate()
     {
@@ -203,6 +203,7 @@ public class PlayerController : MonoBehaviour
         animIDJump = Animator.StringToHash("Jump");
         animIDFreeFall = Animator.StringToHash("FreeFall");
         animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+        animIDAim = Animator.StringToHash("Aim");
     }
 
     private void GroundedCheck()
