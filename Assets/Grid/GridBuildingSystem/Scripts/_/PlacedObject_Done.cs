@@ -105,7 +105,7 @@ public class PlacedObject_Done : MonoBehaviour
 
 
                     newState += 1;
-                    
+
                     if (isMe)
                     {
                         newGridobject.placedObject.Control(false);
@@ -152,10 +152,9 @@ public class PlacedObject_Done : MonoBehaviour
         Transform placedObjectTransform = Instantiate(placedObjectTypeSO.prefab, worldPosition, Quaternion.Euler(0, placedObjectTypeSO.GetRotationAngle(dir), 0));
 
         PlacedObject_Done placedObject = placedObjectTransform.GetComponent<PlacedObject_Done>();
+
         placedObject.Setup(placedObjectTypeSO, origin, dir, gridObject);
-
-
-
+        
         return placedObject;
     }
 
@@ -184,7 +183,7 @@ public class PlacedObject_Done : MonoBehaviour
         {
             Control(true);
         }
-      
+
     }
 
     public List<Vector2Int> GetGridPositionList()

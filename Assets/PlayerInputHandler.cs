@@ -73,7 +73,7 @@ public class PlayerInputHandler : MonoBehaviour
             cursorLocked = true;
             cursorInputForLook = true;
             Cursor.lockState = CursorLockMode.Locked;
-            GameEvents.Instance.OnBuildMenuClosed?.Invoke();
+            GameEvents.Instance.OnBuildMenuOpened?.Invoke(false);
         }
 
     }

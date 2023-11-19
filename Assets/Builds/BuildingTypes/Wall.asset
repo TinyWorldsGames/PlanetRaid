@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Wall
   m_EditorClassIdentifier: 
   nameString: Wall
+  buildResources:
+    resource1: 5
+    resource2: 5
   prefab: {fileID: 1406036821435700011, guid: 2ab804eb7ac5ed94f904af01d6fab1b7, type: 3}
   visual: {fileID: 5270509430191917259, guid: 1994654cb63f5ba409deabce91f51945, type: 3}
+  buildMenuImage: {fileID: 21300000, guid: bbbf241d35deb7340b7d0b4f0a88da3d, type: 3}
   width: 1
   height: 1
   isStackable: 1
