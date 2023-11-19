@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e7747bdf78fa6141a2f81d16ff91e5f, type: 3}
-  m_Name: Portable Miner
+  m_Name: TeslaCoil
   m_EditorClassIdentifier: 
-  nameString: Portable Miner
+  nameString: Tesla Kulesi
   buildResources:
-    resource1: 5
+    resource1: 10
     resource2: 10
-  prefab: {fileID: 1406036821435700011, guid: 4a2c0a62814092f459bcaddc399d4985, type: 3}
-  visual: {fileID: 5963072227763096935, guid: 2e12aa8b98976af4da8bbd605b2284b3, type: 3}
-  buildMenuImage: {fileID: 21300000, guid: 3f5a079396a16564f9827c20f3c81d49, type: 3}
-  description: "S\xFCreki lolarak maden kazars\u0131n"
+  prefab: {fileID: 1406036821435700011, guid: f23913dda1204754c8fa0f5ec7f1d3b3, type: 3}
+  visual: {fileID: 8279544048340504284, guid: 9940fa31fd527fd4293edd480c75df67, type: 3}
+  buildMenuImage: {fileID: 21300000, guid: 149a967e2dc627345a7991e4ff7b4455, type: 3}
+  description: "Tesla Kulesi ile d\xFC\u015Fmanlar\u0131n\u0131 elektrikle!"
   width: 2
-  height: 2
+  height: 1
   isStackable: 0
   isNeedControl: 0
   isUnderground: 0
