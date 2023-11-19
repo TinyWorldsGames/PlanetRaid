@@ -96,9 +96,6 @@ public class Pathfinding : MonoBehaviour
 
                     finalPath = FindPath(startNode, endNode);
 
-
-
-
                     Vector2Int rotationOffset = placedObjectType.GetRotationOffset(dir);
 
                     GameEvents.Instance.OnSelectedChangedStackable?.Invoke();
@@ -234,8 +231,9 @@ public class Pathfinding : MonoBehaviour
             StartCoroutine(CreatingStackableBuild());
         }
 
-        else
+        else if (!objectTypeSO.isStackable)
         {
+            Debug.Log("Is Working"+isWorking + " isStackable+ " + objectTypeSO.isStackable);
 
             GameEvents.Instance.OnObjectPlaced?.Invoke(gridObject, placedObjectType);
             GameEvents.Instance.OnSelectedChanged?.Invoke();
