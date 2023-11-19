@@ -1,8 +1,692 @@
 fileFormatVersion: 2
 guid: b294328ac111b904f942f58596077e3e
 ModelImporter:
-  serializedVersion: 20300
-  internalIDToNameTable: []
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 1350325927773370634
+    second: Rig.001|Rig.001|1H_Melee_Attack_Chop
+  - first:
+      74: -577829648601717103
+    second: Rig.001|Rig.001|1H_Melee_Attack_Slice_Diagonal
+  - first:
+      74: 652973197886150690
+    second: Rig.001|Rig.001|1H_Melee_Attack_Slice_Horizontal
+  - first:
+      74: 4510119076237116104
+    second: Rig.001|Rig.001|1H_Melee_Attack_Stab
+  - first:
+      74: -7828664210741636289
+    second: Rig.001|Rig.001|1H_Ranged_Aiming
+  - first:
+      74: -9032053848784430974
+    second: Rig.001|Rig.001|1H_Ranged_Reload
+  - first:
+      74: -7957941244929049697
+    second: Rig.001|Rig.001|1H_Ranged_Shoot
+  - first:
+      74: -265608564598098164
+    second: Rig.001|Rig.001|1H_Ranged_Shooting
+  - first:
+      74: -7045949896510112789
+    second: Rig.001|Rig.001|2H_Melee_Attack_Chop
+  - first:
+      74: 5097875178255673205
+    second: Rig.001|Rig.001|2H_Melee_Attack_Slice
+  - first:
+      74: -4835685570336769695
+    second: Rig.001|Rig.001|2H_Melee_Attack_Spin
+  - first:
+      74: 7630648429521192981
+    second: Rig.001|Rig.001|2H_Melee_Attack_Spinning
+  - first:
+      74: -7885596466880972194
+    second: Rig.001|Rig.001|2H_Melee_Attack_Stab
+  - first:
+      74: 2254753468916300552
+    second: Rig.001|Rig.001|2H_Melee_Idle
+  - first:
+      74: 3368776575917320377
+    second: Rig.001|Rig.001|2H_Ranged_Aiming
+  - first:
+      74: -5886635091100586303
+    second: Rig.001|Rig.001|2H_Ranged_Reload
+  - first:
+      74: -7931235934892610036
+    second: Rig.001|Rig.001|2H_Ranged_Shoot
+  - first:
+      74: -3964434251002841460
+    second: Rig.001|Rig.001|2H_Ranged_Shooting
+  - first:
+      74: 9048825327085919415
+    second: Rig.001|Rig.001|Block
+  - first:
+      74: 5605211952791312187
+    second: Rig.001|Rig.001|Block_Attack
+  - first:
+      74: -656902947204177586
+    second: Rig.001|Rig.001|Block_Hit
+  - first:
+      74: 421524208840420855
+    second: Rig.001|Rig.001|Blocking
+  - first:
+      74: 5793658489292447643
+    second: Rig.001|Rig.001|Cheer
+  - first:
+      74: 1827480530800938330
+    second: Rig.001|Rig.001|Death_A
+  - first:
+      74: 6381422360583430388
+    second: Rig.001|Rig.001|Death_A_Pose
+  - first:
+      74: -6874403260442088870
+    second: Rig.001|Rig.001|Death_B
+  - first:
+      74: 3738987680806437141
+    second: Rig.001|Rig.001|Death_B_Pose
+  - first:
+      74: 535050215433704462
+    second: Rig.001|Rig.001|Dodge_Backward
+  - first:
+      74: 4630617231603984100
+    second: Rig.001|Rig.001|Dodge_Forward
+  - first:
+      74: 9108487550288843149
+    second: Rig.001|Rig.001|Dodge_Left
+  - first:
+      74: 3649597973610640780
+    second: Rig.001|Rig.001|Dodge_Right
+  - first:
+      74: -4534275035108804790
+    second: Rig.001|Rig.001|Dualwield_Melee_Attack_Chop
+  - first:
+      74: 4211178462412136032
+    second: Rig.001|Rig.001|Dualwield_Melee_Attack_Slice
+  - first:
+      74: 3734179125426711084
+    second: Rig.001|Rig.001|Dualwield_Melee_Attack_Stab
+  - first:
+      74: -7717579645706492294
+    second: Rig.001|Rig.001|Hit_A
+  - first:
+      74: -3695469596879196756
+    second: Rig.001|Rig.001|Hit_B
+  - first:
+      74: -7059768991062667298
+    second: Rig.001|Rig.001|Idle
+  - first:
+      74: 1215218868591277479
+    second: Rig.001|Rig.001|Interact
+  - first:
+      74: -688445290997262473
+    second: Rig.001|Rig.001|Jump_Full_Long
+  - first:
+      74: -8023484745081662794
+    second: Rig.001|Rig.001|Jump_Full_Short
+  - first:
+      74: -7254016606021096855
+    second: Rig.001|Rig.001|Jump_Idle
+  - first:
+      74: -6513164071263621620
+    second: Rig.001|Rig.001|Jump_Land
+  - first:
+      74: 6152351413411871720
+    second: Rig.001|Rig.001|Jump_Start
+  - first:
+      74: 6109470534558426934
+    second: Rig.001|Rig.001|Lie_Down
+  - first:
+      74: 2808309546371088703
+    second: Rig.001|Rig.001|Lie_Idle
+  - first:
+      74: 4560809146236273705
+    second: Rig.001|Rig.001|Lie_Pose
+  - first:
+      74: 5402639901124615304
+    second: Rig.001|Rig.001|Lie_StandUp
+  - first:
+      74: -2078089399454711331
+    second: Rig.001|Rig.001|PickUp
+  - first:
+      74: -7342186375913550343
+    second: Rig.001|Rig.001|Running_A
+  - first:
+      74: 5433679133586838295
+    second: Rig.001|Rig.001|Running_B
+  - first:
+      74: -5277191674042159944
+    second: Rig.001|Rig.001|Running_Strafe_Left
+  - first:
+      74: 7239648119679573598
+    second: Rig.001|Rig.001|Running_Strafe_Right
+  - first:
+      74: -1111747802673868989
+    second: Rig.001|Rig.001|Sit_Chair_Down
+  - first:
+      74: -3924614472620381900
+    second: Rig.001|Rig.001|Sit_Chair_Idle
+  - first:
+      74: -3424123155930605793
+    second: Rig.001|Rig.001|Sit_Chair_Pose
+  - first:
+      74: -9083512354907085762
+    second: Rig.001|Rig.001|Sit_Chair_StandUp
+  - first:
+      74: 6918306120156016786
+    second: Rig.001|Rig.001|Sit_Floor_Down
+  - first:
+      74: -1360483755843921761
+    second: Rig.001|Rig.001|Sit_Floor_Idle
+  - first:
+      74: 4557461980317676822
+    second: Rig.001|Rig.001|Sit_Floor_Pose
+  - first:
+      74: 4716666454570919696
+    second: Rig.001|Rig.001|Sit_Floor_StandUp
+  - first:
+      74: 1150086117147244918
+    second: Rig.001|Rig.001|Spellcast_Long
+  - first:
+      74: -7593799682076251718
+    second: Rig.001|Rig.001|Spellcast_Raise
+  - first:
+      74: 4209551628275886883
+    second: Rig.001|Rig.001|Spellcast_Shoot
+  - first:
+      74: -6101070790967009500
+    second: Rig.001|Rig.001|Spellcasting
+  - first:
+      74: 3613685892464960896
+    second: Rig.001|Rig.001|T-Pose
+  - first:
+      74: 8964719135278294235
+    second: Rig.001|Rig.001|Throw
+  - first:
+      74: -7155329708965275098
+    second: Rig.001|Rig.001|Unarmed_Idle
+  - first:
+      74: -3309482596251172769
+    second: Rig.001|Rig.001|Unarmed_Melee_Attack_Kick
+  - first:
+      74: -6974256985359542421
+    second: Rig.001|Rig.001|Unarmed_Melee_Attack_Punch_A
+  - first:
+      74: 6086134098586376003
+    second: Rig.001|Rig.001|Unarmed_Melee_Attack_Punch_B
+  - first:
+      74: -6842916012090753517
+    second: Rig.001|Rig.001|Unarmed_Pose
+  - first:
+      74: -3300611008893705369
+    second: Rig.001|Rig.001|Use_Item
+  - first:
+      74: -2477493217835674055
+    second: Rig.001|Rig.001|Walking_A
+  - first:
+      74: -5240309872679777353
+    second: Rig.001|Rig.001|Walking_B
+  - first:
+      74: 898650247931922239
+    second: Rig.001|Rig.001|Walking_Backwards
+  - first:
+      74: -6502840245389295907
+    second: Rig.001|Rig.001|Walking_C
+  - first:
+      74: -6933888638055742587
+    second: Rig.001|Rig|1H_Melee_Attack_Chop
+  - first:
+      74: 7153764613717020294
+    second: Rig.001|Rig|1H_Melee_Attack_Chop.001
+  - first:
+      74: 348099773737036885
+    second: Rig.001|Rig|1H_Melee_Attack_Slice_Diagonal
+  - first:
+      74: -2164068314402229224
+    second: Rig.001|Rig|1H_Melee_Attack_Slice_Diagonal.001
+  - first:
+      74: 6392111977502375015
+    second: Rig.001|Rig|1H_Melee_Attack_Slice_Horizontal
+  - first:
+      74: -8759778888562898003
+    second: Rig.001|Rig|1H_Melee_Attack_Slice_Horizontal.001
+  - first:
+      74: 6788856884952323610
+    second: Rig.001|Rig|1H_Melee_Attack_Stab
+  - first:
+      74: 1984593433489377534
+    second: Rig.001|Rig|1H_Melee_Attack_Stab.001
+  - first:
+      74: 8459214784705909158
+    second: Rig.001|Rig|1H_Ranged_Aiming
+  - first:
+      74: -627900708212239603
+    second: Rig.001|Rig|1H_Ranged_Aiming.001
+  - first:
+      74: -4050506022459030545
+    second: Rig.001|Rig|1H_Ranged_Reload
+  - first:
+      74: 3248690863413739361
+    second: Rig.001|Rig|1H_Ranged_Reload.001
+  - first:
+      74: -6812666343213699416
+    second: Rig.001|Rig|1H_Ranged_Shoot
+  - first:
+      74: -5669189644310441782
+    second: Rig.001|Rig|1H_Ranged_Shoot.001
+  - first:
+      74: -3491580521056084982
+    second: Rig.001|Rig|1H_Ranged_Shooting
+  - first:
+      74: -6373421040427051209
+    second: Rig.001|Rig|1H_Ranged_Shooting.001
+  - first:
+      74: 753525117334016276
+    second: Rig.001|Rig|2H_Melee_Attack_Chop
+  - first:
+      74: 1883805373554071750
+    second: Rig.001|Rig|2H_Melee_Attack_Chop.001
+  - first:
+      74: 3960151578707814385
+    second: Rig.001|Rig|2H_Melee_Attack_Slice
+  - first:
+      74: -5042206026293202142
+    second: Rig.001|Rig|2H_Melee_Attack_Slice.001
+  - first:
+      74: 7018696430602270462
+    second: Rig.001|Rig|2H_Melee_Attack_Spin
+  - first:
+      74: 589284621444742194
+    second: Rig.001|Rig|2H_Melee_Attack_Spin.001
+  - first:
+      74: -4181914508232261199
+    second: Rig.001|Rig|2H_Melee_Attack_Spinning
+  - first:
+      74: 5091343187353224536
+    second: Rig.001|Rig|2H_Melee_Attack_Spinning.001
+  - first:
+      74: 8224980431237764681
+    second: Rig.001|Rig|2H_Melee_Attack_Stab
+  - first:
+      74: -2659942038430503443
+    second: Rig.001|Rig|2H_Melee_Attack_Stab.001
+  - first:
+      74: 7448221776047017946
+    second: Rig.001|Rig|2H_Melee_Idle
+  - first:
+      74: -8644076060788708147
+    second: Rig.001|Rig|2H_Melee_Idle.001
+  - first:
+      74: 198820819452297261
+    second: Rig.001|Rig|2H_Ranged_Aiming
+  - first:
+      74: 1176298475692464066
+    second: Rig.001|Rig|2H_Ranged_Aiming.001
+  - first:
+      74: -4912861717007280179
+    second: Rig.001|Rig|2H_Ranged_Reload
+  - first:
+      74: -2664919420621273817
+    second: Rig.001|Rig|2H_Ranged_Reload.001
+  - first:
+      74: 5363412839799798364
+    second: Rig.001|Rig|2H_Ranged_Shoot
+  - first:
+      74: 6321814830998948552
+    second: Rig.001|Rig|2H_Ranged_Shoot.001
+  - first:
+      74: -7839910347677721518
+    second: Rig.001|Rig|2H_Ranged_Shooting
+  - first:
+      74: 3695656236383375777
+    second: Rig.001|Rig|2H_Ranged_Shooting.001
+  - first:
+      74: -7011783508413636856
+    second: Rig.001|Rig|Block
+  - first:
+      74: 5904579968704501002
+    second: Rig.001|Rig|Block.001
+  - first:
+      74: 4215176731890886115
+    second: Rig.001|Rig|Block_Attack
+  - first:
+      74: 6877009753367004537
+    second: Rig.001|Rig|Block_Attack.001
+  - first:
+      74: 5418512355315428682
+    second: Rig.001|Rig|Block_Hit
+  - first:
+      74: -5837314734110865603
+    second: Rig.001|Rig|Block_Hit.001
+  - first:
+      74: -4994674747061393537
+    second: Rig.001|Rig|Blocking
+  - first:
+      74: 7008735348538964556
+    second: Rig.001|Rig|Blocking.001
+  - first:
+      74: -287647979071571352
+    second: Rig.001|Rig|Cheer
+  - first:
+      74: 1443069465525911479
+    second: Rig.001|Rig|Cheer.001
+  - first:
+      74: 8353380201279961224
+    second: Rig.001|Rig|Death_A
+  - first:
+      74: 5911812715246528115
+    second: Rig.001|Rig|Death_A.001
+  - first:
+      74: 8012797799737271138
+    second: Rig.001|Rig|Death_A_Pose
+  - first:
+      74: 2892039395469953784
+    second: Rig.001|Rig|Death_A_Pose.001
+  - first:
+      74: -4173743280994833725
+    second: Rig.001|Rig|Death_B
+  - first:
+      74: -5848940322424360203
+    second: Rig.001|Rig|Death_B.001
+  - first:
+      74: 8085084787180629302
+    second: Rig.001|Rig|Death_B_Pose
+  - first:
+      74: -5745883180992915268
+    second: Rig.001|Rig|Death_B_Pose.001
+  - first:
+      74: 722695914260524068
+    second: Rig.001|Rig|Dodge_Backward
+  - first:
+      74: -6509811999637959839
+    second: Rig.001|Rig|Dodge_Backward.001
+  - first:
+      74: 6580772080327792656
+    second: Rig.001|Rig|Dodge_Forward
+  - first:
+      74: 4804962066003192480
+    second: Rig.001|Rig|Dodge_Forward.001
+  - first:
+      74: -4047353083787119380
+    second: Rig.001|Rig|Dodge_Left
+  - first:
+      74: 6228837424821917960
+    second: Rig.001|Rig|Dodge_Left.001
+  - first:
+      74: 3726891987622383440
+    second: Rig.001|Rig|Dodge_Right
+  - first:
+      74: 17014945351539496
+    second: Rig.001|Rig|Dodge_Right.001
+  - first:
+      74: 1866691256126906949
+    second: Rig.001|Rig|Dualwield_Melee_Attack_Chop
+  - first:
+      74: -8601204325356496587
+    second: Rig.001|Rig|Dualwield_Melee_Attack_Chop.001
+  - first:
+      74: 6605871621940257963
+    second: Rig.001|Rig|Dualwield_Melee_Attack_Slice
+  - first:
+      74: -429685019233178613
+    second: Rig.001|Rig|Dualwield_Melee_Attack_Slice.001
+  - first:
+      74: 7522156120778575579
+    second: Rig.001|Rig|Dualwield_Melee_Attack_Stab
+  - first:
+      74: 6240423429214981035
+    second: Rig.001|Rig|Dualwield_Melee_Attack_Stab.001
+  - first:
+      74: -285964055625433392
+    second: Rig.001|Rig|Hit_A
+  - first:
+      74: -207841198626194150
+    second: Rig.001|Rig|Hit_A.001
+  - first:
+      74: -5205308922385180673
+    second: Rig.001|Rig|Hit_B
+  - first:
+      74: 735070960118894954
+    second: Rig.001|Rig|Hit_B.001
+  - first:
+      74: -8056058155662753472
+    second: Rig.001|Rig|Idle
+  - first:
+      74: 5346502277273335807
+    second: Rig.001|Rig|Idle.001
+  - first:
+      74: -8372382888889286286
+    second: Rig.001|Rig|Interact
+  - first:
+      74: 6649912519886537344
+    second: Rig.001|Rig|Interact.001
+  - first:
+      74: -8756217349665364574
+    second: Rig.001|Rig|Jump_Full_Long
+  - first:
+      74: 2739975358946913780
+    second: Rig.001|Rig|Jump_Full_Long.001
+  - first:
+      74: 4987392009892200392
+    second: Rig.001|Rig|Jump_Full_Short
+  - first:
+      74: 7858255325091605568
+    second: Rig.001|Rig|Jump_Full_Short.001
+  - first:
+      74: 3839857464801988022
+    second: Rig.001|Rig|Jump_Idle
+  - first:
+      74: -5594936242976868839
+    second: Rig.001|Rig|Jump_Idle.001
+  - first:
+      74: 1741949779148815968
+    second: Rig.001|Rig|Jump_Land
+  - first:
+      74: -913578626892465398
+    second: Rig.001|Rig|Jump_Land.001
+  - first:
+      74: -3151578223372268945
+    second: Rig.001|Rig|Jump_Start
+  - first:
+      74: 1545661760087215900
+    second: Rig.001|Rig|Jump_Start.001
+  - first:
+      74: -1091047991486602986
+    second: Rig.001|Rig|Lie_Down
+  - first:
+      74: 974250386616160792
+    second: Rig.001|Rig|Lie_Down.001
+  - first:
+      74: -771663066522269278
+    second: Rig.001|Rig|Lie_Idle
+  - first:
+      74: -2433500800135277555
+    second: Rig.001|Rig|Lie_Idle.001
+  - first:
+      74: 1255437863402843715
+    second: Rig.001|Rig|Lie_Pose
+  - first:
+      74: 8630594464444957206
+    second: Rig.001|Rig|Lie_Pose.001
+  - first:
+      74: 5406543819787548078
+    second: Rig.001|Rig|Lie_StandUp
+  - first:
+      74: 1681251348845417817
+    second: Rig.001|Rig|Lie_StandUp.001
+  - first:
+      74: -6696940358621522783
+    second: Rig.001|Rig|PickUp
+  - first:
+      74: -4349127060803742065
+    second: Rig.001|Rig|PickUp.001
+  - first:
+      74: 2832900516388232982
+    second: Rig.001|Rig|Running_A
+  - first:
+      74: -6974064099197309937
+    second: Rig.001|Rig|Running_A.001
+  - first:
+      74: -8893055608647690335
+    second: Rig.001|Rig|Running_B
+  - first:
+      74: 4032065930735610181
+    second: Rig.001|Rig|Running_B.001
+  - first:
+      74: -4115569480656444304
+    second: Rig.001|Rig|Running_Strafe_Left
+  - first:
+      74: -3736207756776124105
+    second: Rig.001|Rig|Running_Strafe_Left.001
+  - first:
+      74: 5592819330040724867
+    second: Rig.001|Rig|Running_Strafe_Right
+  - first:
+      74: 5907470899290920939
+    second: Rig.001|Rig|Running_Strafe_Right.001
+  - first:
+      74: 726302051526718336
+    second: Rig.001|Rig|Sit_Chair_Down
+  - first:
+      74: 1097492370008125175
+    second: Rig.001|Rig|Sit_Chair_Down.001
+  - first:
+      74: -936398550960567051
+    second: Rig.001|Rig|Sit_Chair_Idle
+  - first:
+      74: 2577078991581845425
+    second: Rig.001|Rig|Sit_Chair_Idle.001
+  - first:
+      74: -1537360311308923162
+    second: Rig.001|Rig|Sit_Chair_Pose
+  - first:
+      74: -2080953213139402803
+    second: Rig.001|Rig|Sit_Chair_Pose.001
+  - first:
+      74: 3096202713439368285
+    second: Rig.001|Rig|Sit_Chair_StandUp
+  - first:
+      74: 3362748931660965956
+    second: Rig.001|Rig|Sit_Chair_StandUp.001
+  - first:
+      74: 8258006704629460521
+    second: Rig.001|Rig|Sit_Floor_Down
+  - first:
+      74: -9131372577727426044
+    second: Rig.001|Rig|Sit_Floor_Down.001
+  - first:
+      74: 7623084786903430145
+    second: Rig.001|Rig|Sit_Floor_Idle
+  - first:
+      74: -5997386107293227516
+    second: Rig.001|Rig|Sit_Floor_Idle.001
+  - first:
+      74: -2197293736327956798
+    second: Rig.001|Rig|Sit_Floor_Pose
+  - first:
+      74: -2157834771128523303
+    second: Rig.001|Rig|Sit_Floor_Pose.001
+  - first:
+      74: -4743043608886888436
+    second: Rig.001|Rig|Sit_Floor_StandUp
+  - first:
+      74: 5843940967548705687
+    second: Rig.001|Rig|Sit_Floor_StandUp.001
+  - first:
+      74: 4425382091889945002
+    second: Rig.001|Rig|Spellcast_Long
+  - first:
+      74: 3471654011255997112
+    second: Rig.001|Rig|Spellcast_Long.001
+  - first:
+      74: -3509052873540632596
+    second: Rig.001|Rig|Spellcast_Raise
+  - first:
+      74: -3090263385745307482
+    second: Rig.001|Rig|Spellcast_Raise.001
+  - first:
+      74: 5618273023130322202
+    second: Rig.001|Rig|Spellcast_Shoot
+  - first:
+      74: 7898076614711689393
+    second: Rig.001|Rig|Spellcast_Shoot.001
+  - first:
+      74: 408643050812654247
+    second: Rig.001|Rig|Spellcasting
+  - first:
+      74: -1047754898663531491
+    second: Rig.001|Rig|Spellcasting.001
+  - first:
+      74: -3162292950314218691
+    second: Rig.001|Rig|T-Pose
+  - first:
+      74: -1060464539065491373
+    second: Rig.001|Rig|T-Pose.001
+  - first:
+      74: -4026620246604415952
+    second: Rig.001|Rig|Throw
+  - first:
+      74: -1887725854939918159
+    second: Rig.001|Rig|Throw.001
+  - first:
+      74: -2763736051133903549
+    second: Rig.001|Rig|Unarmed_Idle
+  - first:
+      74: 3611845808328723893
+    second: Rig.001|Rig|Unarmed_Idle.001
+  - first:
+      74: 7892691211068433276
+    second: Rig.001|Rig|Unarmed_Melee_Attack_Kick
+  - first:
+      74: 416617388994204324
+    second: Rig.001|Rig|Unarmed_Melee_Attack_Kick.001
+  - first:
+      74: -6491217859212517083
+    second: Rig.001|Rig|Unarmed_Melee_Attack_Punch_A
+  - first:
+      74: -1414566910576743638
+    second: Rig.001|Rig|Unarmed_Melee_Attack_Punch_A.001
+  - first:
+      74: -8873830701125235942
+    second: Rig.001|Rig|Unarmed_Melee_Attack_Punch_B
+  - first:
+      74: 9196377334261472868
+    second: Rig.001|Rig|Unarmed_Melee_Attack_Punch_B.001
+  - first:
+      74: 9046044847572593984
+    second: Rig.001|Rig|Unarmed_Pose
+  - first:
+      74: 2693744548803338446
+    second: Rig.001|Rig|Unarmed_Pose.001
+  - first:
+      74: 7011786216180980625
+    second: Rig.001|Rig|Use_Item
+  - first:
+      74: 8167562563511517921
+    second: Rig.001|Rig|Use_Item.001
+  - first:
+      74: 3876223851469808544
+    second: Rig.001|Rig|Walking_A
+  - first:
+      74: 3755839745343285279
+    second: Rig.001|Rig|Walking_A.001
+  - first:
+      74: -2591121941804237363
+    second: Rig.001|Rig|Walking_B
+  - first:
+      74: -5459622502939081198
+    second: Rig.001|Rig|Walking_B.001
+  - first:
+      74: -2096771856648293437
+    second: Rig.001|Rig|Walking_Backwards
+  - first:
+      74: -8635919423580458979
+    second: Rig.001|Rig|Walking_Backwards.001
+  - first:
+      74: -8286835167665570014
+    second: Rig.001|Rig|Walking_C
+  - first:
+      74: -3978804095047242451
+    second: Rig.001|Rig|Walking_C.001
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -18,1189 +702,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Rig.001|Rig.001|1H_Melee_Attack_Chop' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|1H_Melee_Attack_Slice_Diagonal'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|1H_Melee_Attack_Slice_Horizontal' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|1H_Melee_Attack_Stab'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|1H_Ranged_Aiming'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|1H_Ranged_Reload'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|1H_Ranged_Shoot'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|1H_Ranged_Shooting'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|2H_Melee_Attack_Chop'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|2H_Melee_Attack_Slice'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|2H_Melee_Attack_Spin' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|2H_Melee_Attack_Spinning'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|2H_Melee_Attack_Stab'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|2H_Ranged_Aiming'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig.001|2H_Ranged_Reload' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|2H_Ranged_Shoot'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|2H_Ranged_Shooting' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Block'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig.001|Block_Attack' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Block_Hit' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Cheer'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Death_A' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Death_B'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Dodge_Backward'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Dodge_Forward' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'hips' has translation
-      animation that will be discarded.\n\t'hips' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'spine' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Dodge_Left' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'hips' has translation
-      animation that will be discarded.\n\t'hips' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'spine' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Dodge_Right'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Dualwield_Melee_Attack_Chop'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|Dualwield_Melee_Attack_Slice' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Dualwield_Melee_Attack_Stab'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Hit_A' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig.001|Hit_B' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Interact'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Jump_Full_Long'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|Jump_Full_Short' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'hips' has translation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|Jump_Idle' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|Jump_Land' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|Jump_Start' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|Lie_Down' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|Lie_Idle' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'spine' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Lie_StandUp'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|PickUp' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Running_A' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|Running_B' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\t'upperarm.r' has translation animation
-      that will be discarded.\n\t'upperleg.l' has translation animation that will
-      be discarded.\n\t'upperleg.r' has translation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|Running_Strafe_Left' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|Running_Strafe_Right' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|Sit_Chair_Down' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Sit_Chair_Idle'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|Sit_Chair_StandUp' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Sit_Floor_Down'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|Sit_Floor_Idle' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Sit_Floor_StandUp'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|Spellcast_Long' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Spellcast_Raise'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Spellcast_Shoot'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Spellcasting'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Throw'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|Unarmed_Idle' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig.001|Unarmed_Melee_Attack_Kick' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig.001|Unarmed_Melee_Attack_Punch_A'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Unarmed_Melee_Attack_Punch_B'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig.001|Use_Item' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Walking_A'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig.001|Walking_B' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig.001|Walking_Backwards' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'upperleg.l' has translation animation that will
-      be discarded.\n\t'upperleg.r' has translation animation that will be discarded.\n\nClip
-      'Rig.001|Rig.001|Walking_C' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Melee_Attack_Chop'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|1H_Melee_Attack_Chop.001' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|1H_Melee_Attack_Slice_Diagonal' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Melee_Attack_Slice_Diagonal.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|1H_Melee_Attack_Slice_Horizontal' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Melee_Attack_Slice_Horizontal.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|1H_Melee_Attack_Stab' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Melee_Attack_Stab.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Ranged_Aiming' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'hips' has translation
-      animation that will be discarded.\n\t'hips' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'spine' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Ranged_Aiming.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Ranged_Reload' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'hips' has translation
-      animation that will be discarded.\n\t'hips' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'spine' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Ranged_Reload.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Ranged_Shoot'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Ranged_Shoot.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Ranged_Shooting'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|1H_Ranged_Shooting.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Melee_Attack_Chop'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Melee_Attack_Chop.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Melee_Attack_Slice'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|2H_Melee_Attack_Slice.001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Melee_Attack_Spin'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Melee_Attack_Spin.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Melee_Attack_Spinning'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Melee_Attack_Spinning.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Melee_Attack_Stab'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Melee_Attack_Stab.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Ranged_Aiming'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|2H_Ranged_Aiming.001' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|2H_Ranged_Reload' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Ranged_Reload.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|2H_Ranged_Shoot' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|2H_Ranged_Shoot.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|2H_Ranged_Shooting' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|2H_Ranged_Shooting.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Block'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Block.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Block_Attack' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'spine' is inbetween humanoid transforms and has rotation
-      animation that will be discarded.\n\t'upperarm.l' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Block_Attack.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Block_Hit' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Block_Hit.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Cheer'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Cheer.001' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Death_A' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Death_A.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Death_B'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Death_B.001' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Dodge_Backward' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'hips' has translation
-      animation that will be discarded.\n\t'spine' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Dodge_Backward.001' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Dodge_Forward' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Dodge_Forward.001' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'hips' has translation
-      animation that will be discarded.\n\t'hips' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'spine' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Dodge_Left' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Dodge_Left.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Dodge_Right'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Dodge_Right.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Dualwield_Melee_Attack_Chop'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Dualwield_Melee_Attack_Chop.001' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Dualwield_Melee_Attack_Slice' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Dualwield_Melee_Attack_Slice.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Dualwield_Melee_Attack_Stab' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\t'upperarm.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Dualwield_Melee_Attack_Stab.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Hit_A' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Hit_A.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Hit_B' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Hit_B.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Interact' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'hips' has translation
-      animation that will be discarded.\n\t'hips' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'spine' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Interact.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Jump_Full_Long'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Jump_Full_Long.001' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Jump_Full_Short' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Jump_Full_Short.001' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'hips' has translation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Jump_Idle' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Jump_Idle.001' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Jump_Land' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Jump_Land.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Jump_Start'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Jump_Start.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Lie_Down'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Lie_Down.001' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\t'upperarm.r' has translation animation
-      that will be discarded.\n\t'upperleg.l' has translation animation that will
-      be discarded.\n\t'upperleg.r' has translation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Lie_Idle' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Lie_Idle.001' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Lie_StandUp' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Lie_StandUp.001' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\t'upperarm.r' has translation animation
-      that will be discarded.\n\t'upperleg.l' has translation animation that will
-      be discarded.\n\t'upperleg.r' has translation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|PickUp' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|PickUp.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Running_A'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Running_A.001' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\t'upperarm.r' has translation animation
-      that will be discarded.\n\t'upperleg.l' has translation animation that will
-      be discarded.\n\t'upperleg.r' has translation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Running_B' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Running_B.001' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\t'upperarm.r' has translation animation
-      that will be discarded.\n\t'upperleg.l' has translation animation that will
-      be discarded.\n\t'upperleg.r' has translation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Running_Strafe_Left' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Running_Strafe_Left.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Running_Strafe_Right' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Running_Strafe_Right.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Sit_Chair_Down' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Sit_Chair_Down.001' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Sit_Chair_Idle' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'spine' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Sit_Chair_Idle.001' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'spine' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Sit_Chair_StandUp' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Sit_Chair_StandUp.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Sit_Floor_Down'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Sit_Floor_Down.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Sit_Floor_Idle' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'spine' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Sit_Floor_Idle.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Sit_Floor_StandUp' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Sit_Floor_StandUp.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Spellcast_Long' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Spellcast_Long.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Spellcast_Raise' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'hips'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'spine'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Spellcast_Raise.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Spellcast_Shoot' has
-      import animation warnings that might lower retargeting quality:\nNote: Activate
-      translation DOF on avatar to improve retargeting quality.\n\t'hips' has translation
-      animation that will be discarded.\n\t'hips' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Spellcast_Shoot.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Spellcasting'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Spellcasting.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Throw'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperarm.r' has translation
-      animation that will be discarded.\n\t'upperleg.l' has translation animation
-      that will be discarded.\n\t'upperleg.r' has translation animation that will
-      be discarded.\n\nClip 'Rig.001|Rig|Throw.001' has import animation warnings
-      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'hips' has translation animation that will
-      be discarded.\n\t'hips' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperarm.l' has translation
-      animation that will be discarded.\n\t'upperarm.r' has translation animation
-      that will be discarded.\n\t'upperleg.l' has translation animation that will
-      be discarded.\n\t'upperleg.r' has translation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Unarmed_Idle' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Unarmed_Idle.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Unarmed_Melee_Attack_Kick'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Unarmed_Melee_Attack_Kick.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.l'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Unarmed_Melee_Attack_Punch_A'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Unarmed_Melee_Attack_Punch_A.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\nClip 'Rig.001|Rig|Unarmed_Melee_Attack_Punch_B'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Unarmed_Melee_Attack_Punch_B.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'spine' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upperarm.r'
-      has translation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Use_Item' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'hips' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Use_Item.001'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'hips' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Rig.001|Rig|Walking_A'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'hips'
-      has translation animation that will be discarded.\n\t'spine' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Walking_A.001' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Walking_B' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Walking_B.001' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'spine' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'upperleg.l' has translation
-      animation that will be discarded.\n\t'upperleg.r' has translation animation
-      that will be discarded.\n\nClip 'Rig.001|Rig|Walking_Backwards' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'upperleg.l' has translation animation that will
-      be discarded.\n\t'upperleg.r' has translation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Walking_Backwards.001' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'hips' has translation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n\nClip 'Rig.001|Rig|Walking_C' has import
-      animation warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'hips' has translation animation
-      that will be discarded.\n\t'upperleg.l' has translation animation that will
-      be discarded.\n\t'upperleg.r' has translation animation that will be discarded.\n\nClip
-      'Rig.001|Rig|Walking_C.001' has import animation warnings that might lower
-      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
-      quality.\n\t'hips' has translation animation that will be discarded.\n\t'upperleg.l'
-      has translation animation that will be discarded.\n\t'upperleg.r' has translation
-      animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -1608,7 +1110,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
