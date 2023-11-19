@@ -58,15 +58,20 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BuildModeInput()
     {
-        buildMode=!buildMode;
+        buildMode = !buildMode;
 
         if (buildMode)
         {
             cursorLocked = false;
+            cursorInputForLook = false;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
+
             cursorLocked = true;
+            cursorInputForLook = true;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
     }

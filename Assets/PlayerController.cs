@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
+using Cinemachine;
 using UnityEngine.InputSystem;
+using UnityEngine.Animations.Rigging;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
 
     public Transform collectPoint;
+
+    [SerializeField] Rig aimRig;
 
 
     public float moveSpeed = 2.0f;
@@ -49,7 +53,7 @@ public class PlayerController : MonoBehaviour
     private int animIDFreeFall;
     private int animIDMotionSpeed;
 
-    private Animator animator;
+    [SerializeField] private Animator animator;
     private CharacterController characterController;
     [SerializeField] PlayerInputHandler playerInput;
     [SerializeField] private GameObject mainCamera;
@@ -57,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private const float threshold = 0.01f;
 
-    private bool hasAnimator;
+    private bool hasAnimator = true;
 
 
     private Vector2 movement;
@@ -68,6 +72,18 @@ public class PlayerController : MonoBehaviour
     Transform[] hitWeapons;
 
     Transform _weapon;
+
+
+
+    [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
+    [SerializeField] private float normalSensitivity;
+    [SerializeField] private float aimSensitivity;
+    [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
+    [SerializeField] private Transform debugTransform;
+    [SerializeField] private Transform pfBulletProjectile;
+    [SerializeField] private Transform spawnBulletPosition;
+    [SerializeField] private Transform vfxHitGreen;
+    [SerializeField] private Transform vfxHitRed;
 
 
     private void Awake()
@@ -85,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        hasAnimator = TryGetComponent(out animator);
+
         characterController = GetComponent<CharacterController>();
 
         AssignAnimationIDs();
@@ -94,16 +110,86 @@ public class PlayerController : MonoBehaviour
         fallTimeoutDelta = fallTimeout;
     }
 
+
+    private void ShooterController()
+    {
+        Vector3 mouseWorldPosition = Vector3.zero;
+
+        Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
+
+        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+
+        Transform hitTransform = null;
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
+        {
+            debugTransform.position = raycastHit.point;
+            mouseWorldPosition = raycastHit.point;
+            hitTransform = raycastHit.transform;
+        }
+
+        if (playerInput.aim)
+        {
+            aimVirtualCamera.gameObject.SetActive(true);
+            SetSensitivity(aimSensitivity);
+            SetRotateOnMove(false);
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0.5f, Time.deltaTime * 13f));
+
+            aimRig.weight = Mathf.Lerp(aimRig.weight, 1f, Time.deltaTime * 13f);
+            Vector3 worldAimTarget = mouseWorldPosition;
+            worldAimTarget.y = transform.position.y;
+            Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+
+            transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+        }
+
+        else
+        {
+            aimVirtualCamera.gameObject.SetActive(false);
+            SetSensitivity(normalSensitivity);
+            SetRotateOnMove(true);
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 13f));
+            aimRig.weight = Mathf.Lerp(aimRig.weight, 0f, Time.deltaTime * 13f);
+        }
+
+
+        if (playerInput.shoot)
+        {
+            /*
+            // Hit Scan Shoot
+            if (hitTransform != null) {
+                // Hit something
+                if (hitTransform.GetComponent<BulletTarget>() != null) {
+                    // Hit target
+                    Instantiate(vfxHitGreen, mouseWorldPosition, Quaternion.identity);
+                } else {
+                    // Hit something else
+                    Instantiate(vfxHitRed, mouseWorldPosition, Quaternion.identity);
+                }
+            }
+            //*/
+            //*
+            // Projectile Shoot
+            Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            //*/
+            playerInput.shoot = false;
+        }
+
+    }
+
+
     private void Update()
     {
-        hasAnimator = TryGetComponent(out animator);
+
 
         JumpAndGravity();
         GroundedCheck();
+        ShooterController();
         Move();
 
 
     }
+   
 
     private void LateUpdate()
     {
