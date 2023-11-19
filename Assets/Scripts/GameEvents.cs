@@ -23,6 +23,9 @@ public class GameEvents : MonoBehaviour
 
     public delegate void OnResourceUsedDelegate(BuildResources buildResources);
 
+        public delegate void OnOutOfResourcesDelegate();
+
+
     public delegate void OnBuildMenuClosedDelegate();
 
     // public delegate void ControlBuildings();
@@ -34,6 +37,8 @@ public class GameEvents : MonoBehaviour
     public OnNewBuildingSelectedDelegate OnNewBuildingSelected;
 
     public OnResourceUsedDelegate OnResourceUsed;
+
+    public OnOutOfResourcesDelegate OnOutOfResources;
 
     public OnToolTipActivatedDelegate OnToolTipActivated;
     
