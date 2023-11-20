@@ -17,7 +17,7 @@ public class BuildingGhost : MonoBehaviour
 
     Vector3 targetPosition;
 
-    Material[] defaultMaterials;
+    List<Material[]> defaultMaterialsList = new List<Material[]>();
     Material[] _cantBuildMaterials;
 
     private void Start()
@@ -120,12 +120,21 @@ public class BuildingGhost : MonoBehaviour
 
         if (canBuild)
         {
-            _visual.GetComponent<BuildMaterial>().meshRenderer.materials = defaultMaterials;
+            BuildMaterial buildMaterials = _visual.GetComponent<BuildMaterial>();
+
+
+            for (int i = 0; i < buildMaterials.meshRenderers.Length; i++)
+            {
+                buildMaterials.meshRenderers[i].materials = defaultMaterialsList[i];
+            }
         }
-        
+
         else
         {
-            _visual.GetComponent<BuildMaterial>().meshRenderer.materials = _cantBuildMaterials;
+            foreach (MeshRenderer _visualMeshrenderer in _visual.GetComponent<BuildMaterial>().meshRenderers)
+            {
+                _visualMeshrenderer.materials = _cantBuildMaterials;
+            }
         }
 
     }
@@ -160,9 +169,14 @@ public class BuildingGhost : MonoBehaviour
         {
             Transform _newVisual = InstantiateVisual(placedObjectTypeSO);
 
-            defaultMaterials = _newVisual.GetComponent<BuildMaterial>().meshRenderer.materials;
+            BuildMaterial buildMaterials = _newVisual.GetComponent<BuildMaterial>();
 
-            _cantBuildMaterials = new Material[defaultMaterials.Length];
+            foreach (MeshRenderer _visualMeshrenderer in buildMaterials.meshRenderers)
+            {
+                defaultMaterialsList.Add(_visualMeshrenderer.materials);
+            }
+
+            _cantBuildMaterials = new Material[6];
 
             for (int i = 0; i < _cantBuildMaterials.Length; i++)
             {
@@ -215,7 +229,12 @@ public class BuildingGhost : MonoBehaviour
 
             bool canBuildCondition = (gridObject.CanBuild() == 0) || (gridObject.CanBuild() == 1 && placedObjectTypeSO.isUnderground) || (gridObject.CanBuild() == 2 && !placedObjectTypeSO.isUnderground);
 
-            visual.GetComponent<BuildMaterial>().meshRenderer.materials = canBuildCondition ? defaultMaterials : _cantBuildMaterials;
+            BuildMaterial buildMaterials = visual.GetComponent<BuildMaterial>();
+
+            for(int i = 0; i < buildMaterials.meshRenderers.Length; i++)
+            {
+                buildMaterials.meshRenderers[i].materials = canBuildCondition ? defaultMaterialsList[i] : _cantBuildMaterials;
+            }
 
             visuals.Add(visual.transform);
         }

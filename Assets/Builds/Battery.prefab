@@ -191,10 +191,23 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7065823160164794627, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
+      propertyPath: meshRenderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065823160164794627, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
+      propertyPath: meshRenderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 5048886800150181724}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
 --- !u!4 &7584083928372891694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5335981307944893658, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
+  m_PrefabInstance: {fileID: 2543727421791120628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5048886800150181724 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7303744957592607656, guid: 6adee64fb14c54741a9658ed4eca121f, type: 3}
   m_PrefabInstance: {fileID: 2543727421791120628}
   m_PrefabAsset: {fileID: 0}

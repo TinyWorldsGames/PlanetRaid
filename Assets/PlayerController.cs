@@ -2,6 +2,8 @@
 using Cinemachine;
 using UnityEngine.InputSystem;
 using UnityEngine.Animations.Rigging;
+using TMPro;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -86,6 +88,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform spawnBulletPosition;
     [SerializeField] private Transform vfxHitGreen;
     [SerializeField] private Transform vfxHitRed;
+
+    [SerializeField]
+    TMP_Text objectNameText;
 
 
     private void Awake()
@@ -172,23 +177,51 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void ShowObjectName()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 999f))
+        {
+            if (hit.transform.TryGetComponent(out IInteractable interactable))
+            {
+                objectNameText.text = interactable.ShowName();
+            }
+            else
+            {
+                objectNameText.text = "";
+            }
+        }
+    }
+
 
     private void Update()
     {
 
 
         JumpAndGravity();
+        
         GroundedCheck();
+
         if (!playerInput.buildMode)
         {
             ShooterController();
-
-
         }
+
+
         Move();
 
 
     }
+
+   void FixedUpdate()
+    {
+        ShowObjectName();
+    }
+
+
 
 
     private void LateUpdate()

@@ -65,13 +65,7 @@ public class GameEvents : MonoBehaviour
         Instance = this;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            OnResourceChanged?.Invoke(Enums.ResourceTypes.Iron, 1);
-        }
-    }
+   
 
 
 

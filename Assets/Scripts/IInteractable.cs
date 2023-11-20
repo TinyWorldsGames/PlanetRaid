@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildMaterial : MonoBehaviour
+public interface IInteractable 
 {
-   public MeshRenderer[] meshRenderers;
+    
+    string ShowName();
+   
+
 }

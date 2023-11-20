@@ -23,16 +23,16 @@ public class BulletProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.GetComponent<BulletTarget>() != null)
+        if (other.gameObject.GetComponent<IEnemy>() is IEnemy enemy && enemy != null)
         {
-            // Hit target
-            Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
+            enemy.TakeDamage(25);
+
+            Instantiate(vfxHitRed, transform.position, Quaternion.identity);
         }
         else
         {
-            // Hit something else
-            Debug.Log("Name " + other.gameObject.name + other.gameObject.layer);
-            Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+          
+            Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
     }

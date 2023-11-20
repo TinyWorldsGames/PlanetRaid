@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
    public BuildResources buildResources;
 
    public int batteryCount;
+   public int oxygenGeneratorCount;
+
+   public int solarPanelCount;
+   public int farmCount;
 
 
    [SerializeField]
