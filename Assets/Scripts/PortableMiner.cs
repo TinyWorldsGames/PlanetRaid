@@ -18,6 +18,25 @@ public class PortableMiner : MonoBehaviour
 
     bool _isWorking;
 
-    
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Mine")
+        {
+
+
+            if (other.GetComponent<MineSource>().resourceType != resourceType)
+            {
+                resourceType = other.GetComponent<MineSource>().resourceType;
+            }
+
+            GameManager.Instance.AddMiner(resourceType);
+
+            TaskController.Instance.TaskControl1(resourceType);
+            
+
+
+        }
+    }
+
+
 }

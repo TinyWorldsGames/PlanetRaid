@@ -58,6 +58,36 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3.5
   m_Center: {x: 0, y: 0.68, z: 0}
+--- !u!1 &5188950314727177390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3564136584273696060}
+  m_Layer: 0
+  m_Name: Hit Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3564136584273696060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5188950314727177390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.201, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8871340497883797626}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5326573678811705661
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +418,7 @@ Transform:
   - {fileID: 8871474206898859446}
   - {fileID: 4328892244551776658}
   - {fileID: 5326573678811705634}
+  - {fileID: 3564136584273696060}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -427,7 +458,7 @@ MonoBehaviour:
   attackDamage: 10
   targetPoints: []
   _targetEnemy: {fileID: 0}
-  hitPoint: {fileID: 0}
+  hitPoint: {fileID: 3564136584273696060}
   agent: {fileID: 535074627419444752}
   animator: {fileID: 8809355604851647076}
   playerBase: {fileID: 0}
@@ -1426,7 +1457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8864157911192299818
 Transform:
   m_ObjectHideFlags: 0

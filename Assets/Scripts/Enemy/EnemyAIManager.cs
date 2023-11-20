@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using DG.Tweening;
 
 
-public class EnemyAIManager : MonoBehaviour
+public class EnemyAIManager : MonoBehaviour, IEnemy
 {
     [SerializeField]
     int attackDamage;
@@ -193,18 +194,28 @@ public class EnemyAIManager : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
 
+        transform.DOShakePosition(0.25f, 0.5f, 10, 90f, false, true);
 
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
 
+    public void Die()
+    {
+        animator.SetBool("isDie", true);
 
+        animator.SetBool("isAttack", false);
+        agent.isStopped = true;
 
+        agent.enabled = false;
 
-
-
-
-
-
-
-
+        Destroy(gameObject, 2.5f);
+    }
 
 }
