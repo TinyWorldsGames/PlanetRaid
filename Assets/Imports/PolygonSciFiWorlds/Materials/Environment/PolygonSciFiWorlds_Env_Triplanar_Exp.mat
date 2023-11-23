@@ -301,7 +301,7 @@ Material:
     - _EmissiveColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissiveColor1: {r: 1, g: 1, b: 1, a: 0}
     - _GroundColour: {r: 1, g: 1, b: 1, a: 0}
-    - _Ground_Colour: {r: 0.6392157, g: 0.0627451, b: 0.2901961, a: 1}
+    - _Ground_Colour: {r: 0.7803922, g: 0.3137255, b: 0.3137255, a: 1}
     - _Ground_Detail_Colour: {r: 0.09233382, g: 0.052335635, b: 0.16176468, a: 0}
     - _RimColor: {r: 0.2555147, g: 1, b: 0.9269017, a: 0}
     - _RimColor1: {r: 0.1614143, g: 0.1380298, b: 0.8161765, a: 0}

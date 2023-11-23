@@ -67,7 +67,7 @@ Material:
     - _Distance: 2387.3
     - _Distance1: 144.7
     - _DstBlend: 0
-    - _Falloff: 1.2
+    - _Falloff: 0.001
     - _Falloff1: 0.6
     - _GlossMapScale: 1
     - _Glossiness: 0.5
