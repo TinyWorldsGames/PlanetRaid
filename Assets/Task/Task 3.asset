@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e6ec3ed9b6e380248ba7a82c52433baf, type: 3}
   m_Name: Task 3
   m_EditorClassIdentifier: Assembly-CSharp::Task
-  taskName: "S\u0131raSavunmada"
-  taskDescription: "Merkezi dalga dalga gelen d\xFC\u015Fmanlardan savun. Koloni
-    i\xE7in \xFCss\xFCn\xFC geli\u015Ftir. Etraf\u0131 ke\u015Ffe \xE7\u0131k, Hedef
-    almak i\xE7in Sa\u011F t\u0131k "
+  taskName: Savunma
+  taskDescription: "Merkezini d\xFC\u015Fmanlardan savun, kolonin i\xE7in ya\u015Fanabilir
+    bir yer haline getir, Hedef almak i\xE7in sa\u011F t\u0131k kullan."
   isCompleted: 0

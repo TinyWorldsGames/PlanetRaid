@@ -209,44 +209,14 @@ public class GridBuildingSystem3D : MonoBehaviour
 
         if (!inventory.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                placedObjectTypeSO = placedObjectTypeSOList[0];
-                GameEvents.Instance.OnBuildMenuClosed?.Invoke();
-                RefreshSelectedObjectType();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                placedObjectTypeSO = placedObjectTypeSOList[1]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
-                RefreshSelectedObjectType();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                placedObjectTypeSO = placedObjectTypeSOList[2]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
-                RefreshSelectedObjectType();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                placedObjectTypeSO = placedObjectTypeSOList[3]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
-                RefreshSelectedObjectType();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha5))
-            {
-                placedObjectTypeSO = placedObjectTypeSOList[4]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
-                RefreshSelectedObjectType();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha6))
-            {
-                placedObjectTypeSO = placedObjectTypeSOList[5]; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
-                RefreshSelectedObjectType();
-            }
+           
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 placedObjectTypeSO = null; GameEvents.Instance.OnBuildMenuClosed?.Invoke();
                 RefreshSelectedObjectType();
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha0)) { DeselectObjectType(); }
+           
         }
 
 

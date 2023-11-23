@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -59,6 +59,11 @@ public class GameManager : MonoBehaviour
       StartCoroutine(ResourceRoutine());
 
 
+   }
+
+   public void OpenMenu()
+   {
+      SceneManager.LoadScene(0);
    }
 
    public void AddMiner(Enums.ResourceTypes resourceType)

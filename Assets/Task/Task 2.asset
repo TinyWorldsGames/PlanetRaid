@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e6ec3ed9b6e380248ba7a82c52433baf, type: 3}
   m_Name: Task 2
   m_EditorClassIdentifier: Assembly-CSharp::Task
-  taskName: "Enerji \xDCretimi"
-  taskDescription: "Yapt\u0131\u011F\u0131n her yap\u0131 ve silahlar\u0131n enerji
-    t\xFCketiyor. Depolama kapasitemiz i\xE7in bir batarya kurmal\u0131s\u0131n"
+  taskName: "Aman bo\u015Fa gitmesin"
+  taskDescription: "Binalar ve silahlar enerji t\xFCketir. Depolama kapasiteni y\xFCksek
+    tutmal\u0131s\u0131n.Bir adet batarya kur"
   isCompleted: 0
