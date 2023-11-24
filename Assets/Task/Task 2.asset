@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ec3ed9b6e380248ba7a82c52433baf, type: 3}
   m_Name: Task 2
   m_EditorClassIdentifier: Assembly-CSharp::Task
-  taskName: "Aman bo\u015Fa gitmesin"
-  taskDescription: "Binalar ve silahlar enerji t\xFCketir. Depolama kapasiteni y\xFCksek
-    tutmal\u0131s\u0131n.Bir adet batarya kur"
+  taskName: "\u015Eimdi Otomasyon Zaman\u0131"
+  taskDescription: "Maden kaynaklar\u0131n\u0131 bulmu\u015F g\xF6r\xFCn\xFCyorsun.
+    Ta\u015F\u0131nabilir sondaj makinalar\u0131 ile bu i\u015Fi otomatikle\u015Ftirelim.
+    \u0130n\u015Fa men\xFCs\xFCne \"B\" tu\u015Fu ile ula\u015Fabilirsin Demir Maden
+    Sondaj\u0131 [x] Bak\u0131r Maden Sondaj\u0131 [x]"
   isCompleted: 0

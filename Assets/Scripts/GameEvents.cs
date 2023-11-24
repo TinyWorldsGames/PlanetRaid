@@ -35,10 +35,15 @@ public class GameEvents : MonoBehaviour
 
     public delegate bool OnMinerBuildControlDelegate();
 
+        public delegate void  OnTutorialInfoEndedDelegate();
+
+
     // public delegate void ControlBuildings();
 
 
     // Delegate Instance
+
+    public OnTutorialInfoEndedDelegate OnTutorialInfoEnded;
 
     public OnToolTipActivatedForTypesDelegate OnToolTipActivatedForTypes;
     public OnMinerBuildControlDelegate OnMinerBuildControl;
@@ -65,6 +70,7 @@ public class GameEvents : MonoBehaviour
     public ResourceChangedDelegate OnResourceChanged;
 
     public OnBuildMenuClosedDelegate OnBuildMenuClosed;
+
 
 
 

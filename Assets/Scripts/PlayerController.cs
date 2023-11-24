@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] AudioSource audioSource;
 
+    [SerializeField] private bool isTutorialScene = false;
+
 
     public float moveSpeed = 2.0f;
     public float sprintSpeed = 5.335f;
@@ -51,7 +53,9 @@ public class PlayerController : MonoBehaviour
     private float jumpTimeoutDelta;
     private float fallTimeoutDelta;
 
-    private int animIDSpeed;
+
+    [HideInInspector]
+    public int animIDSpeed;
     private int animIDGrounded;
     private int animIDJump;
     private int animIDFreeFall;
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private int animIDAim;
 
-    [SerializeField] private Animator animator;
+    public Animator animator;
     private CharacterController characterController;
     [SerializeField] PlayerInputHandler playerInput;
     [SerializeField] private GameObject mainCamera;
@@ -151,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
 
-            if (playerInput.shoot)
+            if (playerInput.shoot && !isTutorialScene)
             {
                 if (GameManager.Instance.currentBattery >= 2f)
                 {
@@ -211,10 +215,14 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
+        if (!isTutorialScene)
+        {
+            JumpAndGravity();
 
-        JumpAndGravity();
+            GroundedCheck();
+        }
 
-        GroundedCheck();
+
 
         if (!playerInput.buildMode)
         {

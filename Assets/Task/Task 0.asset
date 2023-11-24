@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ec3ed9b6e380248ba7a82c52433baf, type: 3}
   m_Name: Task 0
   m_EditorClassIdentifier: Assembly-CSharp::Task
-  taskName: "Ba\u015Flang\u0131\xE7"
-  taskDescription: "Sistemlerin \xE7al\u0131\u015Fmaya devam etmesini sa\u011Flamak
-    i\xE7in bak\u0131r ve demir kaynaklar\u0131n\u0131 bul ve sondaj makinalar\u0131n\u0131
-    kur"
+  taskName: "Yeni Bir Ba\u015Flang\u0131\xE7"
+  taskDescription: "Gezegene ho\u015F geldin, Jenerat\xF6r\xFCn \xE7al\u0131\u015Fmas\u0131
+    i\xE7in h\u0131zl\u0131ca odun toplamaya ba\u015Fla. Sa\u011F t\u0131klayarak
+    hedef alabilirsin"
   isCompleted: 1

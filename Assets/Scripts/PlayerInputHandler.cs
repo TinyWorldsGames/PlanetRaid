@@ -16,6 +16,14 @@ public class PlayerInputHandler : MonoBehaviour
     public bool cursorLocked = true;
     public bool cursorInputForLook = true;
 
+    [SerializeField]
+    bool isTutorialScene = false;
+
+    private void Start()
+    {
+        SetCoursorActive(false);
+    }
+
     public void OnMove(InputValue value)
     {
         MoveInput(value.Get<Vector2>());
@@ -31,7 +39,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnJump(InputValue value)
     {
-        if(buildMode)
+        if (buildMode)
         {
             return;
         }
@@ -63,6 +71,12 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BuildModeInput()
     {
+        if (isTutorialScene)
+        {
+            return;
+        }
+
+
         buildMode = !buildMode;
 
         if (buildMode)
@@ -111,6 +125,12 @@ public class PlayerInputHandler : MonoBehaviour
     public void ShootInput(bool newShootState)
     {
         shoot = newShootState;
+    }
+
+    public void SetCoursorActive(bool newState)
+    {
+        cursorLocked = !newState;
+        SetCursorState(cursorLocked);
     }
 
 

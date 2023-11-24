@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ec3ed9b6e380248ba7a82c52433baf, type: 3}
   m_Name: Task 3
   m_EditorClassIdentifier: Assembly-CSharp::Task
-  taskName: Savunma
-  taskDescription: "Merkezini d\xFC\u015Fmanlardan savun, kolonin i\xE7in ya\u015Fanabilir
-    bir yer haline getir, Hedef almak i\xE7in sa\u011F t\u0131k kullan."
+  taskName: Nefes Al, Nefes Ver
+  taskDescription: "Oksijen tanklar\u0131m\u0131z bo\u015Falmak \xFCzere. Hayatta
+    kalmak istiyorsan oksijen konsantrat\xF6r\xFC kurmal\u0131s\u0131n"
   isCompleted: 0
