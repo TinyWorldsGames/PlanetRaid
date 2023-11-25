@@ -157,17 +157,22 @@ public class PlayerController : MonoBehaviour
 
             if (playerInput.shoot && !isTutorialScene)
             {
-                if (GameManager.Instance.currentBattery >= 2f)
+
+                Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+
+                Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
+                GameManager.Instance.currentBattery -= 2f;
+
+                if (GameManager.Instance.currentBattery < 0)
                 {
-                    Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-
-                    Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-
-                    GameManager.Instance.currentBattery -= 2f;
-
-                    audioSource.Play();
+                    GameManager.Instance.currentBattery = 0;
 
                 }
+
+                audioSource.Play();
+
+
 
 
                 playerInput.shoot = false;

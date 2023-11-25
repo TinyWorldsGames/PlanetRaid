@@ -115,7 +115,7 @@ public class EnemyManager : MonoBehaviour
         }
 
 
-        GameEvents.Instance.OnEnemySpawnWave?.Invoke(360);
+        GameEvents.Instance.OnEnemySpawnWave?.Invoke(60);
 
 
     }
