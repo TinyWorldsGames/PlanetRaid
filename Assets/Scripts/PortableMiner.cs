@@ -32,6 +32,7 @@ public class PortableMiner : MonoBehaviour
             GameManager.Instance.AddMiner(resourceType);
 
             TaskController.Instance.TaskControl3(resourceType);
+            TaskController.Instance.Task3Update(resourceType);
             
 
 

@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6ec3ed9b6e380248ba7a82c52433baf, type: 3}
-  m_Name: Task 4
+  m_Name: Task 7
   m_EditorClassIdentifier: Assembly-CSharp::Task
-  taskName: 
-  taskDescription: Batarya Kur
-  taskDescription2: 
-  taskEnd: "Aman Bo\u015Fa Gitmesin"
+  taskName: "Kaynaklar\u0131 Ara"
+  taskDescription: "Etraf\u0131n\u0131 ke\u015Ffet , Demir ve Bak\u0131r madenlerini
+    bul, Ate\u015F ederek madenleri topla. 10 Adet Demir [0] 10 Adet Bak\u0131r [0]"
   isCompleted: 0

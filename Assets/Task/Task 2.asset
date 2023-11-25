@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Task 2
   m_EditorClassIdentifier: Assembly-CSharp::Task
   taskName: "\u015Eimdi Otomasyon Zaman\u0131"
-  taskDescription: "Maden kaynaklar\u0131n\u0131 bulmu\u015F g\xF6r\xFCn\xFCyorsun.
-    Ta\u015F\u0131nabilir sondaj makinalar\u0131 ile bu i\u015Fi otomatikle\u015Ftirelim.
-    \u0130n\u015Fa men\xFCs\xFCne \"B\" tu\u015Fu ile ula\u015Fabilirsin Demir Maden
-    Sondaj\u0131 [x] Bak\u0131r Maden Sondaj\u0131 [x]"
+  taskDescription: " Demir Maden Sondaj\u0131 [x] Kur"
+  taskDescription2: "Bak\u0131r Maden Sondaj\u0131 [x] Kur"
+  taskEnd: "Otomasyon Zaman\u0131"
   isCompleted: 0

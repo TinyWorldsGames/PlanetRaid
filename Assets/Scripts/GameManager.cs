@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,7 +33,11 @@ public class GameManager : MonoBehaviour
    Image storageImage, oxygenImage;
 
 
-   [SerializeField] TMP_Text waterCountText, oxygenCountText, electricityCountText, storageCountText, healthCountText, scienceCountText, ironCountText, carbonCountText;
+   [SerializeField]
+   Image electricArrow, ironArrow, copperArrow, electricityBar;
+
+
+   [SerializeField] TMP_Text totalElectricityChange, woodCountText, waterCountText, oxygenCountText, electricityCountText, storageCountText, healthCountText, scienceCountText, ironCountText, carbonCountText;
 
 
 
@@ -145,11 +150,22 @@ public class GameManager : MonoBehaviour
       {
          yield return new WaitForSeconds(1);
 
-         int increaseAmount = 5 + (solarPanelCount * 6);
+         int woodEnergy = buildResources.resource3 * 2;
+
+         int increaseAmount = woodEnergy + (solarPanelCount * 6);
 
          currentBattery += increaseAmount;
 
          currentBattery -= (int)electicityUsage / 10;
+
+         int totalChange = increaseAmount - (int)electicityUsage / 10;
+
+
+
+         if (currentBattery < 0)
+         {
+            currentBattery = 0;
+         }
 
          batterCapacity = 100 + (batteryCount * 125);
 
@@ -158,8 +174,25 @@ public class GameManager : MonoBehaviour
             currentBattery = batterCapacity;
          }
 
-         electricityCountText.text = currentBattery.ToString() + "/" + batterCapacity.ToString() + "  +" + $"<color=#{ColorUtility.ToHtmlStringRGB(Color.green)}>" + increaseAmount + "</color>" + " /s";
+         if (totalChange > 0)
+         {
+            electricArrow.color = Color.green;
+            electricArrow.transform.DORotateQuaternion(Quaternion.Euler(0, 0, 90), 0.125f);
 
+         }
+         else
+         {
+            electricArrow.color = Color.red;
+            electricArrow.transform.DORotateQuaternion(Quaternion.Euler(0, 0, 270), 0.125f);
+         }
+
+         totalElectricityChange.text = totalChange.ToString();
+
+         woodCountText.text = buildResources.resource3.ToString();
+
+         electricityCountText.text = currentBattery.ToString() + "/" + $"<color=#{ColorUtility.ToHtmlStringRGB(Color.blue)}>" + increaseAmount + "</color>" + batterCapacity.ToString();
+
+         electricityBar.fillAmount = currentBattery / batterCapacity;
 
 
       }

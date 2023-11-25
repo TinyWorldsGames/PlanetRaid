@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Task 3
   m_EditorClassIdentifier: Assembly-CSharp::Task
   taskName: Nefes Al, Nefes Ver
-  taskDescription: "Oksijen tanklar\u0131m\u0131z bo\u015Falmak \xFCzere. Hayatta
-    kalmak istiyorsan oksijen konsantrat\xF6r\xFC kurmal\u0131s\u0131n"
+  taskDescription: "Oksijen konsantrat\xF6r\xFC kur"
+  taskDescription2: 
+  taskEnd: Nefes al Nefes ver
   isCompleted: 0
