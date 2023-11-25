@@ -439,6 +439,7 @@ public class PlayerController : MonoBehaviour
                 jumpTimeoutDelta -= Time.deltaTime;
             }
         }
+
         else
         {
             jumpTimeoutDelta = jumpTimeout;

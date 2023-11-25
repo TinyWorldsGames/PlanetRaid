@@ -92,7 +92,7 @@ public class ResourceParent : MonoBehaviour, IEnemy
 
         currentHealth -= damage;
 
-        transform.DOShakePosition(0.25f, 0.5f, 10, 90f, false, true);
+        transform.DOShakePosition(0.125f, 0.25f, 1, 90f, false, true);
 
         // DOTween.To(() => _fillAmount, x => _fillAmount = x, currentHealth / health, 1.25f).OnUpdate(() =>
         // {

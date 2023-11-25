@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enums : MonoBehaviour
 {
-    public enum ResourceTypes {Demir,Bakir,Wood};
+    public enum ResourceTypes {Demir,Bakir,Odun};
     public enum ItemTypes {Empty,Test};
 
 

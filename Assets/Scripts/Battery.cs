@@ -8,7 +8,7 @@ public class Battery : MonoBehaviour
     private void OnEnable()
     {
         GameManager.Instance.batteryCount++;
-        TaskController.Instance.TaskControl3();
+        TaskController.Instance.TaskControl5();
 
     }
 

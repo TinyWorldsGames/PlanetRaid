@@ -31,15 +31,20 @@ public class BulletProjectile : MonoBehaviour
             Instantiate(vfxHitRed, transform.position, Quaternion.identity);
         }
 
-        else if (other.gameObject.GetComponent<ICollectableNew>() is ICollectableNew collectable && collectable != null)
+        if (other.gameObject.GetComponent<ICollectableNew>() is ICollectableNew collectable && collectable != null)
         {
-            collectable.Collect(PlayerController.Instance.transform);
+            collectable.Collect();
+            Instantiate(vfxHitRed, transform.position, Quaternion.identity);
         }
-        else
-        {
 
+        // else
+
+        if (other.gameObject.GetComponent<IEnemy>() == null && other.gameObject.GetComponent<ICollectableNew>() == null)
+        {
             Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
         }
+
+
 
         Destroy(gameObject);
     }

@@ -14,6 +14,8 @@ public class GameEvents : MonoBehaviour
     public delegate void ObjectPlacedDelegate(GridObject objectTypeSO, PlacedObjectTypeSO placedObjectTypeSO);
     public delegate void ResourceChangedDelegate(Enums.ResourceTypes resourceType, int count);
 
+    public delegate void OnResourceCollactedDelegate(Enums.ResourceTypes resourceType);
+
     public delegate void OnEnemySpawnWaveDelegate(int timer);
 
     public delegate void OnNewBuildingSelectedDelegate(PlacedObjectTypeSO objectTypeSO);
@@ -42,6 +44,8 @@ public class GameEvents : MonoBehaviour
 
 
     // Delegate Instance
+
+    public OnResourceCollactedDelegate OnResourceCollacted;
 
     public OnTutorialInfoEndedDelegate OnTutorialInfoEnded;
 

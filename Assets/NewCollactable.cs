@@ -13,23 +13,61 @@ public class NewCollactable : MonoBehaviour, ICollectableNew
 
     Transform playerTransform;
 
+    [SerializeField]
+    Enums.ResourceTypes resourceTypes;
+
     private void Start()
     {
 
         playerTransform = PlayerController.Instance.transform;
-        
+
     }
 
     public void Collect()
     {
         GameObject newCollectable = Instantiate(collectable, spawnPoint.position, Quaternion.identity);
 
-        newCollectable.transform.DOMove(playerTransform.position, 0.35f).OnComplete(() =>
+        StartCoroutine(FollowTheTarget(newCollectable));
+
+
+
+    }
+
+    IEnumerator FollowTheTarget(GameObject newCollectable)
+    {
+        while (true)
         {
-            Destroy(newCollectable);
-        });
+            newCollectable.transform.position = Vector3.Lerp(newCollectable.transform.position, playerTransform.position, 0.1f);
+
+            if (Vector3.Distance(newCollectable.transform.position, playerTransform.position) < 0.5f)
+            {
+                GameEvents.Instance.OnResourceCollacted?.Invoke(resourceTypes);
+
+                if (resourceTypes == Enums.ResourceTypes.Odun)
+                {
+
+
+                    TaskController.Instance.Task1Update(resourceTypes);
 
 
 
+                }
+
+                else
+                {
+                    Debug.Log("Task 2 Updated");
+                    TaskController.Instance.Task2Update(resourceTypes);
+                }
+
+                break;
+
+
+
+
+            }
+            yield return null;
+        }
+
+        Destroy(newCollectable);
     }
 }

@@ -21,7 +21,7 @@ public class EnergyCellAnim : MonoBehaviour
     private void OnEnable()
     {
         GameManager.Instance.oxygenGeneratorCount++;
-        TaskController.Instance.TaskControl2();
+        TaskController.Instance.TaskControl4();
     }
 
     private void OnDisable()

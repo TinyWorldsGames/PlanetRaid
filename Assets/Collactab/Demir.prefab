@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4561330023971326774}
   - component: {fileID: 8264159654479233775}
   m_Layer: 0
-  m_Name: Cylinder - copy.001 - copy Duplicator_Cylinder - copy.001 - copy - copy_Dupli_14
+  m_Name: Demir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2946791384265698594}
   m_LocalRotation: {x: -0.019491805, y: 0.30902046, z: 0.18204038, w: 0.93326724}
   m_LocalPosition: {x: 0.8519993, y: 0, z: 0.89899826}
-  m_LocalScale: {x: 0.4133249, y: 0.13711996, z: 0.41531265}
+  m_LocalScale: {x: 0.4133249, y: 0.31416926, z: 0.39120376}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

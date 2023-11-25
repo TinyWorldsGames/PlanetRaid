@@ -196,4 +196,7 @@ public class BuildResources
 {
     public int resource1;
     public int resource2;
+
+    public int resource3;
+
 }

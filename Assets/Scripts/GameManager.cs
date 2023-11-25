@@ -50,6 +50,44 @@ public class GameManager : MonoBehaviour
 
    }
 
+
+
+   private void OnEnable()
+   {
+      GameEvents.Instance.OnResourceControl += ControlResource;
+      GameEvents.Instance.OnResourceUsed += UseResource;
+      GameEvents.Instance.OnResourceCollacted += ResourcesCollected;
+   }
+
+   private void OnDisable()
+   {
+      GameEvents.Instance.OnResourceControl -= ControlResource;
+      GameEvents.Instance.OnResourceUsed -= UseResource;
+      GameEvents.Instance.OnResourceCollacted -= ResourcesCollected;
+
+   }
+
+
+
+   void ResourcesCollected(Enums.ResourceTypes resourceTypes)
+   {
+      switch (resourceTypes)
+      {
+         case Enums.ResourceTypes.Demir:
+            buildResources.resource1 += 10;
+            break;
+         case Enums.ResourceTypes.Bakir:
+            buildResources.resource2 += 10;
+            break;
+         case Enums.ResourceTypes.Odun:
+            buildResources.resource3 += 10;
+            break;
+         default:
+            break;
+      }
+   }
+
+
    private void Start()
    {
       StartCoroutine(WaterRoutine());
@@ -89,7 +127,7 @@ public class GameManager : MonoBehaviour
       {
          yield return new WaitForSeconds(2);
 
-       
+
 
          buildResources.resource1 += ironMinerCounr;
          buildResources.resource2 += copperMinerCount;
@@ -179,17 +217,6 @@ public class GameManager : MonoBehaviour
 
 
 
-   private void OnEnable()
-   {
-      GameEvents.Instance.OnResourceControl += ControlResource;
-      GameEvents.Instance.OnResourceUsed += UseResource;
-   }
-
-   private void OnDisable()
-   {
-      GameEvents.Instance.OnResourceControl -= ControlResource;
-      GameEvents.Instance.OnResourceUsed -= UseResource;
-   }
 
    void UseResource(BuildResources buildResources)
    {
