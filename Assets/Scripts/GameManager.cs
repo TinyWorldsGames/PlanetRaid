@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
    Image electricArrow, ironArrow, copperArrow, electricityBar;
 
 
-   [SerializeField] TMP_Text totalElectricityChange, woodCountText, waterCountText, oxygenCountText, electricityCountText, storageCountText, healthCountText, scienceCountText, ironCountText, carbonCountText;
+   [SerializeField] TMP_Text increaseIronCount,increaseCopperCount, totalElectricityChange, woodCountText, waterCountText, oxygenCountText, electricityCountText, storageCountText, healthCountText, scienceCountText, ironCountText, carbonCountText;
 
 
 
@@ -95,8 +96,8 @@ public class GameManager : MonoBehaviour
 
    private void Start()
    {
-      StartCoroutine(WaterRoutine());
-      StartCoroutine(OxygenRoutine());
+      // StartCoroutine(WaterRoutine());
+      //  StartCoroutine(OxygenRoutine());
       StartCoroutine(EnergyRoutine());
       StartCoroutine(ResourceRoutine());
 
@@ -136,6 +137,9 @@ public class GameManager : MonoBehaviour
          buildResources.resource1 += ironMinerCounr;
          buildResources.resource2 += copperMinerCount;
 
+         increaseCopperCount.text = "+" + copperMinerCount.ToString();
+         increaseIronCount.text = "+" + ironMinerCounr.ToString();
+
          ironCountText.text = buildResources.resource1.ToString();
          carbonCountText.text = buildResources.resource2.ToString();
 
@@ -149,12 +153,13 @@ public class GameManager : MonoBehaviour
       {
          yield return new WaitForSeconds(1);
 
-         int woodEnergy = buildResources.resource3 * 2;
+         int woodEnergy = Mathf.CeilToInt(buildResources.resource3 / 2.0f);
+
+         woodEnergy = Mathf.Clamp(woodEnergy, 0, 30);
 
          buildResources.resource3 -= woodEnergy;
 
          int increaseAmount = woodEnergy + (solarPanelCount * 6);
-
 
          currentBattery += increaseAmount;
 
@@ -175,7 +180,7 @@ public class GameManager : MonoBehaviour
             currentBattery = batterCapacity;
          }
 
-         if (totalChange > 0)
+         if (totalChange >= 0)
          {
             electricArrow.color = Color.green;
             electricArrow.transform.DORotateQuaternion(Quaternion.Euler(0, 0, 90), 0.125f);
@@ -232,7 +237,7 @@ public class GameManager : MonoBehaviour
       }
    }
 
-  
+
 
 
 
