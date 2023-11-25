@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
    public int farmCount;
 
    public int currentWater = 100, currentOxygen = 100, currenStorage = 100, currentHealth = 100, currentScience = 0;
-   public float currentBattery = 100;
+   public float currentBattery;
    public float batterCapacity = 100;
 
    int ironMinerCounr;
@@ -98,7 +98,6 @@ public class GameManager : MonoBehaviour
       StartCoroutine(WaterRoutine());
       StartCoroutine(OxygenRoutine());
       StartCoroutine(EnergyRoutine());
-      StartCoroutine(ScineRoutine());
       StartCoroutine(ResourceRoutine());
 
 
@@ -152,14 +151,16 @@ public class GameManager : MonoBehaviour
 
          int woodEnergy = buildResources.resource3 * 2;
 
+         buildResources.resource3 -= woodEnergy;
+
          int increaseAmount = woodEnergy + (solarPanelCount * 6);
+
 
          currentBattery += increaseAmount;
 
          currentBattery -= (int)electicityUsage / 10;
 
          int totalChange = increaseAmount - (int)electicityUsage / 10;
-
 
 
          if (currentBattery < 0)
@@ -190,9 +191,11 @@ public class GameManager : MonoBehaviour
 
          woodCountText.text = buildResources.resource3.ToString();
 
-         electricityCountText.text = currentBattery.ToString() + "/" + $"<color=#{ColorUtility.ToHtmlStringRGB(Color.blue)}>" + increaseAmount + "</color>" + batterCapacity.ToString();
+         electricityCountText.text = currentBattery.ToString() + "/" + $"<color=#{ColorUtility.ToHtmlStringRGB(Color.blue)}>" + batterCapacity.ToString() + "</color>";
 
          electricityBar.fillAmount = currentBattery / batterCapacity;
+
+
 
 
       }
@@ -229,21 +232,7 @@ public class GameManager : MonoBehaviour
       }
    }
 
-   IEnumerator ScineRoutine()
-   {
-      while (true)
-      {
-         yield return new WaitForSeconds(5);
-
-         currentScience += deathEnemyCount / 5;
-
-         deathEnemyCount = 0;
-
-         scienceCountText.text = currentScience.ToString();
-      }
-
-   }
-
+  
 
 
 
