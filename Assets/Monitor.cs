@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class Monitor : MonoBehaviour
 {
@@ -19,19 +20,17 @@ public class Monitor : MonoBehaviour
     [SerializeField]
     Image inovatimLogo;
 
+    public VideoPlayer Videoplayer;
+
+
+
 
     public IEnumerator MonitorRoutine()
     {
         yield return new WaitForSeconds(0.5f);
-        inovatimLogo.DOFade(0, 1.5f);
-        yield return new WaitForSeconds(1.5f);
-        foreach (char letter in monitorMessage)
-        {
-            monitorText.text += letter;
-            yield return new WaitForSeconds(0.02f);
+        Videoplayer.Play();
+        yield return new WaitForSeconds(15f);
 
-        }
-        yield return new WaitForSeconds(0.5f);
         GameEvents.Instance.OnTutorialInfoEnded?.Invoke();
         playButton.transform.DOScale(1, 1.5f);
     }

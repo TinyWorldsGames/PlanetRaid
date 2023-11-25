@@ -26,7 +26,6 @@ public class TutorialScene : MonoBehaviour
     [SerializeField]
     GameObject landingInfoText;
 
-    public VideoPlayer Videoplayer;
 
 
     bool canLanding = false;
@@ -103,8 +102,7 @@ public class TutorialScene : MonoBehaviour
         {
 
 
-            //monitor.StartCoroutine(monitor.MonitorRoutine());
-            Videoplayer.Play();
+            monitor.StartCoroutine(monitor.MonitorRoutine());
 
             playerInput.SetCoursorActive(true);
             playerInput.cursorInputForLook = false;
