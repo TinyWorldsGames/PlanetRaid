@@ -50,11 +50,44 @@ public class Utils : MonoBehaviour
         CreateWorldTextPopup(null, text, localPosition, 20, Color.white, localPosition + new Vector3(0, 10), 1f);
     }
 
-    public static void CreateWorldTextPopup(string text, Vector3 localPosition,Color color)
+    public static void CreateWorldTextPopup(string text, Vector3 localPosition, Color color)
     {
         CreateWorldTextPopup(null, text, localPosition, 20, color, localPosition + new Vector3(0, 10), 1f);
     }
-   
+
+    public static void CreateWorldTextPopup(string text, Vector3 localPosition, Color color, float time, Transform lookObject)
+    {
+
+        CreateWorldTextPopup(null, text, localPosition, 20, color, localPosition + new Vector3(0, 2), time,lookObject);
+    }
+
+
+    public static void CreateWorldTextPopup(Transform parent, string text, Vector3 localPosition, int fontSize, Color color, Vector3 finalPopupPosition, float popupTime, Transform lookObject)
+    {
+        TextMesh textMesh = CreateWorldText(parent, text, localPosition, fontSize, color, TextAnchor.LowerLeft, TextAlignment.Left, sortingOrderDefault);
+        Transform transform = textMesh.transform;
+        Vector3 moveAmount = (finalPopupPosition - localPosition) / popupTime;
+        textMesh.fontSize = 10;
+        FunctionUpdater.Create(delegate ()
+        {
+            transform.position += moveAmount * Time.deltaTime;
+            transform.LookAt(lookObject);
+            // ROTATİON Y + 180
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + 180, transform.rotation.eulerAngles.z);
+            popupTime -= Time.deltaTime;
+            if (popupTime <= 0f)
+            {
+                UnityEngine.Object.Destroy(transform.gameObject);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }, "WorldTextPopup");
+
+    }
+
 
     // Create a Text Popup in the World
     public static void CreateWorldTextPopup(Transform parent, string text, Vector3 localPosition, int fontSize, Color color, Vector3 finalPopupPosition, float popupTime)
