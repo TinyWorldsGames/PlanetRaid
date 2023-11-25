@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
+
 public class TutorialScene : MonoBehaviour
 {
     [SerializeField]
@@ -23,6 +25,9 @@ public class TutorialScene : MonoBehaviour
 
     [SerializeField]
     GameObject landingInfoText;
+
+    public VideoPlayer Video;
+
 
     bool canLanding = false;
 
