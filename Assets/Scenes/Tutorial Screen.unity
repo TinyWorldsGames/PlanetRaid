@@ -442,7 +442,6 @@ MonoBehaviour:
   playerInput: {fileID: 3102197296329633087}
   playerTargetPoint: {fileID: 820004748}
   landingInfoText: {fileID: 1645704623}
-  Video: {fileID: 0}
 --- !u!4 &207362483
 Transform:
   m_ObjectHideFlags: 0
@@ -1797,7 +1796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1101402095
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19838,14 +19837,14 @@ MonoBehaviour:
   rotationSmoothTime: 0.12
   speedChangeRate: 10
   sensitivity: 1
-  jumpHeight: 1.2
-  gravity: -15
+  jumpHeight: 0.7
+  gravity: 0
   jumpTimeout: 0.5
   fallTimeout: 0.15
   isGrounded: 1
   groundLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 4294967295
   cameraTarget: {fileID: 7348505927220352103}
   lockCameraPosition: 0
   animIDSpeed: 0
@@ -20809,6 +20808,7 @@ MonoBehaviour:
   monitorMessage: 
   playButton: {fileID: 1967804123}
   inovatimLogo: {fileID: 882310069}
+  Videoplayer: {fileID: 378226270}
 --- !u!224 &3959654285829611573
 RectTransform:
   m_ObjectHideFlags: 0
