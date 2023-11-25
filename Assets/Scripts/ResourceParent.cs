@@ -41,8 +41,8 @@ public class ResourceParent : MonoBehaviour, IEnemy
     private void Start()
     {
         currentHealth = health;
-        defaultMaterials = meshRenderer.materials;
-        whiteMaterials = new Material[meshRenderer.materials.Length];
+        defaultMaterials = meshRenderer.sharedMaterials;
+        whiteMaterials = new Material[meshRenderer.sharedMaterials.Length]; 
         for (int i = 0; i < whiteMaterials.Length; i++)
         {
             whiteMaterials[i] = whiteMaterial;
