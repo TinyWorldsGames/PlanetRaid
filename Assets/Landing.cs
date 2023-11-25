@@ -28,7 +28,7 @@ public class Landing : MonoBehaviour
     private void Start()
     {
 
-        transform.DOMove(landingPoint.position, 15f);
+        transform.DOMove(landingPoint.position, 4f);
         mainDoor.DOPunchRotation(new Vector3(0, 0, 2), 1f, 1, 2.5f).SetLoops(-1, LoopType.Yoyo);
         StartCoroutine(LandingRoutine());
 
@@ -62,7 +62,7 @@ public class Landing : MonoBehaviour
             smokeParticles.Stop();
             yield return new WaitForSeconds(0.5f);
             totalTime++;
-            if (totalTime == 13)
+            if (totalTime == 3)
             {
                 fireParticles.Stop();
                 smokeParticles.Stop();
