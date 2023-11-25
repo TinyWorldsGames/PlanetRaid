@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ec3ed9b6e380248ba7a82c52433baf, type: 3}
   m_Name: Task 5
   m_EditorClassIdentifier: Assembly-CSharp::Task
-  taskName: "G\xFCvenlik Protokol\xFC"
-  taskDescription: "G\xFCzel bir ba\u015Flang\u0131\xE7 yapt\u0131n. S\u0131rada
-    merkezi d\xFC\u015Fmanlardan savunmak ve kolonin i\xE7in ya\u015Fanabilir bir
-    yer haline getirmek var. Gezegendeki d\xFC\u015Fmanlar sana sald\u0131rmaya \xE7al\u0131\u015Facakt\u0131r
-    savunma binalar\u0131yla kendini koru"
+  taskName: 
+  taskDescription: "D\xFC\u015Fman dalgas\u0131n\u0131 savu\u015Ftur"
+  taskDescription2: 
+  taskEnd: "G\xFCvenlik Protokol\xFC"
   isCompleted: 0

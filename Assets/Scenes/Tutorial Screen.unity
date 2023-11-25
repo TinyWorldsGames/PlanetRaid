@@ -19838,14 +19838,14 @@ MonoBehaviour:
   rotationSmoothTime: 0.12
   speedChangeRate: 10
   sensitivity: 1
-  jumpHeight: 0.7
-  gravity: 0
+  jumpHeight: 1.2
+  gravity: -15
   jumpTimeout: 0.5
   fallTimeout: 0.15
   isGrounded: 1
   groundLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
   cameraTarget: {fileID: 7348505927220352103}
   lockCameraPosition: 0
   animIDSpeed: 0
