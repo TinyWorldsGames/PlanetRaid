@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using TMPro;
 
 public class BaseHealth : MonoBehaviour, IDamageable
@@ -11,6 +12,11 @@ public class BaseHealth : MonoBehaviour, IDamageable
 
     [SerializeField]
     GameObject gameOverPanel;
+
+    private void Start()
+    {
+        healthText.text = health.ToString();
+    }
 
 
     public void Die()
@@ -27,6 +33,7 @@ public class BaseHealth : MonoBehaviour, IDamageable
             health = 0;
             Die();
         }
+        healthText.DOColor(Color.red, 0.5f).OnComplete(() => healthText.DOColor(Color.white, 0.5f));
         healthText.text = health.ToString();
     }
 }

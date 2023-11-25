@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Task 2
   m_EditorClassIdentifier: Assembly-CSharp::Task
   taskName: "\u015Eimdi Otomasyon Zaman\u0131"
-  taskDescription: " Demir Maden Sondaj\u0131 [x] Kur"
+  taskDescription: "Demir Maden Sondaj\u0131 [x] Kur"
   taskDescription2: "Bak\u0131r Maden Sondaj\u0131 [x] Kur"
   taskEnd: "Otomasyon Zaman\u0131"
-  isCompleted: 0
+  isCompleted: 1
