@@ -33,16 +33,37 @@ public class EnemyAIManager : MonoBehaviour, IEnemy
 
     [SerializeField] Transform targetInRange;
 
+    [SerializeField] Material hitMaterial, defaultMaterial;
 
+    int selectedIndex;
+
+    Transform playerTransform;
+
+    [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
+
+    private void Start()
+    {
+        playerTransform = PlayerController.Instance.transform;
+
+        StartCoroutine(SetupSpawn(1f, playerTransform));
+    }
 
 
 
 
     public IEnumerator SetupSpawn(float time, Transform target)
     {
+
+
         int randomModel = Random.Range(0, enemyModel.Length);
 
+        selectedIndex = randomModel;
+
         enemyModel[randomModel].SetActive(true);
+
+        skinnedMeshRenderer = enemyModel[randomModel].GetComponent<SkinnedMeshRenderer>();
+
+        defaultMaterial = enemyModel[randomModel].GetComponentInChildren<SkinnedMeshRenderer>().material;
 
         yield return new WaitForSeconds(time);
 
@@ -169,7 +190,7 @@ public class EnemyAIManager : MonoBehaviour, IEnemy
             targetIsBase = true;
         }
 
-        else 
+        else
         {
             GotoTarget(_targetEnemy);
             targetIsBase = false;
@@ -200,10 +221,25 @@ public class EnemyAIManager : MonoBehaviour, IEnemy
 
         transform.DOShakePosition(0.25f, 0.5f, 10, 90f, false, true);
 
+        Utils.CreateWorldTextPopup(damage.ToString(), hitPoint.position, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 1, playerTransform);
+
+        StartCoroutine(HitMaterial());
+
         if (health <= 0)
         {
             Die();
         }
+    }
+
+    IEnumerator HitMaterial()
+    {
+        skinnedMeshRenderer.material = hitMaterial;
+
+        yield return new WaitForSeconds(0.1f);
+
+        skinnedMeshRenderer.material = defaultMaterial;
+
+
     }
 
     public void Die()
@@ -211,6 +247,7 @@ public class EnemyAIManager : MonoBehaviour, IEnemy
         animator.SetBool("isDie", true);
 
         animator.SetBool("isAttack", false);
+
         agent.isStopped = true;
 
         agent.enabled = false;
